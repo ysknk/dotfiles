@@ -47,6 +47,19 @@ if dein#check_install()
   call dein#install()
 endif
 
+" vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup=1
+" ガイドをスタートするインデントの量
+let g:indent_guides_start_level=2
+" 自動カラーを無効にする
+let g:indent_guides_auto_colors=0
+" ハイライト色の変化の幅
+let g:indent_guides_color_change_percent = 30
+" ガイドの幅
+let g:indent_guides_guide_size = 1
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
+
 " =======================
 " set
 " =======================
@@ -139,44 +152,31 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
-
 " http://qiita.com/ahiruman5/items/4f3c845500c172a02935
 " カーソルの左右移動で行末から次の行の行頭への移動が可能になる
 set whichwrap=b,s,h,l,<,>,[,],~
-" 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
-nnoremap j gj
-nnoremap k gk
-nnoremap <down> gj
-nnoremap <up> gk
 " バックスペースキーの有効化
 set backspace=indent,eol,start
-
-set wildmenu " コマンドモードの補完
-set history=5000 " 保存するコマンド履歴の数
+" コマンドモードの補完
+set wildmenu
+" 保存するコマンド履歴の数
+set history=5000
 
 " =======================
 " autocmd
 " =======================
-" vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup=1
-" ガイドをスタートするインデントの量
-let g:indent_guides_start_level=2
-" 自動カラーを無効にする
-let g:indent_guides_auto_colors=0
 " 奇数インデントのカラー
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
 " 偶数インデントのカラー
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
-" ハイライト色の変化の幅
-let g:indent_guides_color_change_percent = 30
-" ガイドの幅
-let g:indent_guides_guide_size = 1
-
+" highlightカラー
 augroup highlightIdegraphicSpace
   autocmd!
   autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
+" デフォルトでツリーを表示させる
+autocmd VimEnter * execute 'NERDTree'
 
 " =======================
 " keymap
@@ -190,3 +190,8 @@ nnoremap k gk
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " tree
 nnoremap :tree :NERDTreeToggle
+" 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk

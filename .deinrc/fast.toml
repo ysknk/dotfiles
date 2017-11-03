@@ -27,6 +27,13 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
+# comment out/in
+[[plugins]]
+repo = 'tyru/caw.vim'
+hook_add = '''
+  vmap - <Plug>(caw:I:toggle)
+'''
+
 # toml syntax
 [[plugins]]
 repo = 'cespare/vim-toml'
