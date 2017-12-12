@@ -6,10 +6,25 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
-build = 'make'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+# GIT
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 # カーソル位置のコンテキストに合わせてftを切り替える
 [[plugins]]
@@ -20,12 +35,14 @@ depends = ['context_filetype.vim']
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
-# statusline custom
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'ervandew/supertab'
+hook_add = '''
+  let g:SuperTabDefaultCompletionType = "<c-n>"
+'''
 
 # comment out/in
 [[plugins]]
@@ -34,10 +51,35 @@ hook_add = '''
   vmap - <Plug>(caw:I:toggle)
 '''
 
+# pug syntax
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
+on_ft = 'pug'
+
+# stylus syntax
+[[plugins]]
+repo = 'wavded/vim-stylus'
+on_ft = 'styl'
+
+# json syntax
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
 # toml syntax
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+
+# es6 syntax
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = 'js'
+
+# stg-0 syntax
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = 'js'
 
  # カラースキーマ
 [[plugins]]
@@ -48,3 +90,23 @@ hook_add = '''
   " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   au MyAutoCmd VimEnter * nested colorscheme luna
 '''
+
+# statusline custom
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+  \   'active': {
+  \     'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
+  \     'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+  \   },
+  \   'inactive': {
+  \     'left': [['filename']],
+  \     'right': [['lineinfo'], ['percent']]
+  \   },
+  \   'component_function': {
+  \     'gitbranch': 'fugitive#head'
+  \   }
+  \ }
+'''
+

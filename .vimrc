@@ -59,6 +59,8 @@ let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
 
 " =======================
 " set
@@ -100,39 +102,8 @@ set visualbell
 set showmatch
 " ステータスラインを常に表示
 set laststatus=2
-
-" ファイル名表示
-" set statusline+=%F
-" 変更チェック表示
-" set statusline+=%m
-" 読み込み専用かどうか表示
-" set statusline+=%r
-" ヘルプなら[HELP]と表示
-" set statusline+=%h
-" プレビューウインドウなら[Prevew]と表示
-" set statusline+=%w
-" フォーマット表示
-" set statusline+=\ [FORMAT=%{&ff}]
-" エンコード表示
-" set statusline+=\ [ENC=%{&fileencoding}]
-" ファイルタイプ表示
-" set statusline+=\ [TYPE=%Y]
-" カーソル位置にあるキャラクタのASCIIおよび16進値表示
-"set statusline+=\ [ASCII=\%03.3b]
-" カーソル位置表示
-" set statusline+=\ [LOW=%l/%L]
-" カーソル位置（％）表示
-" set statusline+=[%p%%]
-
-" カーソル位置表示
-"set statusline+=\ [HEX=\%02.2B]
-" カーソル位置表示
-"set statusline+=\ [POS=%04l,%04v]
-" ファイルの行数表示
-"set statusline+=\ [LEN=%L]
-"
 " コマンドラインの補完
-set wildmode=list:longest
+set wildmode=longest:full,full
 " 不可視文字を可視化
 set list
 set listchars=tab:>-,trail:-,nbsp:%,eol:$
@@ -190,8 +161,17 @@ nnoremap k gk
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " tree
 nnoremap :tree :NERDTreeToggle
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
 nnoremap j gj
 nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
+" jjと入力することでEsc扱いに
+inoremap <silent> jj <Esc>
+inoremap <silent> っj <ESC>
+" 括弧補完
+inoremap { {}<Left>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap ( ()<ESC>i
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
