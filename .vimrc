@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 " =======================
 " init set
 " =======================
@@ -10,9 +13,14 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+if has("win64") || has("win32unix") || has("win32")
+  let g:vimproc#download_windows_dll = 1
+endif
+
 " =======================
 " init dein
 " =======================
+let g:dein#install_process_timeout = 600
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
@@ -23,7 +31,8 @@ if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  " execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
 " 設定開始
@@ -42,11 +51,14 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-" もし、未インストールものものがあったらインストール
+" もし、未インストールのものがあったらインストール
 if dein#check_install()
   call dein#install()
 endif
 
+" =======================
+" config vars
+" =======================
 " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup=1
 " ガイドをスタートするインデントの量
@@ -61,6 +73,8 @@ let g:indent_guides_guide_size = 1
 let NERDTreeShowHidden = 1
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
+" ale
+let g:ale_statusline_format = ['E%d', 'W%d', '']
 
 " =======================
 " set
@@ -104,9 +118,9 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=longest:full,full
-" 不可視文字を可視化
+" 不可視文字を可視化 ",eol:$
 set list
-set listchars=tab:>-,trail:-,nbsp:%,eol:$
+set listchars=tab:>-,trail:-,nbsp:%,eol:↲
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
@@ -131,7 +145,15 @@ set backspace=indent,eol,start
 " コマンドモードの補完
 set wildmenu
 " 保存するコマンド履歴の数
-set history=5000
+set history=2048
+" 新しいウィンドウを下に開く
+set splitbelow
+" 新しいウィンドウを右に開く
+set splitright
+" □や○文字が崩れる問題を解決
+set ambiwidth=double
+" 全角括弧関連
+set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:”
 
 " =======================
 " autocmd
@@ -148,6 +170,8 @@ augroup highlightIdegraphicSpace
 augroup END
 " デフォルトでツリーを表示させる
 autocmd VimEnter * execute 'NERDTree'
+" vueカラー
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " =======================
 " keymap
@@ -159,9 +183,6 @@ nnoremap j gj
 nnoremap k gk
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-" tree
-nnoremap :tree :NERDTreeToggle
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
 nnoremap j gj
 nnoremap k gk
@@ -175,3 +196,14 @@ inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+" Shift+hjklで移動量を大きく
+nnoremap H 3h
+nnoremap J 3j
+nnoremap K 3k
+nnoremap L 3l
+" Shift + 矢印でウィンドウサイズを変更
+nnoremap <S-Left>  <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up>    <C-w>-<CR>
+nnoremap <S-Down>  <C-w>+<CR>
+
