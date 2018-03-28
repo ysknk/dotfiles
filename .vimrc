@@ -1,6 +1,10 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 " =======================
 " init set
 " =======================
@@ -57,26 +61,6 @@ if dein#check_install()
 endif
 
 " =======================
-" config vars
-" =======================
-" vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup=1
-" ガイドをスタートするインデントの量
-let g:indent_guides_start_level=2
-" 自動カラーを無効にする
-let g:indent_guides_auto_colors=0
-" ハイライト色の変化の幅
-let g:indent_guides_color_change_percent = 30
-" ガイドの幅
-let g:indent_guides_guide_size = 1
-" 隠しファイルをデフォルトで表示させる
-let NERDTreeShowHidden = 1
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
-" ale
-let g:ale_statusline_format = ['E%d', 'W%d', '']
-
-" =======================
 " set
 " =======================
 " シンタックスハイライトを有効にする
@@ -102,10 +86,13 @@ set clipboard+=unnamed
 set number
 " カーソルの位置を表示する
 set ruler
+
 " 現在の行を強調表示
-set cursorline
+" set cursorline
+" highlight CursorLine term=reverse cterm=reverse
 " 現在の行を強調表示（縦）
-set cursorcolumn
+" set cursorcolumn
+
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -158,10 +145,6 @@ set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,
 " =======================
 " autocmd
 " =======================
-" 奇数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
-" 偶数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
 " highlightカラー
 augroup highlightIdegraphicSpace
   autocmd!
@@ -172,6 +155,42 @@ augroup END
 autocmd VimEnter * execute 'NERDTree'
 " vueカラー
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+" grep + quickfix
+autocmd QuickFixCmdPost *grep* cwindow
+" cursorline
+augroup vimrc-auto-cursorline
+  autocmd!
+  autocmd CursorMoved,CursorMovedI * call Auto_cursorline('CursorMoved')
+  autocmd CursorHold,CursorHoldI * call Auto_cursorline('CursorHold')
+  autocmd WinEnter * call Auto_cursorline('WinEnter')
+  autocmd WinLeave * call Auto_cursorline('WinLeave')
+
+  let g:cursorline_lock = 0
+  function! Auto_cursorline(event)
+    if a:event ==# 'WinEnter'
+      setlocal cursorline
+      setlocal cursorcolumn
+      let g:cursorline_lock = 2
+    elseif a:event ==# 'WinLeave'
+      setlocal nocursorline
+      setlocal nocursorcolumn
+    elseif a:event ==# 'CursorMoved'
+      if g:cursorline_lock
+        if 1 < g:cursorline_lock
+          let g:cursorline_lock = 1
+        else
+          setlocal nocursorline
+          setlocal nocursorcolumn
+          let g:cursorline_lock = 0
+        endif
+      endif
+    elseif a:event ==# 'CursorHold'
+      setlocal cursorline
+      setlocal cursorcolumn
+      let g:cursorline_lock = 1
+    endif
+  endfunction
+augroup END
 
 " =======================
 " keymap
@@ -206,4 +225,5 @@ nnoremap <S-Left>  <C-w><<CR>
 nnoremap <S-Right> <C-w>><CR>
 nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
-
+" 選択行列の可視化切り替え
+map <C-F2> :set cursorcolumn!<Bar>set cursorline!<CR>

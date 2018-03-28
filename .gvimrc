@@ -1,8 +1,22 @@
-set encoding=utf-8
-scriptencoding utf-8
+" window size
+if has("gui_running")
+  set lines=999 columns=999
+endif
 
-set lines=999 columns=999
-set guioptions-=T
+" UIの最小化
+if has('gui')
+  " ツールバーを非表示
+  set guioptions-=T
+  " メニューバーを非表示
+  set guioptions-=m
+  " 垂直スクロールバーを非表示
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+  " 水平スクロールバーを非表示
+  set guioptions-=b
+endif
 
 " from http://vim.wikia.com/wiki/Disable_beeping
 set noerrorbells visualbell t_vb=
@@ -10,6 +24,7 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
+" フォント・透過設定等
 if has('gui_macvim')
   set guifont=RictyDiminishedDiscord-Regular:h18
   set transparency=20

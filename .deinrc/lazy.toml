@@ -15,6 +15,9 @@ on_i = 1
 repo = 'Shougo/neocomplete'
 if = 'has("lua")'
 on_i = 1
+hook_add = '''
+  let g:neocomplete#enable_at_startup = 1
+'''
 
 # 選択後 S[*] -> *で囲う
 [[plugins]]
@@ -59,8 +62,8 @@ repo = 'm2mdas/phpcomplete-extended'
 
 # [+|-]
 [[plugins]]
-repo   = 'thinca/vim-fontzoom'
+repo = 'thinca/vim-fontzoom'
 on_cmd = ['Fontzoom']
 on_map = ['<Plug>(fontzoom-']
-gui    = 1
+gui = 1
 
