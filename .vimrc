@@ -1,13 +1,15 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+" =======================
+" base set
+" =======================
+let s:cache_dir = '~/.cache'
+
+" shell alias
 if &shell =~# 'fish$'
   set shell=sh
 endif
-
-" =======================
-" init set
-" =======================
 " vi互換モードで動作させない
 if !&compatible
   set nocompatible
@@ -16,7 +18,7 @@ endif
 augroup MyAutoCmd
   autocmd!
 augroup END
-
+" windows dll download
 if has("win64") || has("win32unix") || has("win32")
   let g:vimproc#download_windows_dll = 1
 endif
@@ -26,7 +28,7 @@ endif
 " =======================
 let g:dein#install_process_timeout = 600
 " プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
+let s:dein_dir = expand(s:cache_dir . '/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -45,8 +47,8 @@ if dein#load_state(s:dein_dir)
   " プラグインリストを収めた TOML ファイル
   " 予め TOML ファイル（後述）を用意しておく
   let g:rc_dir = expand('~/.deinrc/')
-  let s:fast   = g:rc_dir . 'fast.toml'
-  let s:lazy   = g:rc_dir . 'lazy.toml'
+  let s:fast = g:rc_dir . 'fast.toml'
+  let s:lazy = g:rc_dir . 'lazy.toml'
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:fast, {'lazy': 0})
   call dein#load_toml(s:lazy, {'lazy': 1})
@@ -61,15 +63,27 @@ if dein#check_install()
 endif
 
 " =======================
-" set
+" init set
 " =======================
 " シンタックスハイライトを有効にする
 syntax enable
-" バックアップファイルを作らない
-set nobackup
-set noundofile
-" スワップファイルを作らない
-set noswapfile
+" バックアップファイル
+" set nobackup
+set backupdir&
+let &backupdir=expand(s:cache_dir)
+" チルダファイル
+" set noundofile
+set undodir&
+let &undodir=expand(s:cache_dir)
+" スワップファイル
+" set noswapfile
+set directory&
+let &directory=expand(s:cache_dir)
+" viminfo
+" set viminfo=
+set viminfo&
+let &viminfo.= ',n' . expand(s:cache_dir) . '/viminfo'
+
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
@@ -78,21 +92,12 @@ set hidden
 set showmode
 " 入力中のコマンドをステータスに表示する
 set showcmd
-" デフォルトエンコード設定
-set encoding=utf-8
 " コピーをクリップボードに保持
 set clipboard+=unnamed
 " 行番号を表示する
 set number
 " カーソルの位置を表示する
 set ruler
-
-" 現在の行を強調表示
-" set cursorline
-" highlight CursorLine term=reverse cterm=reverse
-" 現在の行を強調表示（縦）
-" set cursorcolumn
-
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -141,6 +146,35 @@ set splitright
 set ambiwidth=double
 " 全角括弧関連
 set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:”
+
+" =======================
+" php set
+" =======================
+" 文字列中のSQLをハイライトする
+let php_sql_query=1
+" Baselibメソッドのハイライト
+let php_baselib=1
+" <? をハイライト除外する
+let php_htmlInStrings=1
+" ショートタグ (<?を無効にする→ハイライト除外にする)
+let php_noShortTags=1
+" 折りたたみ
+" zo: 開く (カーソルが折りたたまれた行の上にあるとき)
+" zc: 閉じる (折りたたまれる範囲中で)
+" zR: ぜんぶ開く
+" zM: ぜんぶ閉じる
+" zj: 次に移動
+" zk: 前に移動
+let php_folding=1
+" カッコが閉じていない場合にハイライト
+let php_parent_error_close=1
+
+augroup vimrc-filetype
+  autocmd!
+  " PHP set
+  autocmd BufNewFile,BufRead *.php set filetype=php
+  autocmd FileType php setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
 
 " =======================
 " autocmd
@@ -227,3 +261,4 @@ nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 " 選択行列の可視化切り替え
 map <C-F2> :set cursorcolumn!<Bar>set cursorline!<CR>
+
