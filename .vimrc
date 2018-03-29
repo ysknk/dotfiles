@@ -185,10 +185,6 @@ augroup highlightIdegraphicSpace
   autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
-" デフォルトでツリーを表示させる
-autocmd VimEnter * execute 'NERDTree'
-" vueカラー
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 " grep + quickfix
 autocmd QuickFixCmdPost *grep* cwindow
 " cursorline
