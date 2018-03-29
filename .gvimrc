@@ -26,7 +26,7 @@ endif
 
 " フォント・透過設定等
 if has('gui_macvim')
-  set guifont=RictyDiminishedDiscord-Regular:h18
+  set guifont=RictyDiminishedDiscord-Regular:h20
   set transparency=20
 
 elseif has("win64") || has("win32unix") || has("win32")
