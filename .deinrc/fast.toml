@@ -294,7 +294,7 @@ hook_add = '''
 [[plugins]]
 repo = 'tyru/caw.vim'
 hook_add = '''
-  vmap gcc <Plug>(caw:hatpos:toggle)
+  vmap gcc <Plug>(caw:zeropos:toggle)
 '''
 
 # markdown syntax
