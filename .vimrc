@@ -259,4 +259,5 @@ nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 " 選択行列の可視化切り替え
 map <C-F2> :set cursorcolumn!<Bar>set cursorline!<CR>
-
+" コピペが連続でできるように
+vnoremap <silent> <C-p> "0p<CR>
