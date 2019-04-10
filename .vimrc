@@ -148,6 +148,8 @@ set splitright
 set ambiwidth=double
 " 全角括弧関連
 set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:”
+" 常に行数左側のカラムを表示する
+set signcolumn=yes
 
 " =======================
 " php set
@@ -181,6 +183,11 @@ augroup END
 " =======================
 " autocmd
 " =======================
+"ファイルを開くと、ファイルがあるディレクトリに移動する
+augroup grlcd
+  autocmd!
+  autocmd BufEnter * lcd %:p:h
+augroup END
 " highlightカラー
 augroup highlightIdegraphicSpace
   autocmd!
@@ -260,4 +267,4 @@ nnoremap <S-Down>  <C-w>+<CR>
 " 選択行列の可視化切り替え
 map <C-F2> :set cursorcolumn!<Bar>set cursorline!<CR>
 " コピペが連続でできるように
-vnoremap <silent> <C-p> "0p<CR>
+xnoremap p "_dP

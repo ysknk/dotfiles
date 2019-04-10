@@ -14,9 +14,10 @@ hook_add = '''
   " 表示する位置
   let g:NERDTreeWinPos='left'
 
-  " キーマップ
+  " keymap
   nnoremap :tree :NERDTreeToggle
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
   " autocmd
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " デフォルトでツリーを表示させる
@@ -24,33 +25,40 @@ hook_add = '''
   " ファイル指定がない場合は表示させずにctrlpを優先させる
   autocmd VimEnter * if argc() != 0 | NERDTree | endif
 
-  " " NERDTress File highlighting
-  " function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  "   exec 'autocmd FileType nerdtree highlight '. a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  "   exec 'autocmd FileType nerdtree syn match '. a:extension .' #^\s\+.*'. a:extension .'$#'
-  " endfunction
-  "
-  " au VimEnter * call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-  "
-  " au VimEnter * call NERDTreeHighlightFile('py', 'yellow', 'none', 'yellow', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-  "
-  " au VimEnter * call NERDTreeHighlightFile('html', 'green', 'none', 'green', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('pug', 'green', 'none', 'green', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-  "
-  " au VimEnter * call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('scss', 'cyan', 'none', 'cyan', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('sass', 'cyan', 'none', 'cyan', '#151515')
-  "
-  " au VimEnter * call NERDTreeHighlightFile('rb', 'Red', 'none', 'red', '#151515')
-  " au VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-  "
-  " au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+  "  NERDTree File highlighting
+  "function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  "  exec 'autocmd FileType nerdtree highlight '. a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  "  exec 'autocmd FileType nerdtree syn match '. a:extension .' #^\s\+.*'. a:extension .'$#'
+  "endfunction
+
+  "autocmd VimEnter * call NERDTreeHighlightFile('md',     'Blue', 'none', '#b7ddff', '#151515')
+
+  "autocmd VimEnter * call NERDTreeHighlightFile('json',   'Yellow', 'none', '#b7ffe6', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('yml',    'Yellow', 'none', '#b7ffe6', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('toml',   'Yellow', 'none', '#b7ffe6', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('config', 'Yellow', 'none', '#b7ffe6', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('conf',   'Yellow', 'none', '#b7ffe6', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('ini',    'Yellow', 'none', '#b7ffe6', '#151515')
+
+  "autocmd VimEnter * call NERDTreeHighlightFile('html',   'Green', 'none', '#ffc5b7', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('pug',    'Green', 'none', '#ffc5b7', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('jade',   'Green', 'none', '#ffc5b7', '#151515')
+
+  "autocmd VimEnter * call NERDTreeHighlightFile('vue',    'Green', 'none', '#b7ffb8', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('jsx',    'Green', 'none', '#b7ffb8', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('tag',    'Green', 'none', '#b7ffb8', '#151515')
+
+  "autocmd VimEnter * call NERDTreeHighlightFile('styl',   'Cyan', 'none', '#ffe6b7', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('css',    'Cyan', 'none', '#ffe6b7', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('scss',   'Cyan', 'none', '#ffe6b7', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('sass',   'Cyan', 'none', '#ffe6b7', '#151515')
+
+  "autocmd VimEnter * call NERDTreeHighlightFile('rb',     'Red', 'none', '#fdffb7', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('js',     'Red', 'none', '#fdffb7', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('py',     'Red', 'none', '#fdffb7', '#151515')
+
+  "autocmd VimEnter * call NERDTreeHighlightFile('php',    'Magenta', 'none', '#e6b7ff', '#151515')
+  "autocmd VimEnter * call NERDTreeHighlightFile('go',     'Magenta', 'none', '#e6b7ff', '#151515')
 '''
 
 # [[plugins]]
@@ -177,6 +185,11 @@ repo = 'airblade/vim-gitgutter'
 hook_add = '''
   " let g:gitgutter_highlight_lines=1
   let g:gitgutter_max_signs=9999
+  set updatetime=100
+  " highlight clear SignColumn
+  autocmd ColorScheme * hi GitGutterAdd guifg=#009900
+  autocmd ColorScheme * hi GitGutterChange guifg=#bbbb00
+  autocmd ColorScheme * hi GitGutterDelete guifg=#ff2222
 '''
 
 [[plugins]]
@@ -212,6 +225,20 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+  " mapping
+  nmap n <Plug>(anzu-n-with-echo)
+  nmap N <Plug>(anzu-N-with-echo)
+  nmap * <Plug>(anzu-star-with-echo)
+  nmap # <Plug>(anzu-sharp-with-echo)
+  " clear status
+  nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+  " statusline
+  set statusline=%{anzu#search_status()}
+'''
+
+[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
@@ -240,6 +267,18 @@ hook_post_update = '''
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
+hook_add = '''
+" vimshell setting
+let g:vimshell_interactive_update_time = 10
+let g:vimshell_prompt = $USERNAME."% "
+let g:vimshell_user_prompt = 'getcwd()'
+
+" vimshell map
+nnoremap <silent> vs :VimShell<CR>
+nnoremap <silent> vsc :VimShellCreate<CR>
+nnoremap <silent> vp :VimShellPop<CR>
+nnoremap <silent> vi :VimShellInteractive<CR>
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -347,7 +386,8 @@ on_ft = ['toml']
 repo = 'posva/vim-vue'
 on_ft = ['vue']
 hook_add = '''
-  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.js.css
+  " let g:vue_disable_pre_processors=1
+  " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.js.css
   autocmd FileType vue syntax sync fromstart
 
   let g:ft = ''
@@ -486,6 +526,20 @@ repo = 'w0rp/ale'
 depends = ['lightline.vim']
 hook_add = '''
   let g:ale_statusline_format=['E%d', 'W%d', '']
+  let g:ale_linter_aliases = {
+  \   'vue': 'css'
+  \ }
+  let g:ale_linters = {
+  \   'html': ['htmlhint'],
+  \   'pug': ['puglint'],
+  \   'css': ['stylelint'],
+  \   'stylus': ['stylelint'],
+  \   'javascript': ['eslint'],
+  \   'vue': ['eslint'],
+  \   'jsx': ['eslint']
+  \ }
+  nmap <silent> <C-w>j <Plug>(ale_next_wrap)
+  nmap <silent> <C-w>k <Plug>(ale_previous_wrap)
 '''
 
 # lightline ale
