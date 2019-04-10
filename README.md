@@ -13,8 +13,8 @@
     ```
     if not instaled node.js.
     ```
-    # for linux(mac).
-    cd _install && sh linux.sh
+    # for mac.
+    cd _install && sh mac.sh
 
     # for windows.
     cd _install && windows.bat
