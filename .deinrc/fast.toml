@@ -270,8 +270,8 @@ let g:vimshell_user_prompt = 'getcwd()'
 " vimshell map
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
-nnoremap <silent> vp :VimShellPop<CR>
-nnoremap <silent> vi :VimShellInteractive<CR>
+nnoremap <silent> vsp :VimShellPop<CR>
+nnoremap <silent> vsi :VimShellInteractive<CR>
 '''
 
 [[plugins]]
