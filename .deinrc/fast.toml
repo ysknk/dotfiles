@@ -10,7 +10,7 @@ hook_add = '''
   let g:NERDTreeMinimalUI=1
   " treeの見た目
   let g:NERDTreeDirArrowExpandable='+'
-  let g:NERDTreeDirArrowCollapsible='~'
+  let g:NERDTreeDirArrowCollapsible='-'
   " 表示する位置
   let g:NERDTreeWinPos='left'
 
@@ -18,58 +18,62 @@ hook_add = '''
   nnoremap :tree :NERDTreeToggle
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
+  " NERDTree File highlighting
+  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+    exec 'autocmd FileType nerdtree highlight '. a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd FileType nerdtree syn match '. a:extension .' #^\s\+.*'. a:extension .'$#'
+  endfunction
+
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('md',     'blue',    'none', '#b7ddff', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('json',   'yellow',  'none', '#b7ffe6', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('yml',    'yellow',  'none', '#b7ffe6', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('toml',   'yellow',  'none', '#b7ffe6', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('config', 'yellow',  'none', '#b7ffe6', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('conf',   'yellow',  'none', '#b7ffe6', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('ini',    'yellow',  'none', '#b7ffe6', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('html',   'green',   'none', '#ffc5b7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('pug',    'green',   'none', '#ffc5b7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('jade',   'green',   'none', '#ffc5b7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('vue',    'green',   'none', '#b7ffb8', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('jsx',    'green',   'none', '#b7ffb8', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('tag',    'green',   'none', '#b7ffb8', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('styl',   'cyan',    'none', '#ffe6b7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('css',    'cyan',    'none', '#ffe6b7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('scss',   'cyan',    'none', '#ffe6b7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('sass',   'cyan',    'none', '#ffe6b7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('rb',     'red',     'none', '#fdffb7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('js',     'red',     'none', '#fdffb7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('ts',     'red',     'none', '#fdffb7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('py',     'red',     'none', '#fdffb7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('php',    'magenta', 'none', '#e6b7ff', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('go',     'magenta', 'none', '#e6b7ff', '#151515')
+
   " autocmd
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " デフォルトでツリーを表示させる
   " autocmd VimEnter * NERDTree
   " ファイル指定がない場合は表示させずにctrlpを優先させる
-  autocmd VimEnter * if argc() != 0 | NERDTree | wincmd p | endif
-  " autocmd VimEnter * if argc() == 1 | NERDTree | wincmd p | else | NERDTree | endif
-
-  "  NERDTree File highlighting
-  "function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  "  exec 'autocmd FileType nerdtree highlight '. a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  "  exec 'autocmd FileType nerdtree syn match '. a:extension .' #^\s\+.*'. a:extension .'$#'
-  "endfunction
-  "autocmd VimEnter * call NERDTreeHighlightFile('md',     'Blue',    'none', '#b7ddff', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('json',   'Yellow',  'none', '#b7ffe6', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('yml',    'Yellow',  'none', '#b7ffe6', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('toml',   'Yellow',  'none', '#b7ffe6', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('config', 'Yellow',  'none', '#b7ffe6', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('conf',   'Yellow',  'none', '#b7ffe6', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('ini',    'Yellow',  'none', '#b7ffe6', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('html',   'Green',   'none', '#ffc5b7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('pug',    'Green',   'none', '#ffc5b7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('jade',   'Green',   'none', '#ffc5b7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('vue',    'Green',   'none', '#b7ffb8', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('jsx',    'Green',   'none', '#b7ffb8', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('tag',    'Green',   'none', '#b7ffb8', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('styl',   'Cyan',    'none', '#ffe6b7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('css',    'Cyan',    'none', '#ffe6b7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('scss',   'Cyan',    'none', '#ffe6b7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('sass',   'Cyan',    'none', '#ffe6b7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('rb',     'Red',     'none', '#fdffb7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('js',     'Red',     'none', '#fdffb7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('py',     'Red',     'none', '#fdffb7', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('php',    'Magenta', 'none', '#e6b7ff', '#151515')
-  "autocmd VimEnter * call NERDTreeHighlightFile('go',     'Magenta', 'none', '#e6b7ff', '#151515')
+  autocmd VimEnter,Colorscheme * if argc() != 0 | NERDTree | endif
+  " カーソルをメインウインドウに移動
+  autocmd VimEnter,Colorscheme * if argc() != 0 | wincmd p | endif
 '''
 
 # [[plugins]]
 # repo = 'Xuyuanp/nerdtree-git-plugin'
+# depends = ['scrooloose/nerdtree']
 # hook_add = '''
 #   let g:NERDTreeIndicatorMapCustom={
-#     \ "Modified"  : "✹",
-#     \ "Staged"    : "✚",
-#     \ "Untracked" : "✭",
-#     \ "Renamed"   : "➜",
-#     \ "Unmerged"  : "═",
-#     \ "Deleted"   : "✖",
-#     \ "Dirty"     : "✗",
-#     \ "Clean"     : "✔︎",
-#     \ 'Ignored'   : '☒',
-#     \ "Unknown"   : "?"
-#     \ }
+#    \ "Modified"  : "✹",
+#    \ "Staged"    : "✚",
+#    \ "Untracked" : "✭",
+#    \ "Renamed"   : "➜",
+#    \ "Unmerged"  : "═",
+#    \ "Deleted"   : "✖",
+#    \ "Dirty"     : "✗",
+#    \ "Clean"     : "✔︎",
+#    \ 'Ignored'   : '☒',
+#    \ "Unknown"   : "?"
+#    \ }
 # '''
 
 # [[plugins]]
@@ -85,6 +89,9 @@ hook_add = '''
 #
 #   let g:NERDTreeSyntaxEnabledExtensions=['toml']
 # '''
+
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
@@ -169,9 +176,11 @@ hook_add = '''
 
 # [[plugins]]
 # repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-# depends = ['vim-devicons', 'scrooloose/nerdtree']
+# # depends = ['vim-devicons', 'scrooloose/nerdtree']
+# depends = ['scrooloose/nerdtree']
 # hook_add = '''
 #   let g:NERDTreeLimitedSyntax=1
+#   " let g:NERDTreeSyntaxDisableDefaultExtensions = 1
 # '''
 
 [[plugins]]
@@ -492,7 +501,7 @@ hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-  au MyAutoCmd VimEnter * nested colorscheme luna
+  autocmd MyAutoCmd VimEnter * nested colorscheme luna
 '''
 
 # statusline custom
@@ -553,4 +562,5 @@ hook_add = '''
   \ }
   let g:lightline.active.right=[['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'], ['linter_errors', 'linter_warnings', 'linter_ok']]
 '''
+
 

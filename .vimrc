@@ -267,4 +267,5 @@ nnoremap <S-Down>  <C-w>+<CR>
 " 選択行列の可視化切り替え
 map <C-F2> :set cursorcolumn!<Bar>set cursorline!<CR>
 " コピペが連続でできるように
-xnoremap p "_dP
+xnoremap <expr> p 'pgv"'.v:register.'ygv<esc>'
+
