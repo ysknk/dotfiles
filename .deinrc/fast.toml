@@ -18,6 +18,7 @@ hook_add = '''
   nnoremap :tree :NERDTreeToggle
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
+  " autocmd
   " NERDTree File highlighting
   function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     exec 'autocmd FileType nerdtree highlight '. a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
@@ -48,10 +49,10 @@ hook_add = '''
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('php',    'magenta', 'none', '#e6b7ff', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('go',     'magenta', 'none', '#e6b7ff', '#151515')
 
-  " autocmd
+  " 初期表示に関わるコマンド
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " デフォルトでツリーを表示させる
-  " autocmd VimEnter * NERDTree
+  " autocmd VimEnter,Colorscheme * NERDTree
   " ファイル指定がない場合は表示させずにctrlpを優先させる
   autocmd VimEnter,Colorscheme * if argc() != 0 | NERDTree | endif
   " カーソルをメインウインドウに移動
