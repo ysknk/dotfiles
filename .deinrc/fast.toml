@@ -461,11 +461,11 @@ on_ft = ['go']
 repo = 'vim-ruby/vim-ruby'
 on_ft = ['rb']
 
-# end
+# ruby end
 [[plugins]]
 repo = 'tpope/vim-endwise'
 
-# ruby syntax
+# python syntax
 [[plugins]]
 repo = 'hdima/python-syntax'
 on_ft = ['py']
