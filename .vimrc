@@ -8,6 +8,10 @@ scriptencoding utf-8
 " =======================
 let s:cache_dir = '~/.cache'
 
+let $PATH = "~/.pyenv/shims:".$PATH
+if has('python3')
+endif
+
 " shell alias
 if &shell =~# 'fish$'
   set shell=sh
@@ -150,7 +154,8 @@ set ambiwidth=double
 set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:”
 " 常に行数左側のカラムを表示する
 set signcolumn=yes
-
+" カーソルが一番上や下に移動した時のビープ音を消す＆画面フラッシュも消す
+set vb t_vb=
 " =======================
 " php set
 " =======================

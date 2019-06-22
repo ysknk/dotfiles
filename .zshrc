@@ -107,7 +107,16 @@ setopt histignorealldups
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # dsstore delete
 alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+# zlib
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/sqlite/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/sqlite/include"
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/sqlite/lib/pkgconfig"
 
