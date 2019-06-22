@@ -107,3 +107,7 @@ setopt histignorealldups
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
+
+# dsstore delete
+alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
