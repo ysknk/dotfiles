@@ -6,6 +6,9 @@ scriptencoding utf-8
 " =======================
 " base set
 " =======================
+" Windows でもパスの区切り文字を / にする
+set shellslash
+
 let s:cache_dir = '~/.cache'
 
 let $PATH = "~/.pyenv/shims:".$PATH
