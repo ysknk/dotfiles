@@ -3,6 +3,10 @@ if has("gui_running")
   set lines=999 columns=999
 endif
 
+if has('nvim')
+  call GuiWindowMaximized(1)
+endif
+
 " UIの最小化
 if has('gui')
   " ツールバーを非表示
@@ -38,8 +42,3 @@ elseif has("win64") || has("win32unix") || has("win32")
   set guifont=Ricty\ Diminished\ Discord:h15
   autocmd GUIEnter * set transparency=200
 endif
-
-if has('nvim')
-  call GuiWindowMaximized(1)
-endif
-
