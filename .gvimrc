@@ -38,3 +38,8 @@ elseif has("win64") || has("win32unix") || has("win32")
   set guifont=Ricty\ Diminished\ Discord:h15
   autocmd GUIEnter * set transparency=200
 endif
+
+if has('nvim')
+  call GuiWindowMaximized(1)
+endif
+
