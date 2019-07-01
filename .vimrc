@@ -15,6 +15,9 @@ let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv roo
 let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python3)/bin/python") || echo -n $(which python3)')
 
 " shell alias
+if &shell =~ '\\bash$'
+  set shell=bash shellcmdflag=-c
+endif
 if &shell =~# 'fish$'
   set shell=sh
 endif
