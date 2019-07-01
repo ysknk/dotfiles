@@ -1,25 +1,41 @@
 @echo off
+setlocal enabledelayedexpansion
+REM cd %~dp0
 
-call cd ../
+REM a2b symbolic link file [ mklink ..\b a ]
+REM a2b symbolic link directory [ mklink /d ..\b a ]
 
-if exist .vimrc (
-  echo F | xcopy /Y /D /R .vimrc ..\_vimrc
+set DOTFILES_DIR=%HOME%\dotfiles\
+set NVIM_DIR=%HOME%\AppData\Local\nvim\
+
+set VIMRC=%DOTFILES_DIR%.vimrc
+set GVIMRC=%DOTFILES_DIR%.gvimrc
+set DEIN_DIR=%DOTFILES_DIR%.deinrc
+
+REM vim, gvim
+if exist %VIMRC% (
+  del "%HOME%\_vimrc"
+  mklink "%HOME%\_vimrc" "%VIMRC%"
+)
+if exist %GVIMRC% (
+  del "%HOME%\_gvimrc"
+  mklink "%HOME%\_gvimrc" "%GVIMRC%"
 )
 
-if exist .gvimrc (
-  echo F | xcopy /Y /D /R .gvimrc ..\_gvimrc
+REM nvim
+if exist %VIMRC% (
+  del "%NVIM_DIR%init.vim"
+  mklink "%NVIM_DIR%init.vim" "%VIMRC%"
+)
+if exist %GVIMRC% (
+  del "%NVIM_DIR%ginit.vim"
+  mklink "%NVIM_DIR%ginit.vim" "%GVIMRC%"
 )
 
-if exist .vimrc (
-  echo F | xcopy /Y /D /R .vimrc ..\AppData\Local\nvim\init.vim
-)
-
-if exist .gvimrc (
-  echo F | xcopy /Y /D /R .gvimrc ..\AppData\Local\nvim\ginit.vim
-)
-
-if exist .deinrc (
-  call xcopy /Y /D /R /I .deinrc ..\.deinrc
+REM all
+if exist %DEIN_DIR% (
+  rmdir "%HOME%\.deinrc"
+  mklink /d "%HOME%\.deinrc" "%DEIN_DIR%"
 )
 
 exit
