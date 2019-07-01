@@ -116,8 +116,14 @@ set visualbell
 set showmatch
 " ステータスラインを常に表示
 set laststatus=2
+" コマンドモードの補完
+set wildmenu
 " コマンドラインの補完
 set wildmode=longest:full,full
+" コマンドラインでの補完にポップアップメニューを使う
+set wildoptions=pum
+" ポップアップメニューを半透明に
+set pumblend=10
 " 不可視文字を可視化 ",eol:$
 set list
 set listchars=tab:>-,trail:-,nbsp:%,eol:↲
@@ -142,8 +148,6 @@ set hlsearch
 set whichwrap=b,s,h,l,<,>,[,],~
 " バックスペースキーの有効化
 set backspace=indent,eol,start
-" コマンドモードの補完
-set wildmenu
 " 保存するコマンド履歴の数
 set history=2048
 " 新しいウィンドウを下に開く
@@ -158,6 +162,8 @@ set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,
 set signcolumn=yes
 " カーソルが一番上や下に移動した時のビープ音を消す＆画面フラッシュも消す
 set vb t_vb=
+" ターミナルでも True Color を使えるようにする。
+set termguicolors
 " =======================
 " php set
 " =======================
@@ -237,7 +243,12 @@ augroup vimrc-auto-cursorline
     endif
   endfunction
 augroup END
-
+" 任意のウィンドウを半透明に
+augroup transparent-windows
+  autocmd!
+  autocmd FileType denite set winblend=10
+  autocmd FileType denite-filter set winblend=10
+augroup END
 " =======================
 " keymap
 " =======================
@@ -275,4 +286,3 @@ nnoremap <S-Down>  <C-w>+<CR>
 map <C-F2> :set cursorcolumn!<Bar>set cursorline!<CR>
 " コピペが連続でできるように
 xnoremap <expr> p 'pgv"'.v:register.'ygv<esc>'
-
