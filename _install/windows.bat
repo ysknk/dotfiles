@@ -23,6 +23,9 @@ if exist %GVIMRC% (
 )
 
 REM nvim
+if not exist %NVIM_DIR% (
+  mkdir %NVIM_DIR%
+)
 if exist %VIMRC% (
   del "%NVIM_DIR%init.vim"
   mklink "%NVIM_DIR%init.vim" "%VIMRC%"
