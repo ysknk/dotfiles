@@ -30,6 +30,8 @@ hook_add = '''
   endfunction
 
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('md',     'blue',    'none', '#b7ddff', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('sh',     'yellow',  'none', '#b7ffe6', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('bat',    'yellow',  'none', '#b7ffe6', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('json',   'yellow',  'none', '#b7ffe6', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('yml',    'yellow',  'none', '#b7ffe6', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('toml',   'yellow',  'none', '#b7ffe6', '#151515')
