@@ -162,8 +162,12 @@ set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,
 set signcolumn=yes
 " カーソルが一番上や下に移動した時のビープ音を消す＆画面フラッシュも消す
 set vb t_vb=
-" ターミナルでも True Color を使えるようにする。
-set termguicolors
+" ターミナルでも True Color を使えるように
+if has("termguicolors")
+  set t_8f=\[[38;2;%lu;%lu;%lum
+  set t_8b=\[[48;2;%lu;%lu;%lum
+  set termguicolors
+endif
 " =======================
 " php set
 " =======================
