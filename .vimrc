@@ -9,6 +9,7 @@ scriptencoding utf-8
 " Windows でもパスの区切り文字を / にする
 set shellslash
 
+let s:tmp_dir = '~/.temp'
 let s:cache_dir = '~/.cache'
 
 let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
@@ -78,6 +79,8 @@ endif
 " =======================
 " シンタックスハイライトを有効にする
 syntax enable
+" TMPファイル
+let $TMPDIR = expand(s:tmp_dir)
 " バックアップファイル
 " set nobackup
 set backupdir&
