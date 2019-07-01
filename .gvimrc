@@ -1,5 +1,5 @@
 " window size
-if has("gui_running")
+if has('gui_running')
   set lines=999 columns=999
 endif
 
@@ -33,7 +33,7 @@ if has('gui_macvim')
   set guifont=RictyDiminishedDiscord-Regular:h20
   set transparency=20
 
-elseif has("win64") || has("win32unix") || has("win32")
+elseif has('win64') || has('win32unix') || has('win32')
   " メニューの文字化け対策
   source $VIMRUNTIME/delmenu.vim
   set langmenu=ja_jp.utf-8
