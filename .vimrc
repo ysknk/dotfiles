@@ -259,12 +259,14 @@ augroup vimrc-auto-cursorline
     endif
   endfunction
 augroup END
-" 任意のウィンドウを半透明に
-augroup transparent-windows
-  autocmd!
-  autocmd FileType denite set winblend=10
-  autocmd FileType denite-filter set winblend=10
-augroup END
+if has('nvim')
+  " 任意のウィンドウを半透明に
+  augroup transparent-windows
+    autocmd!
+    autocmd FileType denite set winblend=10
+    autocmd FileType denite-filter set winblend=10
+  augroup END
+endif
 " =======================
 " keymap
 " =======================
