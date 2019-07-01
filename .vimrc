@@ -27,7 +27,7 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 " windows dll download
-if has("win64") || has("win32unix") || has("win32")
+if has('win64') || has('win32unix') || has('win32')
   let g:vimproc#download_windows_dll = 1
 endif
 
@@ -163,7 +163,7 @@ set signcolumn=yes
 " カーソルが一番上や下に移動した時のビープ音を消す＆画面フラッシュも消す
 set vb t_vb=
 " ターミナルでも True Color を使えるように
-if has("termguicolors")
+if has('termguicolors')
   set t_8f=\[[38;2;%lu;%lu;%lum
   set t_8b=\[[48;2;%lu;%lu;%lum
   set termguicolors
