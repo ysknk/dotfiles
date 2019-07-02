@@ -130,12 +130,14 @@ set laststatus=2
 set wildmenu
 " コマンドラインの補完
 set wildmode=longest:full,full
-if has('nvim')
-  " コマンドラインでの補完にポップアップメニューを使う
-  set wildoptions=pum
-  " ポップアップメニューを半透明に
-  set pumblend=10
-endif
+
+" if has('nvim')
+"   " コマンドラインでの補完にポップアップメニューを使う
+"   set wildoptions=pum
+"   " ポップアップメニューを半透明に
+"   set pumblend=10
+" endif
+
 " 不可視文字を可視化 ",eol:$
 set list
 set listchars=tab:>-,trail:-,nbsp:%,eol:↲
