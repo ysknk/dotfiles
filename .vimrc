@@ -102,6 +102,14 @@ let &directory=expand(s:cache_dir)
 set viminfo&
 let &viminfo.= ',n' . expand(s:cache_dir) . '/viminfo'
 
+" マルチバイト文字対策
+"日本語(マルチバイト文字)行の連結時には空白を入力しない。
+set formatoptions+=mMj
+"□や○の文字があってもカーソル位置がずれないようにする。
+set ambiwidth=double
+"画面最後の行をできる限り表示する。
+set display+=lastline
+
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
@@ -168,8 +176,6 @@ set history=2048
 set splitbelow
 " 新しいウィンドウを右に開く
 set splitright
-" □や○文字が崩れる問題を解決
-set ambiwidth=double
 " 全角括弧関連
 set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:”
 " 常に行数左側のカラムを表示する
