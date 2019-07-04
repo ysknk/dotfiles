@@ -39,9 +39,9 @@ let g:dein#install_process_timeout = 600
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand(s:cache_dir . '/dein')
 " dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let s:dein_repo_dir = expand(s:dein_dir . '/repos/github.com/Shougo/dein.vim')
 " dein.vim プラグイン格納場所
-let s:dein_plugin_dir = s:dein_dir . '/repos/github.com'
+let s:dein_plugin_dir = expand(s:dein_dir . '/repos/github.com')
 " execute 'set runtimepath^=' . s:dein_plugin_dir
 
 " dein.vim がなければ github から落としてくる
@@ -52,12 +52,6 @@ if &runtimepath !~# '/dein.vim'
   " execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
-
-" set plugin runtimepath
-" In order to use gvim and nvim together
-execute 'set runtimepath^=' . s:dein_plugin_dir . '/scrooloose/nerdtree'
-execute 'set runtimepath^=' . s:dein_plugin_dir . '/osyo-manga/vim-anzu'
-execute 'set runtimepath^=' . s:dein_plugin_dir . '/Pychimp/vim-luna'
 
 " 設定開始
 if dein#load_state(s:dein_dir)
