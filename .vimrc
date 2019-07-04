@@ -12,10 +12,6 @@ set shellslash
 let s:tmp_dir = '~/.temp'
 let s:cache_dir = '~/.cache'
 
-let $PATH = '~/.pyenv/shims:'.$PATH
-let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
-let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python3)/bin/python") || echo -n $(which python3)')
-
 " shell alias
 if &shell =~ '\\bash$'
   set shell=bash shellcmdflag=-c
@@ -44,6 +40,9 @@ let g:dein#install_process_timeout = 600
 let s:dein_dir = expand(s:cache_dir . '/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" dein.vim プラグイン格納場所
+let s:dein_plugin_dir = s:dein_dir . '/repos/github.com'
+" execute 'set runtimepath^=' . s:dein_plugin_dir
 
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
@@ -53,6 +52,12 @@ if &runtimepath !~# '/dein.vim'
   " execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
+
+" set plugin runtimepath
+" In order to use gvim and nvim together
+execute 'set runtimepath^=' . s:dein_plugin_dir . '/scrooloose/nerdtree'
+execute 'set runtimepath^=' . s:dein_plugin_dir . '/osyo-manga/vim-anzu'
+execute 'set runtimepath^=' . s:dein_plugin_dir . '/Pychimp/vim-luna'
 
 " 設定開始
 if dein#load_state(s:dein_dir)
@@ -70,6 +75,9 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
+filetype plugin indent on
+syntax enable
+
 " もし、未インストールのものがあったらインストール
 if dein#check_install()
   call dein#install()
@@ -78,8 +86,12 @@ endif
 " =======================
 " init set
 " =======================
-" シンタックスハイライトを有効にする
-syntax enable
+let $PATH = '~/.pyenv/shims:'.$PATH
+if has('nvim')
+  let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
+  let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python3)/bin/python") || echo -n $(which python3)')
+endif
+
 " TMPファイル
 let $TMPDIR = expand(s:tmp_dir)
 " バックアップファイル
