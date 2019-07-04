@@ -1,8 +1,8 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'lambdalisue/vim-pyenv'
+# [[plugins]]
+# repo = 'lambdalisue/vim-pyenv'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
