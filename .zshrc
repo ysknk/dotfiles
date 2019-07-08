@@ -1,5 +1,8 @@
 # Ctrl+Dでログアウトしてしまうことを防ぐ
 setopt IGNOREEOF
+# cd した先のディレクトリをディレクトリスタック（履歴）に追加する
+# `cd +<Tab>` でディレクトリの履歴（新しい順）が表示され、そこに移動できる
+setopt AUTO_PUSHD
 # 他のターミナルとヒストリーを共有
 setopt share_history
 # ヒストリーに重複を表示しない
