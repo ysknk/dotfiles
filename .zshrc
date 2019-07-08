@@ -4,6 +4,10 @@ setopt IGNOREEOF
 setopt share_history
 # ヒストリーに重複を表示しない
 setopt histignorealldups
+# ヒストリの設定
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 source $ZSH/oh-my-zsh.sh
 
