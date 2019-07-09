@@ -25,8 +25,10 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 # Path to your vim.
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-# Path config
-export XDG_CONFIG_HOME=~/.config
+# Path xdg
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
 # Path dotfiles
 export DOT_DIRECTORY=$HOME/.dotfiles
 # zlib
