@@ -1,9 +1,14 @@
 #!/bin/sh
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.gvimrc ~/.gvimrc
+DOTFILES_DIR="${HOME}/dotfiles"
 
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
-ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
+cd ${DOTFILES_DIR}
 
-ln -sf ~/dotfiles/.deinrc ~/.deinrc
+for f in .??*
+do
+  [[ ${f} = ".git" ]] && continue
+  [[ ${f} = ".gitignore" ]] && continue
+  ln -snfv ${DOTFILES_DIR}/${f} ${HOME}/${f}
+done
+
+echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
+
