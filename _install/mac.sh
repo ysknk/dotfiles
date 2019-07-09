@@ -7,6 +7,9 @@ for f in .??*
 do
   [[ ${f} = ".git" ]] && continue
   [[ ${f} = ".gitignore" ]] && continue
+  [[ ${f} = ".gitmodules" ]] && continue
+  [[ ${f} = ".DS_Store" ]] && continue
+  [[ ${f} = ".travis.yml" ]] && continue
   ln -snfv ${DOTFILES_DIR}/${f} ${HOME}/${f}
 done
 
