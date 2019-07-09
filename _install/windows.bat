@@ -7,39 +7,42 @@ REM a2b symbolic link file [ mklink ..\b a ]
 REM a2b symbolic link directory [ mklink /d ..\b a ]
 
 set DOTFILES_DIR=%HOME%\dotfiles\
-set NVIM_DIR=%HOME%\AppData\Local\nvim\
+set NVIM_DIR=%HOME%\AppData\Local\nvim
 
-set VIMRC=%DOTFILES_DIR%.vimrc
-set GVIMRC=%DOTFILES_DIR%.gvimrc
-set DEIN_DIR=%DOTFILES_DIR%.deinrc
-
-REM vim, gvim
-if exist %VIMRC% (
-  del "%HOME%\_vimrc"
-  mklink "%HOME%\_vimrc" "%VIMRC%"
-)
-if exist %GVIMRC% (
-  del "%HOME%\_gvimrc"
-  mklink "%HOME%\_gvimrc" "%GVIMRC%"
-)
+cd %DOTFILES_DIR%
 
 REM nvim
 if not exist %NVIM_DIR% (
   mkdir %NVIM_DIR%
 )
-if exist %VIMRC% (
-  del "%NVIM_DIR%init.vim"
-  mklink "%NVIM_DIR%init.vim" "%VIMRC%"
-)
-if exist %GVIMRC% (
-  del "%NVIM_DIR%ginit.vim"
-  mklink "%NVIM_DIR%ginit.vim" "%GVIMRC%"
+REM dirs
+for /d %%f in (.??*) do (
+  rmdir "%HOME%\%%f"
+  mklink /d "%HOME%\%%f" "%DOTFILES_DIR%%%f"
 )
 
-REM all
-if exist %DEIN_DIR% (
-  rmdir "%HOME%\.deinrc"
-  mklink /d "%HOME%\.deinrc" "%DEIN_DIR%"
+REM files
+for %%f in (.??*) do (
+  set filename=%%f
+  if "%%f" == ".gvimrc" (
+    del "%HOME%\!filename:.=_!"
+    mklink "%HOME%\!filename:.=_!" "%DOTFILES_DIR%%%f"
+    mklink "%NVIM_DIR%\ginit.vim" "%DOTFILES_DIR%%%f"
+
+  ) else if "%%f" == ".vimrc" (
+    del "%HOME%\!filename:.=_!"
+    mklink "%HOME%\!filename:.=_!" "%DOTFILES_DIR%%%f"
+    mklink "%NVIM_DIR%\init.vim" "%DOTFILES_DIR%%%f"
+
+  ) else (
+    if not "%%f" == ".git" (
+    if not "%%f" == ".gitignore" (
+      del "%HOME%\%%f"
+      mklink "%HOME%\%%f" "%DOTFILES_DIR%%%f"
+    )
+    )
+  )
 )
 
-exit
+echo [32mDeploy dotfiles complete!.[0m
+
