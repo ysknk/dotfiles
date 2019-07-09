@@ -40,9 +40,6 @@ let g:dein#install_process_timeout = 600
 let s:dein_dir = expand(s:cache_dir . '/dein')
 " dein.vim 本体
 let s:dein_repo_dir = expand(s:dein_dir . '/repos/github.com/Shougo/dein.vim')
-" dein.vim プラグイン格納場所
-let s:dein_plugin_dir = expand(s:dein_dir . '/repos/github.com')
-" execute 'set runtimepath^=' . s:dein_plugin_dir
 
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
