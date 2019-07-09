@@ -37,8 +37,14 @@ for %%f in (.??*) do (
   ) else (
     if not "%%f" == ".git" (
     if not "%%f" == ".gitignore" (
+    if not "%%f" == ".gitmodules" (
+    if not "%%f" == "Thumbs.db" (
+    if not "%%f" == ".travis.yml" (
       del "%HOME%\%%f"
       mklink "%HOME%\%%f" "%DOTFILES_DIR%%%f"
+    )
+    )
+    )
     )
     )
   )
