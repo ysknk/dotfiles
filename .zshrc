@@ -12,7 +12,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-source $ZSH/oh-my-zsh.sh
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="wedisagree"
 
 # Use Japanese
 export LANG=ja_JP.UTF-8
@@ -30,7 +31,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 # Path dotfiles
-export DOT_DIRECTORY=$HOME/.dotfiles
+export DOT_DIRECTORY=$HOME/dotfiles
 # zlib
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
@@ -44,20 +45,13 @@ export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
 # dsstore delete
 alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
-
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="wedisagree"
 
 # Use Colors
 autoload -Uz colors
