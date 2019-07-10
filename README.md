@@ -9,13 +9,13 @@
     ```
 1. **You can easily install it using node.js.**
     ```
-    node _install
+    node _setup
     ```
     if not instaled node.js.
     ```
     # for mac.
-    cd _install && sh mac.sh
+    cd _setup && sh mac.sh
 
     # for windows.
-    cd _install && windows.bat
+    cd _setup && windows.bat
     ```
