@@ -27,10 +27,6 @@ endif
 augroup MyAutoCmd
   autocmd!
 augroup END
-" windows dll download
-if has('win64') || has('win32unix') || has('win32')
-  let g:vimproc#download_windows_dll = 1
-endif
 
 " =======================
 " init dein
