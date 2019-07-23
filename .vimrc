@@ -27,6 +27,10 @@ endif
 augroup MyAutoCmd
   autocmd!
 augroup END
+" windows dll download
+if has('win64') || has('win32unix') || has('win32')
+  let g:vimproc#download_windows_dll = 1
+endif
 
 " =======================
 " init dein
@@ -51,9 +55,9 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   " プラグインリストを収めた TOML ファイル
   " 予め TOML ファイル（後述）を用意しておく
-  let g:drc_dir = expand('~/.deinrc/')
-  let s:fast = g:drc_dir . 'fast.toml'
-  let s:lazy = g:drc_dir . 'lazy.toml'
+  let g:vimrc_dir = expand('~/_deinrc/')
+  let s:fast = g:vimrc_dir . 'fast.toml'
+  let s:lazy = g:vimrc_dir . 'lazy.toml'
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:fast, {'lazy': 0})
   call dein#load_toml(s:lazy, {'lazy': 1})
@@ -180,8 +184,8 @@ set signcolumn=yes
 set vb t_vb=
 " ターミナルでも True Color を使えるように
 if has('termguicolors')
-  set t_8f=\[[38;2;%lu;%lu;%lum
-  set t_8b=\[[48;2;%lu;%lu;%lum
+  " set t_8f=\[[38;2;%lu;%lu;%lum
+  " set t_8b=\[[48;2;%lu;%lu;%lum
   set termguicolors
 endif
 " =======================

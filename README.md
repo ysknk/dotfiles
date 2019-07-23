@@ -1,21 +1,32 @@
 # dotfiles
 
-## how to init.
+## Required
 
-1. **Clone to [user_vimrc] dir.**
-    ```
-    git clone [this_repo_url] %HOME%/dotfiles
-    cd %HOME%/dotfiles
-    ```
-1. **You can easily install it using node.js.**
-    ```
-    node _setup
-    ```
-    if not instaled node.js.
-    ```
-    # for mac.
-    cd _setup && sh mac.sh
+### For All
 
-    # for windows.
-    cd _setup && windows.bat
+1. Git
+
+### For Windows
+
+1. [Chocolatey](https://chocolatey.org/install)
+    - `choco -v`
+1. [MSYS2](http://www.msys2.org/)
+    - `choco install msys2`
+      - check command
+        - `make -v`
+        - `sed --version`
+        - `cygpath --version`
+
+## How to Setup
+
+1. Required Install
+
+1. **Clone**
     ```
+    git clone [this_repo_url] %HOME%/dotfiles && cd %HOME%/dotfiles
+    ```
+1. **You can easily install it using *Makefile*
+    ```
+    make deploy
+    ```
+

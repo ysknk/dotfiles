@@ -1,15 +1,25 @@
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-
-case "$(uname)" in
-  Darwin) # OSがMacならば
+os=${OSTYPE//[0-9.-]*/}
+case "$os" in
+  # mac
+  darwin)
     if [[ -d /Applications/MacVim.app ]]; then # MacVimが存在するならば
       alias vim = /Applications/MacVim.app/Contents/MacOS/Vim
       alias vi = vim
     fi
     ;;
+  # windows
+  msys)
+    os="windows"
+    PATH = "C:\\msys64\\usr\\bin\\:$PATH"
+    ;;
+  # linux
+  linux)
+    os="linux"
+    ;;
+  # other
+  *)
 
-  *) ;; # OSがMac以外ならば何もしない
+  echo "Unknown Operating system $OSTYPE"
+  exit 1
 esac
 
