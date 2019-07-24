@@ -25,7 +25,7 @@
     ```
     git clone [this_repo_url] %HOME%/dotfiles && cd %HOME%/dotfiles
     ```
-1. **You can easily install it using *Makefile*
+1. **You can easily install it using *Makefile***
     ```
     make deploy
     ```
