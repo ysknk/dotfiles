@@ -9,7 +9,7 @@ MAKEFLAGS    += --no-print-directory
 .PHONY: all install
 all: install
 
-install: ## Software Install. Windows: Chocolatey, Other(Mac): Homebre.
+install: ## Software Install. Windows: Chocolatey, Other(Mac): Homebrew.
 	@echo [33mInstall start. [0m;
 ifeq ($(OS),Windows_NT)
 	-@cinst chocolateygui
