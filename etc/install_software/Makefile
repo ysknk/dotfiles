@@ -13,7 +13,7 @@ install: ## Software Install. Windows: Chocolatey, Other(Mac): Homebre.
 	@echo [33mInstall start. [0m;
 ifeq ($(OS),Windows_NT)
 	-@cinst chocolateygui
-	-@cinst cmder nodist git winscp putty vagrant virtualbox docker docker-compose
+	-@cinst cmder nodist git winscp putty vagrant virtualbox docker docker-compose docker-machine
 	-@cinst googlechrome firefox
 	-@cinst tortoisesvn sourcetree
 	-@cinst adobereader irfanview
@@ -41,6 +41,7 @@ else
 	-@brew cask install virtualbox
 	-@brew cask install docker
 	-@brew cask install docker-compose
+	-@brew cask install docker-machine
 	-@brew cask install google-chrome
 	-@brew cask install firefox
 	-@brew cask install sourcetree
