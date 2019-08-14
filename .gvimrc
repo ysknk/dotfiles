@@ -33,6 +33,7 @@ if has('gui_macvim')
   set guifont=RictyDiminishedDiscord-Regular:h20
   set transparency=20
   ” 自動IME変換をオフに、googleIMEでキー設定を編集 [入力文字なし, Escape, キャンセル後 IME を無効化]
+  " https://blog.hotolab.net/entry/vim_ime
   set imdisable
 
 elseif has('win64') || has('win32unix') || has('win32')
