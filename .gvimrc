@@ -32,7 +32,7 @@ endif
 if has('gui_macvim')
   set guifont=RictyDiminishedDiscord-Regular:h20
   set transparency=20
-  ” 自動IM変換をオフに
+  ” 自動IME変換をオフに
   set imdisable
 
 elseif has('win64') || has('win32unix') || has('win32')
