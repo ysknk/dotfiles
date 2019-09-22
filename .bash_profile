@@ -27,3 +27,11 @@ case "$os" in
   exit 1
 esac
 
+function grepr() {
+  if [-z $1] || [-z $2] || [-z $3] ; then
+    echo "第1引数:検索パス、第2引数:検索文字列 [第3引数:置換文字列を入力してください。]"
+    return 1
+  fi
+
+  grep -lr "$2" $1 | sort | uniq | xargs perl -e "s/$2/$3/" -pi
+}
