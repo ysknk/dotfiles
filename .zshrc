@@ -26,6 +26,7 @@ export LANG=ja_JP.UTF-8
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/openssl/bin:$PATH
 # Path to your nodebrew.
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
