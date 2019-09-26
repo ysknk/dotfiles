@@ -460,6 +460,16 @@ hook_add = '''
 repo = 'Quramy/vim-js-pretty-template'
 on_ft = ['typescript']
 
+# typescript d.ts
+[[plugins]]
+repo = 'Quramy/vim-dtsm'
+on_ft = ['typescript']
+
+# typescript typings
+[[plugins]]
+repo = 'mhartington/vim-typings'
+on_ft = ['typescript']
+
 # typescript complement
 [[plugins]]
 repo = 'Quramy/tsuquyomi'
