@@ -368,7 +368,7 @@ on_ft = ['html']
 # stylus syntax
 [[plugins]]
 repo = 'wavded/vim-stylus'
-on_ft = ['styl']
+on_ft = ['stylus']
 
 # scss color syntax
 [[plugins]]
@@ -378,12 +378,12 @@ on_ft = ['sass']
 # css syntax
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
-on_ft = ['css', 'styl', 'sass', 'less', 'scss']
+on_ft = ['css', 'stylus', 'sass', 'less', 'scss']
 
 # css color syntax
 [[plugins]]
 repo = 'ap/vim-css-color'
-on_ft = ['css', 'styl', 'sass', 'less', 'scss']
+on_ft = ['css', 'stylus', 'sass', 'less', 'scss']
 
 # json syntax
 [[plugins]]
@@ -583,5 +583,4 @@ hook_add = '''
   \ }
   let g:lightline.active.right=[['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'], ['linter_errors', 'linter_warnings', 'linter_ok']]
 '''
-
 
