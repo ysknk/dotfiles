@@ -52,6 +52,7 @@ hook_add = '''
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('rb',     'red',     'none', '#fdffb7', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('js',     'red',     'none', '#fdffb7', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('ts',     'red',     'none', '#fdffb7', '#151515')
+  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('tsx',    'red',     'none', '#fdffb7', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('py',     'red',     'none', '#fdffb7', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('php',    'magenta', 'none', '#e6b7ff', '#151515')
   autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('go',     'magenta', 'none', '#e6b7ff', '#151515')
@@ -427,7 +428,7 @@ hook_add = '''
 # javascript syntax
 [[plugins]]
 repo = 'pangloss/vim-javascript'
-on_ft = ['js']
+on_ft = ['javascript']
 hook_add = '''
   let g:javascript_plugin_jsdoc=1
 '''
@@ -435,12 +436,12 @@ hook_add = '''
 # es6 syntax
 [[plugins]]
 repo = 'othree/yajs.vim'
-on_ft = ['js']
+on_ft = ['javascript']
 
 # stg-0 syntax
 [[plugins]]
 repo = 'othree/es.next.syntax.vim'
-on_ft = ['js']
+on_ft = ['javascript']
 
 # jsx syntax
 [[plugins]]
