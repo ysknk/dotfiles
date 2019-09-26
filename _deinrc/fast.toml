@@ -449,10 +449,20 @@ on_ft = ['jsx']
 
 #typescript syntax
 repo = 'leafgarland/typescript-vim'
-on_ft = ['ts']
+on_ft = ['typescript']
 hook_add = '''
   let g:typescript_indent_disable = 1
 '''
+
+# typescript template syntax
+[[plugins]]
+repo = 'Quramy/vim-js-pretty-template'
+on_ft = ['typescript']
+
+# typescript complement
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
 
 # php syntax
 [[plugins]]
