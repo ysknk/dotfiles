@@ -8,13 +8,13 @@ case "$os" in
   darwin)
     if [[ -d /Applications/MacVim.app ]]; then # MacVimが存在するならば
       os="mac"
-      PATH = "/Applications/MacVim.app/Contents/MacOS:$PATH"
+      PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
     fi
     ;;
   # windows
   msys)
     os="windows"
-    PATH = "C:\\msys64\\usr\\bin\\:$PATH"
+    PATH="C:\\msys64\\usr\\bin\\:$PATH"
     ;;
   # linux
   linux)
