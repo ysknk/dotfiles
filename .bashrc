@@ -3,14 +3,14 @@ case "$os" in
   # mac
   darwin)
     if [[ -d /Applications/MacVim.app ]]; then # MacVimが存在するならば
-      alias vim = /Applications/MacVim.app/Contents/MacOS/Vim
-      alias vi = vim
+      alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+      alias vi=vim
     fi
     ;;
   # windows
   msys)
     os="windows"
-    PATH = "C:\\msys64\\usr\\bin\\:$PATH"
+    PATH="C:\\msys64\\usr\\bin\\:$PATH"
     ;;
   # linux
   linux)
