@@ -34,6 +34,7 @@ else
 	-@brew install wget
 	-@brew install pyenv
 	-@brew install nodebrew
+	-@brew install zsh
 	-@brew install git
 	-@brew install docker
 	-@brew cask install iterm2
