@@ -32,13 +32,14 @@ else
 	-@brew doctor
 	-@brew install caskroom/cask/brew-cask
 	-@brew install wget
+	-@brew install git
 	-@brew install pyenv
+	-@git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 	-@brew install nodebrew
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 	-@chsh -s '/usr/local/bin/zsh'
 	-@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	-@brew install git
 	-@brew install docker
 	-@brew cask install iterm2
 	-@brew cask install vagrant
