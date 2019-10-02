@@ -35,6 +35,9 @@ else
 	-@brew install pyenv
 	-@brew install nodebrew
 	-@brew install zsh
+	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+	-@chsh -s '/usr/local/bin/zsh'
+	-@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	-@brew install git
 	-@brew install docker
 	-@brew cask install iterm2
