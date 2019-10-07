@@ -36,13 +36,18 @@ else
 	-@brew install git
 	-@brew install pyenv
 	-@git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+
 	-@brew install nodebrew
 	-@mkdir -p ~/.nodebrew/src
 	-@nodebrew install-binary stable
+	-@nodebrew use stable
+	-@npm i --save -g gulp-cli
+
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 	-@chsh -s '/usr/local/bin/zsh'
 	-@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 	-@brew install docker
 	-@brew cask install iterm2
 	-@brew cask install vagrant
