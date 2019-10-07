@@ -60,6 +60,9 @@ else
 	-@brew list
 	-@brew cask list
 	-@echo install memo -> adobe
+	
+	-@defaults write com.apple.finder AppleShowAllFiles TRUE
+	-@killall Finder
 endif
 	@echo [32mInstall complete!. ✔︎[0m;
 
