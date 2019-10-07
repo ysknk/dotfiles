@@ -30,6 +30,7 @@ else
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
 	-@/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	-@brew doctor
+	-@brew cask
 	-@brew install caskroom/cask/brew-cask
 	-@brew install wget
 	-@brew install git
