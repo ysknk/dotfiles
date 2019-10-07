@@ -37,6 +37,8 @@ else
 	-@brew install pyenv
 	-@git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 	-@brew install nodebrew
+	-@mkdir -p ~/.nodebrew/src
+	-@nodebrew install-binary stable
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 	-@chsh -s '/usr/local/bin/zsh'
