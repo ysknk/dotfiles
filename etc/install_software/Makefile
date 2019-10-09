@@ -14,6 +14,7 @@ install: ## Software Install. Windows: Chocolatey, Other(Mac): Homebrew.
 ifeq ($(OS),Windows_NT)
 	-@cinst chocolateygui
 	-@cinst cmder nodist git winscp putty vagrant virtualbox docker docker-compose docker-machine
+	-@cinst ack
 	-@cinst googlechrome firefox
 	-@cinst tortoisesvn sourcetree
 	-@cinst adobereader irfanview
