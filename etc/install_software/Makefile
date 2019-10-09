@@ -52,6 +52,7 @@ else
 	# https://github.com/mileszs/ack.vim/issues/156
 	# sudo apt-get install ack
 	-@brew install ack
+	brew install the_silver_searcher
 
 	-@brew install docker
 	-@brew cask install iterm2
