@@ -73,7 +73,7 @@ hook_add = '''
   let s:lightGreen="31B53E"
   let s:white="FFFFFF"
 
-  let g:NERDTreeLimitedSyntax=1
+  " let g:NERDTreeLimitedSyntax=1
 
   let g:NERDTreeFileExtensionHighlightFullName=1
   let g:NERDTreeExactMatchHighlightFullName=1
@@ -93,7 +93,7 @@ hook_add = '''
   " let g:NERDTreeExtensionHighlightColor={}
   " let g:NERDTreeExtensionHighlightColor['ts']=s:beige
 
-  let g:NERDTreeSyntaxEnabledExtensions=['styl']
+  " let g:NERDTreeSyntaxEnabledExtensions=['styl']
 '''
 
 [[plugins]]
