@@ -71,23 +71,23 @@ hook_add = '''
 repo = 'MarSoft/nerdtree-grep-plugin'
 depends = ['scrooloose/nerdtree']
 
-# [[plugins]]
-# repo = 'Xuyuanp/nerdtree-git-plugin'
-# depends = ['scrooloose/nerdtree']
-# hook_add = '''
-#   let g:NERDTreeIndicatorMapCustom={
-#    \ "Modified"  : "✹",
-#    \ "Staged"    : "✚",
-#    \ "Untracked" : "✭",
-#    \ "Renamed"   : "➜",
-#    \ "Unmerged"  : "═",
-#    \ "Deleted"   : "✖",
-#    \ "Dirty"     : "✗",
-#    \ "Clean"     : "✔︎",
-#    \ 'Ignored'   : '☒',
-#    \ "Unknown"   : "?"
-#    \ }
-# '''
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['scrooloose/nerdtree']
+hook_add = '''
+  let g:NERDTreeIndicatorMapCustom={
+   \ "Modified"  : "✹",
+   \ "Staged"    : "✚",
+   \ "Untracked" : "✭",
+   \ "Renamed"   : "➜",
+   \ "Unmerged"  : "═",
+   \ "Deleted"   : "✖",
+   \ "Dirty"     : "✗",
+   \ "Clean"     : "✔︎",
+   \ 'Ignored'   : '☒',
+   \ "Unknown"   : "?"
+   \ }
+'''
 
 # [[plugins]]
 # repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
