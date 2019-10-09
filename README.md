@@ -2,7 +2,7 @@
 
 ## Description
 
-Setup for Vim, iTerm.
+Setup for Vim, iTerm(zsh).
 
 ## Required
 
