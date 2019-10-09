@@ -30,7 +30,7 @@ HOME_DIR     := $(HOME)$(DS)
 ML_FILE_CMD  := ln -sfnv
 ML_DIR_CMD   := $(ML_FILE_CMD)
 RM_FILE_CMD  := rm -f
-RM_DIR_CMD   := $(RM_FILE_CMD)
+RM_DIR_CMD   := rm -r
 endif
 
 .PHONY: all install deploy clean list help
@@ -44,6 +44,8 @@ ifeq ($(OS),Windows_NT)
 	-@$(foreach f, $(DOT_DIRS), $(ML_DIR_CMD) "$(HOME_DIR)$(f)" "$(DOT_PATH)$(f)";)
 	-@$(foreach f, $(DOT_FILES), $(ML_FILE_CMD) "$(HOME_DIR)$(f)" "$(DOT_PATH)$(f)";)
 else
+	# mkdir $(HOME_DIR).temp/
+	-@mkdir $(HOME_DIR).temp/
 	-@$(foreach f, $(DOT_DIRS), $(ML_DIR_CMD) $(DOT_PATH)$(f) $(HOME_DIR)$(f);)
 	-@$(foreach f, $(DOT_FILES), $(ML_FILE_CMD) $(DOT_PATH)$(f) $(HOME_DIR)$(f);)
 endif
@@ -54,6 +56,11 @@ clean: ## Remove symlink to dotfiles.
 		TASK_NAME:="Clean" \
 		CMD_DIR:="$(RM_DIR_CMD)" \
 		CMD_FILE:="$(RM_FILE_CMD)"
+ifeq ($(OS),Windows_NT)
+else
+	# $(RM_DIR_CMD) $(HOME_DIR).temp/
+	-@$(RM_DIR_CMD) $(HOME_DIR).temp/
+endif
 
 list: ## dotfiles list.
 	-@make _commons \
