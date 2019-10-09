@@ -287,6 +287,17 @@ let g:vimshell_interactive_update_time = 10
 let g:vimshell_prompt = $USERNAME."% "
 let g:vimshell_user_prompt = 'getcwd()'
 
+let $PATH = $HOME.'/.nodebrew/current/bin:'.$PATH
+let $PATH = '/usr/local/opt/openssl/bin:'.$PATH
+
+let $PATH = '/usr/local/sbin:'.$PATH
+let $PATH = '/usr/sbin:'.$PATH
+let $PATH = '/sbin:'.$PATH
+
+let $PATH = '/usr/local/bin:'.$PATH
+let $PATH = '/usr/bin:'.$PATH
+let $PATH = '/bin:'.$PATH
+
 " vimshell map
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
