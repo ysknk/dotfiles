@@ -17,10 +17,9 @@
         - `sed --version`
         - `cygpath --version`
 
-### Recommended
+## Recommended
 
-#### Font
-
+### Font
 [RictyDiminishedDiscord](https://github.com/edihbrandon/RictyDiminished)
 
 ## How to Setup
