@@ -21,42 +21,6 @@ hook_add = '''
   nnoremap :tree :NERDTreeToggle
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-  " autocmd
-  " NERDTree File highlighting
-  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-    exec 'autocmd FileType nerdtree highlight '. a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-    exec 'autocmd FileType nerdtree syn match '. a:extension .' #^\s\+.*'. a:extension .'$#'
-    exec 'autocmd FileType nerdtree syn match '. a:extension .' #^\s\+.*'. a:extension .'\*$#'
-  endfunction
-
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('md',     'blue',    'none', '#b7ddff', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('sh',     'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('bat',    'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('json',   'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('yml',    'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('toml',   'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('vim',    'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('config', 'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('conf',   'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('ini',    'yellow',  'none', '#b7ffe6', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('html',   'green',   'none', '#ffc5b7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('pug',    'green',   'none', '#ffc5b7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('jade',   'green',   'none', '#ffc5b7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('vue',    'green',   'none', '#b7ffb8', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('jsx',    'green',   'none', '#b7ffb8', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('tag',    'green',   'none', '#b7ffb8', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('styl',   'cyan',    'none', '#ffe6b7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('css',    'cyan',    'none', '#ffe6b7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('scss',   'cyan',    'none', '#ffe6b7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('sass',   'cyan',    'none', '#ffe6b7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('rb',     'red',     'none', '#fdffb7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('js',     'red',     'none', '#fdffb7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('ts',     'red',     'none', '#fdffb7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('tsx',    'red',     'none', '#fdffb7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('py',     'red',     'none', '#fdffb7', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('php',    'magenta', 'none', '#e6b7ff', '#151515')
-  autocmd VimEnter,Colorscheme * call NERDTreeHighlightFile('go',     'magenta', 'none', '#e6b7ff', '#151515')
-
   " 初期表示に関わるコマンド
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " デフォルトでツリーを表示させる
@@ -89,19 +53,48 @@ hook_add = '''
    \ }
 '''
 
-# [[plugins]]
-# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-# hook_add = '''
-#   " let g:NERDTreeLimitedSyntax=1
-#
-#   let g:NERDTreeFileExtensionHighlightFullName=1
-#   let g:NERDTreeExactMatchHighlightFullName=1
-#   let g:NERDTreePatternMatchHighlightFullName=1
-#
-#   let g:NERDTreeHighlightCursorline=0
-#
-#   let g:NERDTreeSyntaxEnabledExtensions=['toml']
-# '''
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+  let s:brown="905532"
+  let s:aqua= "3AFFDB"
+  let s:blue="689FB6"
+  let s:darkBlue="44788E"
+  let s:purple="834F79"
+  let s:lightPurple="834F79"
+  let s:red="AE403F"
+  let s:beige="F5C06F"
+  let s:yellow="F09F17"
+  let s:orange="D4843E"
+  let s:darkOrange="F16529"
+  let s:pink="CB6F6F"
+  let s:salmon="EE6E73"
+  let s:green="8FAA54"
+  let s:lightGreen="31B53E"
+  let s:white="FFFFFF"
+
+  let g:NERDTreeLimitedSyntax=1
+
+  let g:NERDTreeFileExtensionHighlightFullName=1
+  let g:NERDTreeExactMatchHighlightFullName=1
+  let g:NERDTreePatternMatchHighlightFullName=1
+
+  let g:NERDTreeHighlightCursorline=0
+
+  " let g:NERDTreeExtensionHighlightColor={}
+  " let g:NERDTreeExtensionHighlightColor['pug']=s:darkOrange
+
+  " let g:NERDTreeExtensionHighlightColor={}
+  " let g:NERDTreeExtensionHighlightColor['vue']=s:beige
+
+  " let g:NERDTreeExtensionHighlightColor={}
+  " let g:NERDTreeExtensionHighlightColor['jsx']=s:beige
+
+  " let g:NERDTreeExtensionHighlightColor={}
+  " let g:NERDTreeExtensionHighlightColor['ts']=s:beige
+
+  let g:NERDTreeSyntaxEnabledExtensions=['styl']
+'''
 
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
