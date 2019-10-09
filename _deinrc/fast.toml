@@ -103,6 +103,9 @@ hook_add = '''
 repo = 'thinca/vim-qfreplace'
 
 [[plugins]]
+repo = 'mileszs/ack.vim'
+
+[[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
   " # ctrlpバッファに入る時と出るときに使用する関数を定義
