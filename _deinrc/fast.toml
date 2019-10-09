@@ -67,6 +67,10 @@ hook_add = '''
   autocmd VimEnter,Colorscheme * if argc() != 0 | wincmd p | endif
 '''
 
+[[plugins]]
+repo = 'MarSoft/nerdtree-grep-plugin'
+depends = ['scrooloose/nerdtree']
+
 # [[plugins]]
 # repo = 'Xuyuanp/nerdtree-git-plugin'
 # depends = ['scrooloose/nerdtree']
