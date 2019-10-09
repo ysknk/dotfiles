@@ -301,7 +301,7 @@ let $PATH = '/bin:'.$PATH
 " vimshell map
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
-nnoremap <silent> vsp :VimShellPop<CR>
+nnoremap <silent> vsp :VimShellPop %:p:h<CR>
 nnoremap <silent> vsi :VimShellInteractive<CR>
 '''
 
