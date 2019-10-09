@@ -1,5 +1,9 @@
 # dotfiles
 
+## Description
+
+Setup for Vim, iTerm.
+
 ## Required
 
 ### For All
