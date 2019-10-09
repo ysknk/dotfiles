@@ -48,6 +48,8 @@ else
 	-@chsh -s '/usr/local/bin/zsh'
 	-@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+	-@brew install ack
+
 	-@brew install docker
 	-@brew cask install iterm2
 	-@brew cask install vagrant
