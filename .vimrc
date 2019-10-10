@@ -54,7 +54,6 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   " プラグインリストを収めた TOML ファイル
-  " 予め TOML ファイル（後述）を用意しておく
   let g:vimrc_dir = expand('~/_deinrc/')
   let s:fast = g:vimrc_dir . 'fast.toml'
   let s:lazy = g:vimrc_dir . 'lazy.toml'
