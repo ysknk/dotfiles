@@ -95,6 +95,7 @@ hook_add = '''
   let g:NERDTreeSyntaxEnabledExtensions=[
     \ 'styl',
     \ 'yml',
+    \ 'gif', 'svg',
     \ 'psd', 'psb', 'ai'
   \ ]
 '''
