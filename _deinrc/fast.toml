@@ -73,7 +73,7 @@ hook_add = '''
   let s:lightGreen="31B53E"
   let s:white="FFFFFF"
 
-  " let g:NERDTreeLimitedSyntax=1
+  let g:NERDTreeLimitedSyntax=1
 
   let g:NERDTreeFileExtensionHighlightFullName=1
   let g:NERDTreeExactMatchHighlightFullName=1
@@ -81,19 +81,22 @@ hook_add = '''
 
   let g:NERDTreeHighlightCursorline=0
 
-  " let g:NERDTreeExtensionHighlightColor={}
-  " let g:NERDTreeExtensionHighlightColor['pug']=s:darkOrange
+  let g:NERDTreeExtensionHighlightColor = {}
+  let g:NERDTreePatternMatchHighlightColor = {}
+  let g:NERDTreeExactMatchHighlightColor = {}
 
-  " let g:NERDTreeExtensionHighlightColor={}
-  " let g:NERDTreeExtensionHighlightColor['vue']=s:beige
+  let g:NERDTreeExtensionHighlightColor['pug']=s:darkOrange
+  let g:NERDTreeExtensionHighlightColor['jade']=s:darkOrange
 
-  " let g:NERDTreeExtensionHighlightColor={}
-  " let g:NERDTreeExtensionHighlightColor['jsx']=s:beige
+  let g:NERDTreeExtensionHighlightColor['vue']=s:beige
+  let g:NERDTreeExtensionHighlightColor['jsx']=s:beige
+  let g:NERDTreeExtensionHighlightColor['ts']=s:beige
 
-  " let g:NERDTreeExtensionHighlightColor={}
-  " let g:NERDTreeExtensionHighlightColor['ts']=s:beige
-
-  " let g:NERDTreeSyntaxEnabledExtensions=['styl']
+  let g:NERDTreeSyntaxEnabledExtensions=[
+    \ 'styl',
+    \ 'yml',
+    \ 'psd', 'psb', 'ai'
+  \ ]
 '''
 
 # [[plugins]]
