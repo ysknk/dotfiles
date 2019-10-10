@@ -44,23 +44,23 @@ ifeq ($(OS),Windows_NT)
 	-@$(foreach f, $(DOT_DIRS), $(ML_DIR_CMD) "$(HOME_DIR)$(f)" "$(DOT_PATH)$(f)";)
 	-@$(foreach f, $(DOT_FILES), $(ML_FILE_CMD) "$(HOME_DIR)$(f)" "$(DOT_PATH)$(f)";)
 else
-	# mkdir $(HOME_DIR).temp/
-	-@mkdir $(HOME_DIR).temp/
+	-mkdir $(HOME_DIR).temp/
 	-@$(foreach f, $(DOT_DIRS), $(ML_DIR_CMD) $(DOT_PATH)$(f) $(HOME_DIR)$(f);)
 	-@$(foreach f, $(DOT_FILES), $(ML_FILE_CMD) $(DOT_PATH)$(f) $(HOME_DIR)$(f);)
 endif
 	@make _message_end TASK_NAME:="Deploy"
 
 clean: ## Remove symlink to dotfiles.
-	-@make _commons \
-		TASK_NAME:="Clean" \
-		CMD_DIR:="$(RM_DIR_CMD)" \
-		CMD_FILE:="$(RM_FILE_CMD)"
+	@make _message_start TASK_NAME:="Clean"
 ifeq ($(OS),Windows_NT)
+	-@$(foreach f, $(DOT_DIRS), $(RM_DIR_CMD) "$(HOME_DIR)$(f)";)
+	-@$(foreach f, $(DOT_FILES), $(RM_FILE_CMD) "$(HOME_DIR)$(f)";)
 else
-	# $(RM_DIR_CMD) $(HOME_DIR).temp/
 	-@$(RM_DIR_CMD) $(HOME_DIR).temp/
+	-@$(foreach f, $(DOT_DIRS), $(RM_DIR_CMD) $(HOME_DIR)$(f);)
+	-@$(foreach f, $(DOT_FILES), $(RM_FILE_CMD) $(HOME_DIR)$(f);)
 endif
+	@make _message_end TASK_NAME:="Clean"
 
 list: ## dotfiles list.
 	-@make _commons \
