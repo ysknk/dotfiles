@@ -16,7 +16,7 @@ ifeq ($(OS),Windows_NT)
 	-@cinst cmder nodist git winscp putty vagrant virtualbox docker docker-compose docker-machine
 	-@cinst ack
 	-@cinst googlechrome firefox
-	-@cinst tortoisesvn sourcetree
+	-@cinst tortoisesvn git-fork
 	-@cinst adobereader irfanview
 	-@cinst winrar lhaplus
 	-@cinst python2 python3 ruby
@@ -63,7 +63,7 @@ else
 	-@brew cask install docker-machine
 	-@brew cask install google-chrome
 	-@brew cask install firefox
-	-@brew cask install sourcetree
+	-@brew cask install fork
 	-@brew cask install alfred
 	-@brew cask install google-japanese-ime
 	-@brew cask install clipy
