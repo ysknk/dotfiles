@@ -531,7 +531,7 @@ hook_add = '''
   \ }
 '''
 
- # カラースキーマ
+# colorscheme
 [[plugins]]
 # repo = 'Pychimp/vim-luna'
 repo = 'sainnhe/edge'
