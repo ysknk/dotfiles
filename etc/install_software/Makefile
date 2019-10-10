@@ -44,11 +44,6 @@ else
 	-@nodebrew use stable
 	-@npm i --save -g gulp-cli
 
-	-@brew install zsh
-	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
-	-@chsh -s '/usr/local/bin/zsh'
-	-@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 	# https://github.com/mileszs/ack.vim/issues/156
 	# sudo apt-get install ack
 	-@brew install ack
@@ -68,6 +63,11 @@ else
 	-@brew cask install google-japanese-ime
 	-@brew cask install clipy
 	-@brew cask install comparemerge
+
+	-@brew install zsh
+	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+	-@chsh -s '/usr/local/bin/zsh'
+	-@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 	-@brew doctor
 	-@brew list
