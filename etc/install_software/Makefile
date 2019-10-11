@@ -36,6 +36,7 @@ else
 	-@brew install wget
 	-@brew install git
 	-@brew install pyenv
+	-@brew install neovim
 	-@git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
 	-@pyenv versions
