@@ -209,13 +209,6 @@ let php_folding=1
 " カッコが閉じていない場合にハイライト
 let php_parent_error_close=1
 
-augroup vimrc-filetype
-  autocmd!
-  " PHP set
-  autocmd BufNewFile,BufRead *.php set filetype=php
-  autocmd FileType php setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
-augroup END
-
 " =======================
 " autocmd
 " =======================
