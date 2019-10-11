@@ -81,8 +81,8 @@ endif
 " =======================
 let $PATH = '~/.pyenv/shims:'.$PATH
 if has('nvim')
-  let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/shims/python2") || echo -n $(which python2)')
-  let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/shims/python3") || echo -n $(which python3)')
+  let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/neovim2/bin/python") || echo -n $(which python2)')
+  let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/neovim3/bin/python") || echo -n $(which python3)')
 endif
 
 " TMPファイル
