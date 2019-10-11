@@ -80,8 +80,10 @@ endif
 " init set
 " =======================
 let $PATH = '~/.pyenv/shims:'.$PATH
-let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/shims/python2") || echo -n $(which python2)')
-let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/shims/python3") || echo -n $(which python3)')
+if has('nvim')
+  let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/shims/python2") || echo -n $(which python2)')
+  let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/shims/python3") || echo -n $(which python3)')
+endif
 
 " TMPファイル
 let $TMPDIR = expand(s:tmp_dir)
