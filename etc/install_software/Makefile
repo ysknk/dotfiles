@@ -40,9 +40,9 @@ else
 
 	-@pyenv versions
 	-@pyenv versions
-	-@pyenv install 2.7.12
-	-@pyenv install 3.5.2
-	-@pyenv global 3.5.2 2.7.12
+	-@pyenv install 2.7.14
+	-@pyenv install 3.6.3
+	-@pyenv global 3.6.3 2.7.14
 	-@python -v
 	-@python2 -v
 	-@python3 -v
