@@ -16,7 +16,7 @@ DS           := $(shell echo "/")
 
 # for windows
 ifeq ($(OS),Windows_NT)
-DOT_PATH     := $(shell /usr/bin/cygpath -w "$(abspath .)$(DS)")
+DOT_PATH     := $(shell /usr/bin/cygpath -w "$(HOME)$(DS)dotfiles/")
 HOME_DIR     := $(shell /usr/bin/cygpath -w "$(HOME)$(DS)")
 DS           := $(shell echo "\\")
 ML_FILE_CMD  := cmd.exe //C mklink
@@ -29,12 +29,12 @@ INITVIM      := $(shell /usr/bin/cygpath -w "$(NVIM_DIR)$(DS)init.vim")
 GINITVIM     := $(shell /usr/bin/cygpath -w "$(NVIM_DIR)$(DS)ginit.vim")
 # for others(mac)
 else
-DOT_PATH     := $(PWD)$(DS)
+DOT_PATH     := $(HOME)$(DS)dotfiles/
 HOME_DIR     := $(HOME)$(DS)
 ML_FILE_CMD  := ln -sfnv
 ML_DIR_CMD   := $(ML_FILE_CMD)
 RM_FILE_CMD  := rm -f
-RM_DIR_CMD   := $(RM_FILE_CMD)
+RM_DIR_CMD   := rm -r
 
 NVIM_DIR     := $(XDG_CONFIG_HOME)$(DS)nvim
 INITVIM      := $(NVIM_DIR)$(DS)init.vim
