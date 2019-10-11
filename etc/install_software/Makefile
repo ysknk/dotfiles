@@ -40,6 +40,7 @@ else
 	-@git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
 	-@pyenv versions
+
 	-@pyenv install 2.7.12
 	-@pyenv virtualenv 2.7.12 neovim2
 	-@pyenv activate neovim2
