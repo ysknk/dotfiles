@@ -55,6 +55,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   export PATH=$PYENV_ROOT/bin:$PATH
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
+  if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+    source "${VIRTUAL_ENV}/bin/activate"
+  fi
 fi
 
 source $ZSH/oh-my-zsh.sh
