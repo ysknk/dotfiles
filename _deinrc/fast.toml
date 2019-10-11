@@ -521,6 +521,10 @@ on_ft = ['typescript']
 repo = 'StanAngeloff/php.vim'
 on_ft = ['php']
 
+[[plugins]]
+repo = 'm2mdas/phpcomplete-extended'
+on_ft = ['php']
+
 # go syntax
 [[plugins]]
 repo = 'fatih/vim-go'
