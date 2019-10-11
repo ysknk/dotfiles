@@ -6,7 +6,8 @@ scriptencoding utf-8
 " =======================
 " base set
 " =======================
-if has('python3') endif
+if has('python3')
+endif
 
 " Windows でもパスの区切り文字を / にする
 set shellslash
