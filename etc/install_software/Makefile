@@ -38,6 +38,15 @@ else
 	-@brew install pyenv
 	-@git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
+	-@pyenv versions
+	-@pyenv versions
+	-@pyenv install 2.7.12
+	-@pyenv install 3.5.2
+	-@pyenv global 3.5.2 2.7.12
+	-@python -v
+	-@python2 -v
+	-@python3 -v
+
 	-@brew install nodebrew
 	-@mkdir -p ~/.nodebrew/src
 	-@nodebrew install-binary stable
