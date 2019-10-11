@@ -42,6 +42,8 @@ else
 	-@pyenv versions
 	-@env PYTHON_CONFIGURE_OPTS="--enable-shared" LDSHARED="clang -bundle" LDCXXSHARED="clang++ -bundle" BLDSHARED="clang -bundle -lpython2.7" pyenv install 2.7.12
 	-@env PYTHON_CONFIGURE_OPTS="--enable-shared" LDSHARED="clang -undefined dynamic_lookup　-bundle" LDCXXSHARED="clang++ -undefined dynamic_lookup　-bundle" BLDSHARED="clang -bundle -undefined dynamic_lookup　-lpython3.5m" pyenv install 3.5.2
+	-@pip install pynvim
+	-@pip3 install pynvim
 
 	-@pyenv global 3.5.2 2.7.12
 	-@python -V
