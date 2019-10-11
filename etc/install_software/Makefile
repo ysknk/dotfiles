@@ -40,8 +40,18 @@ else
 
 	-@pyenv versions
 	-@pyenv versions
-	-@pyenv install 2.7.12
-	-@pyenv install 3.5.2
+	-@PYTHON_CONFIGURE_OPTS="--enable-shared"
+			\ LDSHARED="clang -bundle"
+			\ LDCXXSHARED="clang++ -bundle"
+			\ BLDSHARED="clang -bundle -lpython2.7"
+			\ pyenv install 2.7.12
+
+	-@PYTHON_CONFIGURE_OPTS="--enable-shared"
+		\ LDSHARED="clang -undefined dynamic_lookup　-bundle"
+		\ LDCXXSHARED="clang++ -undefined dynamic_lookup　-bundle"
+		\ BLDSHARED="clang -bundle -undefined dynamic_lookup　-lpython3.5m"
+		\ pyenv install 3.5.2
+
 	-@pyenv global 3.5.2 2.7.12
 	-@python -V
 	-@python2 -V
