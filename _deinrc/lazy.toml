@@ -57,9 +57,6 @@ hook_add = '''
   nnoremap <silent> <space><space> :<C-u>Unite file_mru buffer<CR>
 '''
 
-[[plugins]]
-repo = 'm2mdas/phpcomplete-extended'
-
 # [+|-]
 [[plugins]]
 repo = 'thinca/vim-fontzoom'
