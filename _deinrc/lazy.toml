@@ -115,10 +115,11 @@ repo = 'posva/vim-vue'
 on_ft = ['vue', 'vuejs']
 hook_add = '''
   let g:vue_disable_pre_processors=1
-  " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.js.css
   let g:vue_pre_processors='detect_on_enter'
-  autocmd FileType vuejs set filetype=vue
+  autocmd FileType *.vuejs set filetype=vue
   autocmd FileType vue syntax sync fromstart
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+
 '''
 
 # javascript syntax
