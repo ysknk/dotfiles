@@ -5,6 +5,9 @@ repo = 'Shougo/dein.vim'
 # repo = 'lambdalisue/vim-pyenv'
 
 [[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
 repo = 'itchyny/vim-parenmatch'
 hook_add = '''
   let g:loaded_matchparen = 1
