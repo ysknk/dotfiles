@@ -18,13 +18,13 @@ hook_add = '''
   let g:javascript_plugin_jsdoc=1
 
   " python
-  let g:python_highlight_all = 1
+  let g:python_highlight_all=1
 '''
 
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
 hook_add = '''
-  let g:loaded_matchparen = 1
+  let g:loaded_matchparen=1
 '''
 
 [[plugins]]
