@@ -11,6 +11,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'itchyny/vim-cursorword'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   " 隠しファイルをデフォルトで表示させる
