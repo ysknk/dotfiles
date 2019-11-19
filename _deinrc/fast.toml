@@ -6,6 +6,20 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+hook_add = '''
+  " vue
+  let g:vue_disable_pre_processors=1
+  let g:vue_pre_processors='detect_on_enter'
+  autocmd FileType *.vuejs set filetype=vue
+  autocmd FileType vue syntax sync fromstart
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+
+  " javascript
+  let g:javascript_plugin_jsdoc=1
+
+  " python
+  let g:python_highlight_all = 1
+'''
 
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
