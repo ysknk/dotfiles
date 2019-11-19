@@ -240,24 +240,24 @@ augroup vimrc-auto-cursorline
   function! Auto_cursorline(event)
     if a:event ==# 'WinEnter'
       setlocal cursorline
-      setlocal cursorcolumn
+      " setlocal cursorcolumn
       let g:cursorline_lock = 2
     elseif a:event ==# 'WinLeave'
       setlocal nocursorline
-      setlocal nocursorcolumn
+      " setlocal nocursorcolumn
     elseif a:event ==# 'CursorMoved'
       if g:cursorline_lock
         if 1 < g:cursorline_lock
           let g:cursorline_lock = 1
         else
           setlocal nocursorline
-          setlocal nocursorcolumn
+          " setlocal nocursorcolumn
           let g:cursorline_lock = 0
         endif
       endif
     elseif a:event ==# 'CursorHold'
       setlocal cursorline
-      setlocal cursorcolumn
+      " setlocal cursorcolumn
       let g:cursorline_lock = 1
     endif
   endfunction
