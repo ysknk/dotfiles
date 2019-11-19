@@ -5,6 +5,12 @@ repo = 'Shougo/dein.vim'
 # repo = 'lambdalisue/vim-pyenv'
 
 [[plugins]]
+repo = 'itchyny/vim-parenmatch'
+hook_add = '''
+  let g:loaded_matchparen = 1
+'''
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   " 隠しファイルをデフォルトで表示させる
