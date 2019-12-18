@@ -88,3 +88,8 @@ hook_add = '''
   \   'indentation': '  '
   \ }
 '''
+
+# css color syntax
+[[plugins]]
+repo = 'ap/vim-css-color'
+on_ft = ['css', 'stylus', 'sass', 'less', 'scss']
