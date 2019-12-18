@@ -91,5 +91,5 @@ hook_add = '''
 
 # css color syntax
 [[plugins]]
-repo = 'ap/vim-css-color'
+repo = 'gorodinskiy/vim-coloresque'
 on_ft = ['css', 'stylus', 'sass', 'less', 'scss']
