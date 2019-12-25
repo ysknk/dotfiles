@@ -122,7 +122,7 @@ hook_add = '''
   let g:NERDTreeExtensionHighlightColor['ts']=s:beige
   let g:NERDTreeExtensionHighlightColor['tsx']=s:beige
 
-let g:NERDTreeExtensionHighlightColor['svg']=s:aqua
+  let g:NERDTreeExtensionHighlightColor['svg']=s:aqua
 
   let g:NERDTreeSyntaxEnabledExtensions=[
     \ 'styl',
