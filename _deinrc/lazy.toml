@@ -93,3 +93,8 @@ hook_add = '''
 [[plugins]]
 repo = 'gorodinskiy/vim-coloresque'
 on_ft = ['css', 'stylus', 'sass', 'less', 'scss']
+
+# pug complete
+[[plugins]]
+repo = 'dNitro/vim-pug-complete'
+on_ft = ['pug', 'jade']
