@@ -19,6 +19,9 @@ hook_add = '''
 
   " python
   let g:python_highlight_all=1
+
+  " disabled
+  let g:polyglot_disabled = []
 '''
 
 [[plugins]]
