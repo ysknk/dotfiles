@@ -13,9 +13,21 @@ endif
 " Windows でもパスの区切り文字を / にする
 set shellslash
 
+" ネストしたディレクトリを作成する関数
+function! s:mkdir(dir)
+  if !isdirectory(a:dir)
+    " 'p' を渡すことでネストしたディレクトリ全てが作成される
+    call mkdir(a:dir, "p")
+  endif
+endfunction
+
 let s:tmp_dir = '~/.temp'
+call s:mkdir(&s:tmp_dir)
 let s:cache_dir = '~/.cache'
-" let s:undo_dir = '~/.undo'
+call s:mkdir(&s:cache_dir)
+let s:undo_dir = expand(s:cache_dir . '/.undo')
+let s:backup_dir = expand(s:cache_dir . '/.backup')
+let s:swap_dir = expand(s:cache_dir . '/.swap')
 
 " shell alias
 if &shell =~ '\\bash$'
@@ -92,19 +104,21 @@ let $TMPDIR = expand(s:tmp_dir)
 " バックアップファイル
 " set nobackup
 set backupdir&
-let &backupdir=expand(s:cache_dir)
+let &backupdir=expand(s:backup_dir)
+call s:mkdir(&backupdir)
 " チルダファイル
 " set noundofile
 if has('persistent_undo')
-  " let undo_path = expand(s:undo_dir)
-  let undo_path = expand(s:cache_dir)
-  exe 'set undodir=' .. undo_path
+  set undodir&
+  let &undodir=expand(s:undo_dir)
+  call s:mkdir(&undodir)
   set undofile
 endif
 " スワップファイル
 " set noswapfile
 set directory&
-let &directory=expand(s:cache_dir)
+let &directory=expand(s:swap_dir)
+call s:mkdir(&directory)
 " viminfo
 " set viminfo=
 set viminfo&
