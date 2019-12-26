@@ -7,6 +7,8 @@ repo = 'jiangmiao/auto-pairs'
 on_i = 1
 
 # TableModeToggle
+# | a | ab |
+# ||
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
 on_i = 1
