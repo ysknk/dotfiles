@@ -94,8 +94,11 @@ set backupdir&
 let &backupdir=expand(s:cache_dir)
 " チルダファイル
 " set noundofile
-set undodir&
-let &undodir=expand(s:cache_dir)
+if has('persistent_undo')
+  let undo_path = expand(s:cache_dir)
+  exe 'set undodir=' .. undo_path
+  set undofile
+endif
 " スワップファイル
 " set noswapfile
 set directory&
