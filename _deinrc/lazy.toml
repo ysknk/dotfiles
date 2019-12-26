@@ -98,3 +98,11 @@ on_ft = ['css', 'stylus', 'sass', 'less', 'scss']
 [[plugins]]
 repo = 'dNitro/vim-pug-complete'
 on_ft = ['pug', 'jade']
+
+# html tag close
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = ['html', 'htm', 'xhtml', 'phtml', 'erb', 'php', 'vue']
+hook_add = '''
+  let g:closetag_filenames = '*.html,*.htm,*.xhtml,*.phtml,*.erb,*.php,*.vue'
+'''
