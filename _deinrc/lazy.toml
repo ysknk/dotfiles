@@ -6,6 +6,14 @@ on_path = '.*'
 repo = 'jiangmiao/auto-pairs'
 on_i = 1
 
+# TableModeToggle
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_i = 1
+hook_add = '''
+  let g:table_mode_corner='|'
+'''
+
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_path = '.*'
