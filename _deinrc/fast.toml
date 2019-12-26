@@ -33,9 +33,10 @@ hook_add = '''
 [[plugins]]
 repo = 'mhinz/vim-startify'
 hook_add = '''
-  let g:startify_custom_header = [
-    \   strftime("   %Y-%m-%d %H:%M:%S"),
-    \   "   Vim ver." . v:version
+  let g:ascii = []
+  let g:startify_custom_header = g:ascii + [
+    \   '   Vim ver.' . v:version,
+    \   strftime("   %Y/%m/%d %H:%M:%S")
     \ ]
   let g:startify_files_number = 8
   let g:startify_custom_indices = ['f', 'g', 'h', 'r', 'i', 'o', 'b']
