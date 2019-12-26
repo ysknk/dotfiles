@@ -168,7 +168,9 @@ repo = 'thinca/vim-qfreplace'
 [[plugins]]
 repo = 'mileszs/ack.vim'
 hook_add = '''
-  let g:ackprg = 'ag --nogroup --nocolor --column'
+  if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+  endif
 '''
 
 [[plugins]]
