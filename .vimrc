@@ -15,7 +15,7 @@ set shellslash
 
 let s:tmp_dir = '~/.temp'
 let s:cache_dir = '~/.cache'
-let s:undo_dir = '~/.undo'
+" let s:undo_dir = '~/.undo'
 
 " shell alias
 if &shell =~ '\\bash$'
@@ -96,7 +96,8 @@ let &backupdir=expand(s:cache_dir)
 " チルダファイル
 " set noundofile
 if has('persistent_undo')
-  let undo_path = expand(s:undo_dir)
+  " let undo_path = expand(s:undo_dir)
+  let undo_path = expand(s:cache_dir)
   exe 'set undodir=' .. undo_path
   set undofile
 endif
