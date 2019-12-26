@@ -25,9 +25,9 @@ function! s:mkdir(dir)
 endfunction
 
 let s:tmp_dir = '~/.temp'
-call s:mkdir(&s:tmp_dir)
+" call s:mkdir(&s:tmp_dir)
 let s:cache_dir = '~/.cache'
-call s:mkdir(&s:cache_dir)
+" call s:mkdir(&s:cache_dir)
 let s:undo_dir = expand(s:cache_dir . '/.undo')
 let s:backup_dir = expand(s:cache_dir . '/.backup')
 let s:swap_dir = expand(s:cache_dir . '/.swap')
