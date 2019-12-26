@@ -31,6 +31,28 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mhinz/vim-startify'
+hook_add = '''
+  let g:startify_custom_header = [
+    \   strftime("   %Y-%m-%d %H:%M:%S"),
+    \   "   Vim ver." . v:version
+    \ ]
+  let g:startify_files_number = 8
+  let g:startify_custom_indices = ['f', 'g', 'h', 'r', 'i', 'o', 'b']
+  let g:startify_list_order = [
+    \ ['   MRU'],
+    \ 'files',
+    \ ['   MRU ' . getcwd()],
+    \ 'dir',
+    \ ['   Sessions'],
+    \ 'sessions',
+    \ ['   Bookmarks'],
+    \ 'bookmarks',
+    \ ]
+  let g:startify_bookmarks = [$MYVIMRC]
+'''
+
+[[plugins]]
 repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
