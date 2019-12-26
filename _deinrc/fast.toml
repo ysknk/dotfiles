@@ -395,19 +395,21 @@ hook_add = '''
 # colorscheme
 [[plugins]]
 # repo = 'Pychimp/vim-luna'
-repo = 'sainnhe/edge'
+# repo = 'sainnhe/edge'
+repo = 'jonathanfilip/vim-lucius'
 hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   " autocmd MyAutoCmd VimEnter * nested colorscheme luna
-  autocmd MyAutoCmd VimEnter * nested colorscheme edge
+  " autocmd MyAutoCmd VimEnter * nested colorscheme edge
+  autocmd MyAutoCmd VimEnter * nested colorscheme lucius
 '''
 
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-depends = ['sainnhe/edge']
+depends = ['jonathanfilip/vim-lucius']
 hook_add = '''
   let g:lightline={
   \   'colorscheme': 'edge',
