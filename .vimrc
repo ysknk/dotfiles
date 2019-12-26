@@ -7,6 +7,9 @@ scriptencoding utf-8
 " =======================
 " base set
 " =======================
+filetype off
+filetype plugin indent off
+
 if has('python3')
 endif
 
@@ -82,8 +85,6 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-filetype on
-filetype plugin indent on
 syntax enable
 
 " もし、未インストールのものがあったらインストール
@@ -328,3 +329,6 @@ nnoremap <S-Down>  <C-w>+<CR>
 map <C-F2> :set cursorcolumn!<Bar>set cursorline!<CR>
 " コピペが連続でできるように
 xnoremap <expr> p 'pgv"'.v:register.'ygv<esc>'
+
+filetype plugin indent on
+
