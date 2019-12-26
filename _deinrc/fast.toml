@@ -54,7 +54,7 @@ hook_add = '''
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " デフォルトでツリーを表示させる
   " autocmd VimEnter,Colorscheme * NERDTree
-  " ファイル指定がない場合は表示させずにctrlpを優先させる
+  " ファイル指定があればNERDTreeを開く、指定がない場合は表示させない
   autocmd VimEnter,Colorscheme * if argc() != 0 | NERDTree | endif
   " カーソルをメインウインドウに移動
   autocmd VimEnter,Colorscheme * if argc() != 0 | wincmd p | endif
