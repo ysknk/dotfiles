@@ -167,6 +167,9 @@ repo = 'thinca/vim-qfreplace'
 
 [[plugins]]
 repo = 'mileszs/ack.vim'
+hook_add = '''
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+'''
 
 [[plugins]]
 repo = 'simeji/winresizer'
