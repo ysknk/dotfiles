@@ -50,7 +50,7 @@ hook_add = '''
   nnoremap :tree :NERDTreeToggle
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-  " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+  " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " デフォルトでツリーを表示させる
   " autocmd VimEnter,Colorscheme * NERDTree
