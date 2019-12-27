@@ -66,6 +66,7 @@ else
 	# sudo apt-get install ack
 	-@brew install ack
 	-@brew install the_silver_searcher
+	-@brew install fzf
 
 	-@brew install docker
 	-@brew cask install iterm2
