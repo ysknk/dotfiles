@@ -6,9 +6,8 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'junegunn/fzf'
-build_on = '''
-./install -all
-'''
+build = './install -all'
+merged = '0'
 
 # Files, History, GFiles, Colors
 [[plugins]]
