@@ -13,6 +13,7 @@ build_on = '''
 # Files, History, GFiles, Colors
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+depends = ['fzf']
 hook_add = '''
   " ファイル一覧を出すときにプレビュー表示
   command! -bang -nargs=? -complete=dir Files
