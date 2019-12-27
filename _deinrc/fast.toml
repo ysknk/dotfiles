@@ -397,7 +397,9 @@ hook_add = '''
 # repo = 'Pychimp/vim-luna'
 # repo = 'sainnhe/edge'
 # repo = 'jonathanfilip/vim-lucius'
-repo = 'dracula/vim'
+# repo = 'dracula/vim'
+# repo = 'zeis/vim-kolor'
+repo = 'KeitaNakamura/neodark.vim'
 hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
@@ -405,16 +407,18 @@ hook_add = '''
   " autocmd MyAutoCmd VimEnter * nested colorscheme luna
   " autocmd MyAutoCmd VimEnter * nested colorscheme edge
   " autocmd MyAutoCmd VimEnter * nested colorscheme lucius
-  autocmd MyAutoCmd VimEnter * nested colorscheme dracula
+  " autocmd MyAutoCmd VimEnter * nested colorscheme dracula
+  " autocmd MyAutoCmd VimEnter * nested colorscheme kolor
+  autocmd MyAutoCmd VimEnter * nested colorscheme neodark
 '''
 
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-depends = ['dracula/vim']
+depends = ['KeitaNakamura/neodark.vim']
 hook_add = '''
   let g:lightline={
-  \   'colorscheme': 'dracula',
+  \   'colorscheme': 'neodark',
   \   'active': {
   \     'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
   \     'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
