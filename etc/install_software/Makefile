@@ -82,6 +82,8 @@ else
 	-@brew cask install google-japanese-ime
 	-@brew cask install clipy
 	-@brew cask install comparemerge
+	-@brew cask install slack
+	-@brew cask install appcleaner
 
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
