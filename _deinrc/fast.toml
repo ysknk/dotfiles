@@ -5,6 +5,15 @@ repo = 'Shougo/dein.vim'
 # repo = 'lambdalisue/vim-pyenv'
 
 [[plugins]]
+repo = 'junegunn/fzf'
+build_on = '''
+./install -all
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+[[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
   " vue
