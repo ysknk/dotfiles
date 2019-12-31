@@ -292,6 +292,13 @@ if has('nvim')
     autocmd FileType denite-filter set winblend=10
   augroup END
 endif
+" 最後のカーソル位置を復元する
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
 " =======================
 " keymap
 " =======================
