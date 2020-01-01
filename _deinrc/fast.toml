@@ -21,6 +21,19 @@ hook_add = '''
   nnoremap <c-p> :Files<CR>
 '''
 
+# lsp
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+merged = '0'
+
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
