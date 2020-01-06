@@ -477,7 +477,7 @@ hook_add = '''
   \   'html': ['htmlhint'],
   \   'pug': ['puglint'],
   \   'css': ['stylelint'],
-  \   'stylus': ['stylelint'],
+  \   'stylus': ['stylint'],
   \   'javascript': ['eslint'],
   \   'vue': ['eslint'],
   \   'jsx': ['eslint']
