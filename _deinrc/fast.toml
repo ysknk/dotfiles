@@ -446,10 +446,10 @@ hook_add = '''
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-depends = ['KeitaNakamura/neodark.vim']
+# depends = ['KeitaNakamura/neodark.vim']
+#  \   'colorscheme': 'neodark',
 hook_add = '''
   let g:lightline={
-  \   'colorscheme': 'neodark',
   \   'active': {
   \     'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
   \     'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
