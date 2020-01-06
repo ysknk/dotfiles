@@ -2,6 +2,11 @@
 repo = 'Shougo/neomru.vim'
 on_path = '.*'
 
+# color preview
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+on_path = '.*'
+
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = ['neomru.vim']
