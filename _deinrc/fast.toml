@@ -204,6 +204,10 @@ hook_add = '''
   endif
 '''
 
+# color preview
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+
 [[plugins]]
 repo = 'simeji/winresizer'
 hook_add = '''
