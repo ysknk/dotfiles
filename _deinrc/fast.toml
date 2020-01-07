@@ -441,9 +441,9 @@ hook_add = '''
   " 例外ファイルタイプ
   let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite', 'startify']
   " 奇数インデントのカラー
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg='#777766' ctermbg=153
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg='#444433' ctermbg=153
   " 偶数インデントのカラー
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#889999' ctermbg=221
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#334444' ctermbg=221
 '''
 
 [[plugins]]
