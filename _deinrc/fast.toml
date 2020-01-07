@@ -165,6 +165,8 @@ hook_add = '''
     \ 'Ignored'   : ' ',
     \ "Unknown"   : "?"
     \ }
+
+  autocmd VimEnter,Colorscheme * highlight link NERDTreeGitStatusIgnored Comment  "custom color
 '''
 
 [[plugins]]
