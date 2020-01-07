@@ -16,6 +16,10 @@ repo = 'junegunn/goyo.vim'
 #   let g:minimap_highlight='Visual'
 # '''
 
+[[plugins]]
+repo  = 'prettier/vim-prettier'
+build = 'npm install'
+
 # [[plugins]]
 # repo = 'lambdalisue/vim-pyenv'
 
