@@ -4,9 +4,9 @@ repo = 'Shougo/dein.vim'
 # [[plugins]]
 # repo = 'lambdalisue/vim-pyenv'
 
-# color preview
-[[plugins]]
-repo = 'marslo/vim-coloresque'
+# color preview *slow
+# [[plugins]]
+# repo = 'marslo/vim-coloresque'
 
 [[plugins]]
 repo = 'junegunn/fzf'
