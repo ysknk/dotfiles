@@ -4,6 +4,10 @@ repo = 'Shougo/dein.vim'
 # [[plugins]]
 # repo = 'lambdalisue/vim-pyenv'
 
+# color preview
+# [[plugins]]
+# repo = 'gorodinskiy/vim-coloresque'
+
 [[plugins]]
 repo = 'junegunn/fzf'
 build = './install -all'
