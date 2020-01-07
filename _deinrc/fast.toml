@@ -6,7 +6,7 @@ repo = 'Shougo/dein.vim'
 # In percentage
 # Goyo 120x50%
 # With offsets
-#Goyo 50%+25%x50%-25%
+# Goyo 50%+25%x50%-25%
 [[plugins]]
 repo = 'junegunn/goyo.vim'
 
