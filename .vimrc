@@ -16,6 +16,20 @@ endif
 " Windows でもパスの区切り文字を / にする
 set shellslash
 
+" カーソル下のhighlight情報を表示する HighlightInfo
+function! s:get_syn_id(transparent)
+  let synid = synID(line('.'), col('.'), 1)
+  return a:transparent ? synIDtrans(synid) : synid
+endfunction
+function! s:get_syn_name(synid)
+  return synIDattr(a:synid, 'name')
+endfunction
+function! s:get_highlight_info()
+  execute "highlight " . s:get_syn_name(s:get_syn_id(0))
+  execute "highlight " . s:get_syn_name(s:get_syn_id(1))
+endfunction
+command! HighlightInfo call s:get_highlight_info()
+
 " ネストしたディレクトリを作成する関数
 function! s:mkdir(dir)
   if !isdirectory(a:dir)
