@@ -1,6 +1,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# DeinUpdate
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+
 # Both
 # Goyo 120x30
 # In percentage
