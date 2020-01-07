@@ -114,8 +114,8 @@ hook_add = '''
 
 # markdown preview PreVimOpen
 [[plugins]]
-repo = 'kannokanno/previm'
+repo = 'previm/previm'
 on_ft = ['md']
 hook_add = '''
-  let g:previm_open_cmd = 'open -a Chrome'
+  let g:previm_open_cmd = 'open -a Google\ Chrome'
 '''
