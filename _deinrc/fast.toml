@@ -506,6 +506,8 @@ hook_add = '''
 [[plugins]]
 repo = 'w0rp/ale'
 depends = ['lightline.vim']
+#  \   'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+#  \   'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
 hook_add = '''
   let g:ale_statusline_format=['E%d', 'W%d', '']
   let g:ale_linter_aliases = {
