@@ -59,6 +59,9 @@ hook_add = '''
   " javascript
   let g:javascript_plugin_jsdoc=1
 
+  " markdown
+  let g:vim_markdown_folding_disabled=1
+
   " python
   let g:python_highlight_all=1
 
