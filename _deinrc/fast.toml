@@ -462,6 +462,7 @@ hook_add = '''
 # repo = 'jonathanfilip/vim-lucius'
 # repo = 'dracula/vim'
 # repo = 'zeis/vim-kolor'
+# repo = 'arcticicestudio/nord-vim'
 repo = 'KeitaNakamura/neodark.vim'
 hook_add = '''
   set background=dark
@@ -472,14 +473,15 @@ hook_add = '''
   " autocmd MyAutoCmd VimEnter * nested colorscheme lucius
   " autocmd MyAutoCmd VimEnter * nested colorscheme dracula
   " autocmd MyAutoCmd VimEnter * nested colorscheme kolor
+  " autocmd MyAutoCmd VimEnter * nested colorscheme nord
   autocmd MyAutoCmd VimEnter * nested colorscheme neodark
 '''
 
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-# depends = ['KeitaNakamura/neodark.vim']
-#  \   'colorscheme': 'neodark',
+# depends = ['arcticicestudio/nord-vim']
+#\   'colorscheme': 'nord',
 hook_add = '''
   let g:lightline={
   \   'active': {
