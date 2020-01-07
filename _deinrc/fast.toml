@@ -466,8 +466,8 @@ hook_add = '''
 # repo = 'jonathanfilip/vim-lucius'
 # repo = 'dracula/vim'
 # repo = 'zeis/vim-kolor'
-# repo = 'arcticicestudio/nord-vim'
-repo = 'KeitaNakamura/neodark.vim'
+# repo = 'KeitaNakamura/neodark.vim'
+repo = 'arcticicestudio/nord-vim'
 hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
@@ -477,17 +477,17 @@ hook_add = '''
   " autocmd MyAutoCmd VimEnter * nested colorscheme lucius
   " autocmd MyAutoCmd VimEnter * nested colorscheme dracula
   " autocmd MyAutoCmd VimEnter * nested colorscheme kolor
-  " autocmd MyAutoCmd VimEnter * nested colorscheme nord
-  autocmd MyAutoCmd VimEnter * nested colorscheme neodark
+  " autocmd MyAutoCmd VimEnter * nested colorscheme neodark
+  autocmd MyAutoCmd VimEnter * nested colorscheme nord
 '''
 
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-# depends = ['arcticicestudio/nord-vim']
-#\   'colorscheme': 'nord',
+depends = ['arcticicestudio/nord-vim']
 hook_add = '''
   let g:lightline={
+  \   'colorscheme': 'nord',
   \   'active': {
   \     'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
   \     'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
