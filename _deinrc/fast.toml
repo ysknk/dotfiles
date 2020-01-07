@@ -129,6 +129,8 @@ hook_add = '''
   " 表示する位置
   let g:NERDTreeWinPos='left'
 
+  let g:NERDTreeAutoDeleteBuffer=1
+
   " keymap
   nnoremap :tree :NERDTreeToggle
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
