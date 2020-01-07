@@ -304,9 +304,6 @@ endif
 " =======================
 " F1でvimrcを開く
 nnoremap <F1> :tabnew $MYVIMRC<CR>
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
