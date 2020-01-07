@@ -111,3 +111,11 @@ on_ft = ['html', 'htm', 'xhtml', 'phtml', 'erb', 'php', 'vue']
 hook_add = '''
   let g:closetag_filenames = '*.html,*.htm,*.xhtml,*.phtml,*.erb,*.php,*.vue'
 '''
+
+# markdown preview PreVimOpen
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['md']
+hook_add = '''
+  let g:previm_open_cmd = 'open -a Chrome'
+'''
