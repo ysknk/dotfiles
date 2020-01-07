@@ -1,6 +1,9 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+
 # [[plugins]]
 # repo = 'lambdalisue/vim-pyenv'
 
