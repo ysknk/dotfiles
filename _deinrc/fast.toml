@@ -9,6 +9,18 @@ repo = 'Shougo/dein.vim'
 # repo = 'marslo/vim-coloresque'
 
 [[plugins]]
+repo = 'junegunn/rainbow_parentheses.vim'
+hook_add = '''
+  let g:rainbow#max_level = 16
+  let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+  " List of colors that you do not want. ANSI code or #RRGGBB
+  " let g:rainbow#blacklist = [233, 234]
+
+  autocmd VimEnter,Colorscheme * RainbowParentheses
+'''
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
 hook_add = '''
   let g:netrw_nogx = 1 " disable netrw's gx mapping.
