@@ -462,7 +462,7 @@ hook_add = '''
   " ガイドの幅
   let g:indent_guides_guide_size=1
   " 例外ファイルタイプ
-  let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite', 'startify']
+  let g:indent_guides_exclude_filetypes = ['help', 'tagbar', 'unite', 'startify']
   " 奇数インデントのカラー
   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg='#555544' ctermbg=153
   " 偶数インデントのカラー
