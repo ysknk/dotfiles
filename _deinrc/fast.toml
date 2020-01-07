@@ -11,6 +11,12 @@ repo = 'Shougo/dein.vim'
 repo = 'junegunn/goyo.vim'
 
 # [[plugins]]
+# repo = 'severin-lemaignan/vim-minimap'
+# hook_add = '''
+#   let g:minimap_highlight='Visual'
+# '''
+
+# [[plugins]]
 # repo = 'lambdalisue/vim-pyenv'
 
 # color preview *slow
