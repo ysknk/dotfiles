@@ -49,7 +49,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'junegunn/fzf'
-build = './install -all'
+build = './install --all'
 merged = '0'
 
 # Files, History, GFiles, Colors
