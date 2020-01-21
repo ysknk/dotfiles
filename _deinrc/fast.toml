@@ -253,6 +253,7 @@ hook_add = '''
 repo = 'thinca/vim-qfreplace'
 
 # Ack hoge
+# replacfe = Ack hoge -> Qfreplace -> [replace] -> w
 [[plugins]]
 repo = 'mileszs/ack.vim'
 hook_add = '''
