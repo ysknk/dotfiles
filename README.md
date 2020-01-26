@@ -15,11 +15,10 @@ Setup for Vim, iTerm(zsh).
 1. [Chocolatey](https://chocolatey.org/install)
     - `choco -v`
 1. [MSYS2](http://www.msys2.org/)
-    - `choco install msys2`
-      - check command
-        - `make -v`
-        - `sed --version`
-        - `cygpath --version`
+    - check command
+      - `make -v`
+      - `sed --version`
+      - `cygpath --version`
 
 ## Recommended
 
