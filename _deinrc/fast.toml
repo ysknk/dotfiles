@@ -192,55 +192,55 @@ hook_add = '''
   autocmd VimEnter,Colorscheme * highlight link NERDTreeGitStatusIgnored Comment  "custom color
 '''
 
-[[plugins]]
-repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-hook_add = '''
-  let s:brown="905532"
-  let s:aqua= "3AFFDB"
-  let s:blue="689FB6"
-  let s:darkBlue="44788E"
-  let s:purple="834F79"
-  let s:lightPurple="834F79"
-  let s:red="AE403F"
-  let s:beige="F5C06F"
-  let s:yellow="F09F17"
-  let s:orange="D4843E"
-  let s:darkOrange="F16529"
-  let s:pink="CB6F6F"
-  let s:salmon="EE6E73"
-  let s:green="8FAA54"
-  let s:lightGreen="31B53E"
-  let s:white="FFFFFF"
-
-  let g:NERDTreeLimitedSyntax=1
-
-  let g:NERDTreeFileExtensionHighlightFullName=1
-  let g:NERDTreeExactMatchHighlightFullName=1
-  let g:NERDTreePatternMatchHighlightFullName=1
-
-  let g:NERDTreeHighlightCursorline=0
-
-  let g:NERDTreeExtensionHighlightColor = {}
-  let g:NERDTreePatternMatchHighlightColor = {}
-  let g:NERDTreeExactMatchHighlightColor = {}
-
-  let g:NERDTreeExtensionHighlightColor['pug']=s:darkOrange
-  let g:NERDTreeExtensionHighlightColor['jade']=s:darkOrange
-
-  let g:NERDTreeExtensionHighlightColor['vue']=s:beige
-  let g:NERDTreeExtensionHighlightColor['jsx']=s:beige
-  let g:NERDTreeExtensionHighlightColor['ts']=s:beige
-  let g:NERDTreeExtensionHighlightColor['tsx']=s:beige
-
-  let g:NERDTreeExtensionHighlightColor['svg']=s:aqua
-
-  let g:NERDTreeSyntaxEnabledExtensions=[
-    \ 'styl',
-    \ 'yml',
-    \ 'gif',
-    \ 'psd', 'psb', 'ai'
-  \ ]
-'''
+# [[plugins]]
+# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+# hook_add = '''
+#   let s:brown="905532"
+#   let s:aqua= "3AFFDB"
+#   let s:blue="689FB6"
+#   let s:darkBlue="44788E"
+#   let s:purple="834F79"
+#   let s:lightPurple="834F79"
+#   let s:red="AE403F"
+#   let s:beige="F5C06F"
+#   let s:yellow="F09F17"
+#   let s:orange="D4843E"
+#   let s:darkOrange="F16529"
+#   let s:pink="CB6F6F"
+#   let s:salmon="EE6E73"
+#   let s:green="8FAA54"
+#   let s:lightGreen="31B53E"
+#   let s:white="FFFFFF"
+#
+#   let g:NERDTreeLimitedSyntax=1
+#
+#   let g:NERDTreeFileExtensionHighlightFullName=1
+#   let g:NERDTreeExactMatchHighlightFullName=1
+#   let g:NERDTreePatternMatchHighlightFullName=1
+#
+#   let g:NERDTreeHighlightCursorline=0
+#
+#   let g:NERDTreeExtensionHighlightColor = {}
+#   let g:NERDTreePatternMatchHighlightColor = {}
+#   let g:NERDTreeExactMatchHighlightColor = {}
+#
+#   let g:NERDTreeExtensionHighlightColor['pug']=s:darkOrange
+#   let g:NERDTreeExtensionHighlightColor['jade']=s:darkOrange
+#
+#   let g:NERDTreeExtensionHighlightColor['vue']=s:beige
+#   let g:NERDTreeExtensionHighlightColor['jsx']=s:beige
+#   let g:NERDTreeExtensionHighlightColor['ts']=s:beige
+#   let g:NERDTreeExtensionHighlightColor['tsx']=s:beige
+#
+#   let g:NERDTreeExtensionHighlightColor['svg']=s:aqua
+#
+#   let g:NERDTreeSyntaxEnabledExtensions=[
+#    \ 'styl',
+#    \ 'yml',
+#    \ 'gif',
+#    \ 'psd', 'psb', 'ai'
+#  \ ]
+# '''
 
 # [[plugins]]
 # repo = 'ryanoasis/vim-devicons'
