@@ -21,6 +21,7 @@ Setup for Vim, iTerm(zsh).
     - `make -v`
     - `sed --version`
     - `cygpath --version`
+    - `echo %HOME%` -> Environment variables must be set(ex: C:\Users\ysknk)
 
 ## Recommended
 
