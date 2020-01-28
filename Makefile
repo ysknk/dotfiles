@@ -83,7 +83,7 @@ _message_start:
 	@echo [33m$(TASK_NAME) dotfiles start. [0m;
 
 _message_end:
-	@echo [32m$(TASK_NAME) dotfiles complete!. [0m;
+	@echo [32m$(TASK_NAME) dotfiles complete! [0m;
 
 help: ## this message.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
