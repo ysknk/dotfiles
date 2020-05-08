@@ -69,6 +69,7 @@ else
 	-@brew install fzf
 
 	-@brew install docker
+	-@brew install tnftp
 	-@brew install mysql
 	-@brew cask install iterm2
 	-@brew cask install vagrant
