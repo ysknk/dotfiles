@@ -119,3 +119,7 @@ on_ft = ['markdown', 'txt']
 hook_add = '''
   let g:previm_open_cmd = 'open -a Google\ Chrome'
 '''
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['ts', 'tsx', 'typescript', 'typescriptreact']
