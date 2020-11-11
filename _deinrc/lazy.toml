@@ -86,11 +86,12 @@ hook_add = '''
   nmap <silent> <C-l> <Plug>(jsdoc)
 '''
 
-# emmet html:5 <c-y>,
+# emmet html:5 <c-y>, -> <c-y>
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html']
+on_ft = ['html', 'typescriptreact', 'javascriptreact']
 hook_add = '''
+  let g:user_emmet_expandabbr_key='<c-y>'
   let g:user_emmet_settings={
   \    'variables': {
   \      'lang': 'ja'
