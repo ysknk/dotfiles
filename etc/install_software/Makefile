@@ -71,21 +71,21 @@ else
 	-@brew install docker
 	-@brew install tnftp
 	-@brew install mysql
-	-@brew cask install iterm2
-	-@brew cask install vagrant
-	-@brew cask install virtualbox
-	-@brew cask install docker
-	-@brew cask install docker-compose
-	-@brew cask install docker-machine
-	-@brew cask install google-chrome
-	-@brew cask install firefox
-	-@brew cask install fork
-	-@brew cask install alfred
-	-@brew cask install google-japanese-ime
-	-@brew cask install clipy
-	-@brew cask install comparemerge
-	-@brew cask install slack
-	-@brew cask install appcleaner
+	-@brew install iterm2
+	-@brew install vagrant
+	-@brew install virtualbox
+	-@brew install docker
+	-@brew install docker-compose
+	-@brew install docker-machine
+	-@brew install google-chrome
+	-@brew install firefox
+	-@brew install fork
+	-@brew install alfred
+	-@brew install google-japanese-ime
+	-@brew install clipy
+	-@brew install comparemerge
+	-@brew install slack
+	-@brew install appcleaner
 
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
