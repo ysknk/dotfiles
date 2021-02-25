@@ -29,7 +29,7 @@ ifeq ($(OS),Windows_NT)
 else
 	-@xcode-select --install
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
-  -@ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	-@ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	-@brew doctor
 	-@brew cask
 	-@brew install caskroom/cask/brew-cask
