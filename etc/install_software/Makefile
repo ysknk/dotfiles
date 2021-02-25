@@ -31,8 +31,8 @@ else
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
 	-@ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	-@brew doctor
-	-@brew cask
-	-@brew install caskroom/cask/brew-cask
+	# -@brew cask
+	# -@brew install caskroom/cask/brew-cask
 	-@brew install wget
 	-@brew install git
 	-@brew install pyenv
