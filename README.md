@@ -34,7 +34,7 @@ Setup for Vim, iTerm(zsh).
 
 1. **Clone**
     ```
-    git clone [this_repo_url] %HOME%/dotfiles && cd %HOME%/dotfiles
+    git clone https://github.com/ysknk/dotfiles %HOME%/dotfiles && cd %HOME%/dotfiles
     ```
 1. **You can easily install it using *Makefile***
     ```
