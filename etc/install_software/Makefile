@@ -95,7 +95,7 @@ else
 	-@brew doctor
 	-@brew list
 	-@brew cask list
-	-@echo install memo -> adobe
+	-@echo "install memo -> adobe"
 	
 	-@defaults write com.apple.finder AppleShowAllFiles TRUE
 	-@killall Finder
