@@ -89,6 +89,7 @@ else
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 	-@chsh -s '/usr/local/bin/zsh'
 	-@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	-@compaudit | xargs chmod g-w,o-w
 
 	-@brew doctor
 	-@brew list
