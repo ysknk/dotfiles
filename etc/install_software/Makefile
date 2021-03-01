@@ -25,7 +25,7 @@ ifeq ($(OS),Windows_NT)
 	-@cinst winmerge
 
 	-@choco list -localonly
-	-@echo "install memo -> idmanager, adobe, subsetfont, woffconv, macvim kaoriya"
+	-@echo "install etc: idmanager, adobe, subsetfont, woffconv, macvim kaoriya"
 else
 	-@xcode-select --install
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
@@ -96,7 +96,7 @@ else
 	-@brew doctor
 	-@brew list
 	-@brew cask list
-	-@echo "install memo -> adobe, subsetfont, woffconv, macvim kaoriya"
+	-@echo "install etc: adobe, subsetfont, woffconv, macvim kaoriya"
 	
 	-@defaults write com.apple.finder AppleShowAllFiles TRUE
 	-@killall Finder
