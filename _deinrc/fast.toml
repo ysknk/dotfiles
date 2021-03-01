@@ -176,7 +176,7 @@ depends = ['scrooloose/nerdtree']
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['scrooloose/nerdtree']
 hook_add = '''
-  let g:NERDTreeIndicatorMapCustom={
+  let g:NERDTreeGitStatusIndicatorMapCustom={
     \ "Modified"  : "*",
     \ "Staged"    : "+",
     \ "Untracked" : "_",
