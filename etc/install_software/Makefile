@@ -78,6 +78,7 @@ else
 	-@brew install --cask firefox
 	-@brew install --cask fork
 	-@brew install --cask alfred
+	# http://atarimae.hatenablog.com/entry/2014/05/21/173856
 	-@brew install --cask google-japanese-ime
 	-@brew install --cask clipy
 	-@brew install --cask comparemerge
