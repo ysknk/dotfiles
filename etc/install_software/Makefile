@@ -69,6 +69,7 @@ else
 	-@brew install tnftp
 	-@brew install mysql
 	-@brew install macvim
+	-@brew install --cask atom
 	-@brew install --cask iterm2
 	-@brew install --cask vagrant
 	-@brew install --cask virtualbox
