@@ -88,6 +88,7 @@ else
 	-@brew install --cask blender
 	-@brew install --cask android-studio
 	-@brew install --cask versions
+	-@brew install --cask adobe-creative-cloud
 
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
@@ -98,7 +99,7 @@ else
 	-@brew doctor
 	-@brew list
 	-@brew cask list
-	-@echo "install etc: adobe, subsetfont, woffconv"
+	-@echo "install etc: subsetfont, woffconv"
 	
 	-@defaults write com.apple.finder AppleShowAllFiles TRUE
 	-@killall Finder
