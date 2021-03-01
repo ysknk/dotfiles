@@ -25,7 +25,7 @@ ifeq ($(OS),Windows_NT)
 	-@cinst winmerge
 
 	-@choco list -localonly
-	-@echo install memo -> idmanager, adobe
+	-@echo "install memo -> idmanager, adobe, subsetfont, woffconv, macvim kaoriya"
 else
 	-@xcode-select --install
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
