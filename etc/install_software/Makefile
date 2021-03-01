@@ -25,7 +25,7 @@ ifeq ($(OS),Windows_NT)
 	-@cinst winmerge
 
 	-@choco list -localonly
-	-@echo "install etc: idmanager, adobe, subsetfont, woffconv, macvim kaoriya"
+	-@echo "install etc: idmanager, adobe, subsetfont, woffconv"
 else
 	-@xcode-select --install
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
@@ -68,6 +68,7 @@ else
 
 	-@brew install tnftp
 	-@brew install mysql
+	-@brew install macvim
 	-@brew install --cask iterm2
 	-@brew install --cask vagrant
 	-@brew install --cask virtualbox
@@ -97,7 +98,7 @@ else
 	-@brew doctor
 	-@brew list
 	-@brew cask list
-	-@echo "install etc: adobe, subsetfont, woffconv, macvim kaoriya"
+	-@echo "install etc: adobe, subsetfont, woffconv"
 	
 	-@defaults write com.apple.finder AppleShowAllFiles TRUE
 	-@killall Finder
