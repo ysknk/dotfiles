@@ -69,6 +69,7 @@ else
 	-@brew install tnftp
 	-@brew install mysql
 	-@brew install macvim
+	# https://atom.io/packages/veda/
 	-@brew install --cask atom
 	-@brew install --cask iterm2
 	-@brew install --cask vagrant
