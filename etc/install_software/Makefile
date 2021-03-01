@@ -66,24 +66,26 @@ else
 	-@brew install the_silver_searcher
 	-@brew install fzf
 
-	-@brew install docker
 	-@brew install tnftp
 	-@brew install mysql
-	-@brew install iterm2
-	-@brew install vagrant
-	-@brew install virtualbox
-	-@brew install docker
+	-@brew install --cask iterm2
+	-@brew install --cask vagrant
+	-@brew install --cask virtualbox
+	-@brew install --cask docker
 	-@brew install docker-compose
-	-@brew install docker-machine
-	-@brew install google-chrome
-	-@brew install firefox
-	-@brew install fork
-	-@brew install alfred
-	-@brew install google-japanese-ime
-	-@brew install clipy
-	-@brew install comparemerge
-	-@brew install slack
-	-@brew install appcleaner
+	-@brew install docker-machine-nfs
+	-@brew install --cask google-chrome
+	-@brew install --cask firefox
+	-@brew install --cask fork
+	-@brew install --cask alfred
+	-@brew install --cask google-japanese-ime
+	-@brew install --cask clipy
+	-@brew install --cask comparemerge
+	-@brew install --cask slack
+	-@brew install --cask appcleaner
+	-@brew install --cask blender
+	-@brew install --cask android-studio
+	-@brew install --cask versions
 
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
@@ -94,7 +96,7 @@ else
 	-@brew doctor
 	-@brew list
 	-@brew cask list
-	-@echo "install memo -> adobe"
+	-@echo "install memo -> adobe, subsetfont, woffconv, macvim kaoriya"
 	
 	-@defaults write com.apple.finder AppleShowAllFiles TRUE
 	-@killall Finder
