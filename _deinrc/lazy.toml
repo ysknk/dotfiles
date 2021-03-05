@@ -1,3 +1,12 @@
+# deoplete
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = [ 'nvim-yarp', 'vim-hug-neovim-rpc' ]
+on_event = 'InsertEnter'
+hook_source = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_path = '.*'
@@ -23,14 +32,14 @@ hook_add = '''
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
-on_i = 1
+on_event = 'InsertEnter'
 
 # TableModeToggle
 # | a | ab |
 # ||
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
-on_i = 1
+on_event = 'InsertEnter'
 hook_add = '''
   let g:table_mode_corner='|'
 '''
@@ -38,20 +47,24 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_path = '.*'
-on_i = 1
+on_event = 'InsertEnter'
 
+# [[plugins]]
+# repo = 'Shougo/neocomplete'
+# if = 'has("lua")'
+# on_event = 'InsertEnter'
+# hook_add = '''
+#   let g:neocomplete#enable_at_startup = 1
+# '''
+
+# DeinUpdate
 [[plugins]]
-repo = 'Shougo/neocomplete'
-if = 'has("lua")'
-on_i = 1
-hook_add = '''
-  let g:neocomplete#enable_at_startup = 1
-'''
+repo = 'wsdjeg/dein-ui.vim'
 
 # 選択後 S[*] -> *で囲う
 [[plugins]]
 repo = 'tpope/vim-surround'
-on_i = 1
+on_event = 'InsertEnter'
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -63,7 +76,7 @@ hook_source = '''
     set conceallevel=2 concealcursor=niv
   endif
 '''
-on_i  = 1
+on_event = 'InsertEnter'
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
