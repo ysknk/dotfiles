@@ -153,7 +153,9 @@ set autoread
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
 " 現在のモードを表示
-set showmode
+" set showmode
+" 現在のモードを表示しない
+set noshowmode
 " 入力中のコマンドをステータスに表示する
 set showcmd
 " コピーをクリップボードに保持
