@@ -1,9 +1,13 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# DeinUpdate
+# deoplete on vim requires plugin 1/2
 [[plugins]]
-repo = 'wsdjeg/dein-ui.vim'
+repo = 'roxma/nvim-yarp'
+
+# deoplete on vim requires plugin 2/2
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
 
 # Both
 # Goyo 120x30
@@ -304,21 +308,27 @@ hook_add = '''
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
 hook_add = '''
+  " https://github.com/Shougo/deoplete.nvim/issues/265
   " Called once right before you start selecting multiple cursors
-  function! Multiple_cursors_before()
-    let g:ycm_auto_trigger = 0
-    if exists(':NeoCompleteLock') == 2
-      exe 'NeoCompleteLock'
-    endif
+  function Multiple_cursors_before()
+    let g:deoplete#disable_auto_complete = 1
   endfunction
-
   " Called once only when the multiple selection is canceled (default <Esc>)
-  function! Multiple_cursors_after()
-    let g:ycm_auto_trigger = 1
-    if exists(':NeoCompleteUnlock') == 2
-      exe 'NeoCompleteUnlock'
-    endif
+  function Multiple_cursors_after()
+    let g:deoplete#disable_auto_complete = 0
   endfunction
+  " function! Multiple_cursors_before()
+  "   let g:ycm_auto_trigger = 0
+  "   if exists(':NeoCompleteLock') == 2
+  "     exe 'NeoCompleteLock'
+  "   endif
+  " endfunction
+  " function! Multiple_cursors_after()
+  "   let g:ycm_auto_trigger = 1
+  "   if exists(':NeoCompleteUnlock') == 2
+  "     exe 'NeoCompleteUnlock'
+  "   endif
+  " endfunction
 '''
 
 [[plugins]]
@@ -508,7 +518,6 @@ hook_add = '''
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-depends = ['arcticicestudio/nord-vim']
 hook_add = '''
   let g:lightline={
   \   'colorscheme': 'nord',
