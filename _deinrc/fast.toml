@@ -1,6 +1,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# DeinUpdate
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+
 # deoplete on vim requires plugin 1/2
 [[plugins]]
 repo = 'roxma/nvim-yarp'
