@@ -65,6 +65,7 @@ else
 	-@brew install ack
 	-@brew install the_silver_searcher
 	-@brew install fzf
+	-@brew install ripgrep
 
 	-@brew install tnftp
 	-@brew install mysql
