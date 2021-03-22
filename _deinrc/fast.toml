@@ -280,9 +280,6 @@ hook_add = '''
   let g:winresizer_gui_start_key='<C-T>'
 '''
 
-# [[plugins]]
-# repo = 'mhinz/vim-startify'
-
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
