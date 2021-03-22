@@ -45,12 +45,12 @@ else
 	-@pyenv activate neovim2
 	-@pip install neovim
 
-	-@pyenv install 3.5.2
-	-@pyenv virtualenv 3.5.2 neovim3
+	-@pyenv install 3.9.2
+	-@pyenv virtualenv 3.9.2 neovim3
 	-@pyenv activate neovim3
 	-@pip3 install neovim
 
-	-@pyenv global 3.5.2 2.7.12
+	-@pyenv global 3.9.2 2.7.12
 	-@python -V
 	-@python2 -V
 	-@python3 -V
