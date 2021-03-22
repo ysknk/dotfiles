@@ -3,7 +3,7 @@
 repo = 'Shougo/deoplete.nvim'
 depends = [ 'nvim-yarp', 'vim-hug-neovim-rpc' ]
 on_event = 'InsertEnter'
-hook_source = '''
+hook_post_source = '''
   let g:deoplete#enable_at_startup = 1
 '''
 
