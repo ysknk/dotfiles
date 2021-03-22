@@ -15,6 +15,7 @@ ifeq ($(OS),Windows_NT)
 	-@cinst chocolateygui
 	-@cinst cmder nodist git winscp putty vagrant virtualbox docker docker-compose docker-machine
 	-@cinst ack
+	-@cinst ripgrep
 	-@cinst googlechrome firefox
 	-@cinst tortoisesvn git-fork
 	-@cinst adobereader irfanview
