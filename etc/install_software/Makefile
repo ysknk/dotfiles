@@ -40,8 +40,8 @@ else
 
 	-@pyenv versions
 
-	-@pyenv install 2.7.12
-	-@pyenv virtualenv 2.7.12 neovim2
+	-@pyenv install 2.7.18
+	-@pyenv virtualenv 2.7.18 neovim2
 	-@pyenv activate neovim2
 	-@pip install neovim
 
@@ -50,7 +50,7 @@ else
 	-@pyenv activate neovim3
 	-@pip3 install neovim
 
-	-@pyenv global 3.9.1 2.7.12
+	-@pyenv global 3.9.1 2.7.18
 	-@python -V
 	-@python2 -V
 	-@python3 -V
