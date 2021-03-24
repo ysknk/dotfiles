@@ -121,9 +121,9 @@ on_ft = ['pug', 'jade']
 # html tag close
 [[plugins]]
 repo = 'alvan/vim-closetag'
-on_ft = ['html', 'htm', 'xhtml', 'phtml', 'erb', 'php', 'vue']
+on_ft = ['html', 'htm', 'xhtml', 'phtml', 'erb', 'php', 'vue', 'jsx', 'tsx']
 hook_add = '''
-  let g:closetag_filenames = '*.html,*.htm,*.xhtml,*.phtml,*.erb,*.php,*.vue'
+  let g:closetag_filenames = '*.html,*.htm,*.xhtml,*.phtml,*.erb,*.php,*.vue,*.jsx,*.tsx'
 '''
 
 # markdown preview PreVimOpen
