@@ -57,10 +57,6 @@ on_event = 'InsertEnter'
 #   let g:neocomplete#enable_at_startup = 1
 # '''
 
-# DeinUpdate
-[[plugins]]
-repo = 'wsdjeg/dein-ui.vim'
-
 # 選択後 S[*] -> *で囲う
 [[plugins]]
 repo = 'tpope/vim-surround'
