@@ -178,6 +178,8 @@ set laststatus=2
 set wildmenu
 " コマンドラインの補完
 set wildmode=longest:full,full
+" vim script内の再帰処理回数
+set maxfuncdepth=200
 
 " if has('nvim')
 "   " コマンドラインでの補完にポップアップメニューを使う
