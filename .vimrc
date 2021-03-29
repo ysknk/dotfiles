@@ -180,6 +180,8 @@ set wildmenu
 set wildmode=longest:full,full
 " vim script内の再帰処理回数
 set maxfuncdepth=200
+" 文字検索時カウント表示
+set shortmess-=S
 
 " if has('nvim')
 "   " コマンドラインでの補完にポップアップメニューを使う
