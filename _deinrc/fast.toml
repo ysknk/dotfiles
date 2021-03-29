@@ -413,6 +413,10 @@ hook_post_update = '''
 repo = 'Shougo/vimshell.vim'
 hook_add = '''
   " vimshell setting
+  if has('osxdarwin')
+    let g:vimshell_editor_command = '/Applications/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+  endif
+
   let g:vimshell_interactive_update_time = 10
   " let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 
