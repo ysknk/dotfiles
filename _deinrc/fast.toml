@@ -332,6 +332,8 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'osyo-manga/vim-over'
 hook_add = '''
+  " let g:over#command_line#enable_import_commandline_map=0
+
   " 全体置換
   nnoremap <silent> <Space>o :OverCommandLine<CR>%s//g<Left><Left>
   " 選択範囲置換
