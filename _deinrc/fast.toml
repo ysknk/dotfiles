@@ -32,8 +32,8 @@ repo = 'junegunn/goyo.vim'
 repo  = 'prettier/vim-prettier'
 build = 'npm install'
 
-# [[plugins]]
-# repo = 'lambdalisue/vim-pyenv'
+[[plugins]]
+repo = 'lambdalisue/vim-pyenv'
 
 # color preview *slow
 # [[plugins]]
