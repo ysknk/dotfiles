@@ -29,12 +29,12 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/openssl/bin:$PATH
 # Path to your nodebrew.
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
+# export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 # Path to your vim.
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+# export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 # Path xdg
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -64,8 +64,9 @@ source $ZSH/oh-my-zsh.sh
 
 # alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 # alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias vi=vim
+
+# alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+# alias vi=vim
 
 # dsstore delete
 alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
@@ -112,3 +113,5 @@ function git_diff_archive() {
 
   git archive --format=zip --prefix=root/ $h `eval $diff` -o archive.zip
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
