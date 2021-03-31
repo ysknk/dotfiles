@@ -156,6 +156,9 @@ set hidden
 " set showmode
 " 現在のモードを表示しない
 set noshowmode
+" マウス操作を有効にする
+set mouse=a
+set ttymouse=xterm2
 " 入力中のコマンドをステータスに表示する
 set showcmd
 " コピーをクリップボードに保持
