@@ -235,27 +235,6 @@ if has('termguicolors')
   " set t_8b=\[[48;2;%lu;%lu;%lum
   set termguicolors
 endif
-" =======================
-" php set
-" =======================
-" 文字列中のSQLをハイライトする
-let php_sql_query=1
-" Baselibメソッドのハイライト
-let php_baselib=1
-" <? をハイライト除外する
-let php_htmlInStrings=1
-" ショートタグ (<?を無効にする→ハイライト除外にする)
-let php_noShortTags=1
-" 折りたたみ
-" zo: 開く (カーソルが折りたたまれた行の上にあるとき)
-" zc: 閉じる (折りたたまれる範囲中で)
-" zR: ぜんぶ開く
-" zM: ぜんぶ閉じる
-" zj: 次に移動
-" zk: 前に移動
-let php_folding=1
-" カッコが閉じていない場合にハイライト
-let php_parent_error_close=1
 
 " =======================
 " autocmd
