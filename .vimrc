@@ -141,12 +141,16 @@ set viminfo&
 let &viminfo.= ',n' . expand(s:cache_dir) . '/viminfo'
 
 " マルチバイト文字対策
-"日本語(マルチバイト文字)行の連結時には空白を入力しない。
+" 日本語(マルチバイト文字)行の連結時には空白を入力しない。
 set formatoptions+=mMj
-"□や○の文字があってもカーソル位置がずれないようにする。
+" □や○の文字があってもカーソル位置がずれないようにする。
 set ambiwidth=double
-"画面最後の行をできる限り表示する。
+" 画面最後の行をできる限り表示する。
 set display+=lastline
+" 不要な再描画をしない
+set lazyredraw
+" ターミナル接続を高速化
+set ttyfast
 
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
