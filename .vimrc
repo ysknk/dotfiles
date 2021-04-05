@@ -147,8 +147,8 @@ set formatoptions+=mMj
 set ambiwidth=double
 " 画面最後の行をできる限り表示する。
 set display+=lastline
-" 不要な再描画をしない
-set lazyredraw
+" 不要な再描画をしない（関連ファイルから正常に開かないためdisabled）
+" set lazyredraw
 " ターミナル接続を高速化
 set ttyfast
 
