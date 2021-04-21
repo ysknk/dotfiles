@@ -17,6 +17,9 @@ export PATH=/usr/local/opt/openssl/bin:$PATH
 # Path to your nodebrew.
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# Path java
+# export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Path dotfiles
 export DOTFILES_DIR=$HOME/dotfiles
 
