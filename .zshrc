@@ -1,3 +1,8 @@
+# Get the aliases and functions
+if [ -f ~/.bash_profile ]; then
+  . ~/.bash_profile
+fi
+
 # Ctrl+Dでログアウトしてしまうことを防ぐ
 setopt ignoreeof
 # カッコの対応などを自動的に補完
@@ -21,26 +26,13 @@ SAVEHIST=1000000
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="wedisagree"
 
-# Use Japanese
-export LANG=ja_JP.UTF-8
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/opt/openssl/bin:$PATH
-# Path to your nodebrew.
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 # export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 # Path to your vim.
 # export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-# Path xdg
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-# Path dotfiles
-export DOTFILES_DIR=$HOME/dotfiles
 # zlib
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
@@ -48,7 +40,6 @@ export LDFLAGS="${LDFLAGS} -L/usr/local/opt/sqlite/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/sqlite/include"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/sqlite/lib/pkgconfig"
-
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT=$HOME/.pyenv
@@ -64,12 +55,8 @@ source $ZSH/oh-my-zsh.sh
 
 # alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 # alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-
 # alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 # alias vi=vim
-
-# dsstore delete
-alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Use Colors
 autoload -U colors
@@ -85,33 +72,3 @@ colors
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-function grepr() {
-  if [-z $1] || [-z $2] || [-z $3] ; then
-    echo "第1引数:検索パス、第2引数:検索文字列 [第3引数:置換文字列を入力してください。]"
-    return 1
-  fi
-
-  grep -lr "$2" $1 | sort | uniq | xargs perl -e "s/$2/$3/" -pi
-}
-
-function git_diff_archive() {
-  local diff=""
-  local h="HEAD"
-  if [ $# -eq 1 ]; then
-    if expr "$1" : '[0-9]*$' > /dev/null ; then
-      diff="HEAD~${1} HEAD"
-    else
-      diff="${1} HEAD"
-    fi
-  elif [ $# -eq 2 ]; then
-    diff="${2} ${1}"
-    h=$1
-  fi
-  if [ "$diff" != "" ]; then
-    diff="git diff --diff-filter=d --name-only ${diff}"
-  fi
-
-  git archive --format=zip --prefix=root/ $h `eval $diff` -o archive.zip
-}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
