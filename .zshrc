@@ -40,17 +40,6 @@ export LDFLAGS="${LDFLAGS} -L/usr/local/opt/sqlite/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/sqlite/include"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/sqlite/lib/pkgconfig"
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT=$HOME/.pyenv
-  export PATH=$PYENV_ROOT/bin:$PATH
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-  if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
-    source "${VIRTUAL_ENV}/bin/activate"
-  fi
-fi
-
 source $ZSH/oh-my-zsh.sh
 
 # alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
