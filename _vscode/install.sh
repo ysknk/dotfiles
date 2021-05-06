@@ -1,8 +1,10 @@
 #!/bin/sh
 
-# Windows > echo %~dp0
+# memo for Windows > echo %~dp0
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
-VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
+
+# memo for Windows > %APPDATA%\Code\User\settings.json
+VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User/
 
 rm "$VSCODE_SETTING_DIR/settings.json"
 ln -s "$SCRIPT_DIR/settings.json" "${VSCODE_SETTING_DIR}/settings.json"
