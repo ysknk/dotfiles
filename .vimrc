@@ -207,7 +207,7 @@ set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
 " ターミナルウインドウの表示サイズ
-set termwinsize=7x0
+set termwinsize=8x0
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
