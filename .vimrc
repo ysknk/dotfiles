@@ -245,11 +245,11 @@ endif
 " =======================
 " autocmd
 " =======================
-"ファイルを開くと、ファイルがあるディレクトリに移動する
-augroup grlcd
+" 開いた箇所を自動的に作業ディレクトリにする
+augroup auto_lcd
   autocmd!
-  autocmd BufEnter * lcd %:p:h
-augroup END
+  autocmd BufEnter * if &buftype !=# 'terminal' | lcd %:p:h | endif
+augroup End
 " highlightカラー
 augroup highlightIdegraphicSpace
   autocmd!
