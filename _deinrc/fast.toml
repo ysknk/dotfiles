@@ -131,6 +131,9 @@ hook_add = '''
   autocmd FileType vue syntax sync fromstart
   autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
 
+  " pcss
+  autocmd BufRead,BufNewFile *.pcss setlocal filetype=scss
+
   " glsl
   autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 
