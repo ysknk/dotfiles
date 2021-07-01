@@ -565,6 +565,25 @@ hook_add = '''
   vmap gcc <Plug>(caw:zeropos:toggle)
 '''
 
+# ,で区切ったあとに:MakeTable!
+[[plugins]]
+repo = 'mattn/vim-maketable'
+
+# help日本語化
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+  set helplang=ja
+'''
+
+# 置換可視化
+[[plugins]]
+repo = 'markonm/traces.vim'
+
+# 文字選択後:Translate
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
 # colorscheme
 [[plugins]]
 # repo = 'Pychimp/vim-luna'
