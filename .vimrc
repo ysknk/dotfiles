@@ -1,6 +1,6 @@
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=iso-2022-jp,utf-8,euc-jp,sjis,cp932,ucs-bom
+set fileencodings=iso-2022-jp,utf-8,euc-jp,sjis,cp932,ucs-bom,default,latin1
 set fileformats=unix,dos,mac
 scriptencoding utf-8
 
