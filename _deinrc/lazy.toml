@@ -87,6 +87,7 @@ gui = 1
 [[plugins]]
 repo = 'heavenshell/vim-jsdoc'
 on_ft = ['javascript', 'typescript', 'jsx', 'vue', 'vuejs']
+build = 'make install'
 hook_add = '''
   let g:jsdoc_allow_input_prompt=1
   let g:jsdoc_input_description=1
