@@ -17,6 +17,10 @@ export PATH=/usr/local/opt/openssl/bin:$PATH
 # Path to your nodebrew.
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# nodeenv
+export PATH=$HOME/.nodenv/bin:$PATH
+eval "$(nodenv init -)"
+
 # Path java
 # export JAVA_HOME=$(/usr/libexec/java_home)
 
