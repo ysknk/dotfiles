@@ -59,6 +59,7 @@ else
 	-@mkdir -p ~/.nodebrew/src
 	-@nodebrew install-binary stable
 	-@nodebrew use stable
+	-@brew install nodenv
 	-@npm i --save -g gulp-cli
 
 	# https://github.com/mileszs/ack.vim/issues/156
