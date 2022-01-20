@@ -62,6 +62,9 @@ else
 	-@brew install nodenv
 	-@git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 	-@git clone https://github.com/nodenv/node-build-update-defs.git ~/.nodenv/plugins/node-build-update-defs
+	-@nodenv install 16.13.2
+	-@nodenv global 16.13.2
+	-@node -v
 	-@npm i --save -g gulp-cli
 
 	# https://github.com/mileszs/ack.vim/issues/156
