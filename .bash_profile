@@ -14,8 +14,9 @@ export XDG_DATA_HOME=$HOME/.local/share
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/openssl/bin:$PATH
+
 # Path to your nodebrew.
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # nodenv
 if [ -e "$HOME/.nodenv" ]
