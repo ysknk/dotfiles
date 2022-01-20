@@ -62,6 +62,8 @@ else
 
 	-@brew install anyenv
 	-@anyenv init
+	-@exec $SHELL -l
+	-@anyenv install --init
 	-@anyenv install nodenv
 	-@exec $SHELL -l
 
