@@ -18,16 +18,27 @@ export PATH=/usr/local/opt/openssl/bin:$PATH
 # Path to your nodebrew.
 # export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-# nodenv
-if [ -e "$HOME/.nodenv" ]
+# anyenv
+if [ -e "$HOME/.anyenv" ]
 then
-  export NODENV_ROOT="$HOME/.nodenv"
-  export PATH="$NODENV_ROOT/bin:$PATH"
-  if command -v nodenv 1>/dev/null 2>&1
+  export ANYENV_ROOT="$HOME/.anyenv"
+  export PATH="$ANYENV_ROOT/bin:$PATH"
+  if command -v anyenv 1>/dev/null 2>&1
   then
-    eval "$(nodenv init -)"
+    eval "$(anyenv init -)"
   fi
 fi
+
+# nodenv
+# if [ -e "$HOME/.nodenv" ]
+# then
+#   export NODENV_ROOT="$HOME/.nodenv"
+#   export PATH="$NODENV_ROOT/bin:$PATH"
+#   if command -v nodenv 1>/dev/null 2>&1
+#   then
+#     eval "$(nodenv init -)"
+#   fi
+# fi
 
 # Path java
 # export JAVA_HOME=$(/usr/libexec/java_home)
