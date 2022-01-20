@@ -55,10 +55,10 @@ else
 	-@python2 -V
 	-@python3 -V
 
-	-@brew install nodebrew
-	-@mkdir -p ~/.nodebrew/src
-	-@nodebrew install-binary stable
-	-@nodebrew use stable
+	# -@brew install nodebrew
+	# -@mkdir -p ~/.nodebrew/src
+	# -@nodebrew install-binary stable
+	# -@nodebrew use stable
 	-@brew install nodenv
 	-@git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 	-@git clone https://github.com/nodenv/node-build-update-defs.git ~/.nodenv/plugins/node-build-update-defs
