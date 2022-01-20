@@ -30,16 +30,14 @@ ifeq ($(OS),Windows_NT)
 else
 	-@xcode-select --install
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
+	-@exec $SHELL -l
 	-@ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	-@exec $SHELL -l
+
 	-@brew doctor
 	-@brew install wget
 	-@brew install git
-	# -@brew install pyenv
-
-	# -@brew install nodebrew
-	# -@mkdir -p ~/.nodebrew/src
-	# -@nodebrew install-binary stable
-	# -@nodebrew use stable
+	-@exec $SHELL -l
 
 	-@brew install anyenv
 	-@anyenv init
