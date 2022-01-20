@@ -34,7 +34,31 @@ else
 	-@brew doctor
 	-@brew install wget
 	-@brew install git
-	-@brew install pyenv
+	# -@brew install pyenv
+
+	# -@brew install nodebrew
+	# -@mkdir -p ~/.nodebrew/src
+	# -@nodebrew install-binary stable
+	# -@nodebrew use stable
+
+	-@brew install anyenv
+	-@anyenv init
+	-@exec $SHELL -l
+	-@anyenv install --init
+	-@anyenv install nodenv
+	-@anyenv install pyenv
+	-@exec $SHELL -l
+
+	-@git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
+	-@git clone https://github.com/nodenv/node-build-update-defs.git "$(nodenv root)"/plugins/node-build-update-defs
+	-@git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/plugins/nodenv-package-rehash
+
+	-@nodenv package-hooks install --all
+	-@nodenv install 16.13.2
+	-@nodenv global 16.13.2
+	-@node -v
+	-@npm i --save -g gulp-cli
+
 	-@brew install neovim
 	-@git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
@@ -55,27 +79,6 @@ else
 	-@python2 -V
 	-@python3 -V
 
-	# -@brew install nodebrew
-	# -@mkdir -p ~/.nodebrew/src
-	# -@nodebrew install-binary stable
-	# -@nodebrew use stable
-
-	-@brew install anyenv
-	-@anyenv init
-	-@exec $SHELL -l
-	-@anyenv install --init
-	-@anyenv install nodenv
-	-@exec $SHELL -l
-
-	-@git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
-	-@git clone https://github.com/nodenv/node-build-update-defs.git "$(nodenv root)"/plugins/node-build-update-defs
-	-@git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/plugins/nodenv-package-rehash
-
-	-@nodenv package-hooks install --all
-	-@nodenv install 16.13.2
-	-@nodenv global 16.13.2
-	-@node -v
-	-@npm i --save -g gulp-cli
 
 	# https://github.com/mileszs/ack.vim/issues/156
 	# sudo apt-get install ack
