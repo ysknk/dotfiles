@@ -4,6 +4,9 @@
 # dsstore delete
 alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
+# relogin
+alias relogin='exec $SHELL -l'
+
 os=${OSTYPE//[0-9.-]*/}
 case "$os" in
   # mac
