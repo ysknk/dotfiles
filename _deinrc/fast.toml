@@ -492,6 +492,7 @@ hook_add = '''
   endfunction
 
   let $PATH = $HOME.'/.nodebrew/current/bin:'.$PATH
+  let $PATH = $HOME.'/.anyenv/envs/nodenv/bin:'.$PATH
   let $PATH = '/usr/local/opt/openssl/bin:'.$PATH
 
   let $PATH = '/usr/local/sbin:'.$PATH
