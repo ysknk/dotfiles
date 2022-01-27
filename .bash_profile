@@ -33,6 +33,7 @@ if [ -e "$HOME/.nodenv" ]
 then
   export NODENV_ROOT=$HOME/.anyenv/envs/nodenv
   export PATH=NODENV_ROOT/bin:$PATH
+  export PATH=NODENV_ROOT/shims:$PATH
   if command -v nodenv 1>/dev/null 2>&1; then
     eval "$(nodenv init - --no-rehash)"
   fi
