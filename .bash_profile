@@ -21,10 +21,9 @@ export PATH=/usr/local/opt/openssl/bin:$PATH
 # anyenv
 if [ -e "$HOME/.anyenv" ]
 then
-  export ANYENV_ROOT="$HOME/.anyenv"
-  export PATH="$ANYENV_ROOT/bin:$PATH"
-  if command -v anyenv 1>/dev/null 2>&1
-  then
+  export ANYENV_ROOT=$HOME/.anyenv
+  export PATH=$ANYENV_ROOT/bin:$PATH
+  if command -v anyenv 1>/dev/null 2>&1; then
     eval "$(anyenv init -)"
   fi
 fi
@@ -32,8 +31,7 @@ fi
 # nodenv
 if [ -e "$HOME/.nodenv" ]
 then
-  if command -v nodenv 1>/dev/null 2>&1
-  then
+  if command -v nodenv 1>/dev/null 2>&1; then
     eval "$(nodenv init - --no-rehash)"
   fi
 fi
