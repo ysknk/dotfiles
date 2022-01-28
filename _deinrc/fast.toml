@@ -619,7 +619,7 @@ hook_add = '''
   \   'colorscheme': 'iceberg',
   \   'active': {
   \     'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
-  \     'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+  \     'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'], ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok']]
   \   },
   \   'inactive': {
   \     'left': [['filename']],
@@ -670,6 +670,6 @@ hook_add = '''
   \   'linter_errors': 'error',
   \   'linter_ok': 'left'
   \ }
-  let g:lightline.active.right=[['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'], ['linter_errors', 'linter_warnings', 'linter_ok']]
+  " let g:lightline.active.right=[['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'], ['linter_errors', 'linter_warnings', 'linter_ok']]
 '''
 
