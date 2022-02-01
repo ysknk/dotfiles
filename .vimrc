@@ -16,11 +16,6 @@ endif
 " Windows でもパスの区切り文字を / にする
 set shellslash
 
-" highlight 初期化
-hi Normal guibg=NONE ctermbg=NONE
-hi Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-
 " カーソル下のhighlight情報を表示する HighlightInfo
 function! s:get_syn_id(transparent)
   let synid = synID(line('.'), col('.'), 1)
