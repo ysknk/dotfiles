@@ -609,6 +609,11 @@ hook_add = '''
   " autocmd MyAutoCmd VimEnter * nested colorscheme neodark
   " autocmd MyAutoCmd VimEnter * nested colorscheme nord
   autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
+
+  " highlight 初期化
+  autocmd VimEnter,Colorscheme * hi Normal guibg=NONE ctermbg=NONE
+  autocmd VimEnter,Colorscheme * hi Normal ctermbg=NONE guibg=NONE
+  autocmd VimEnter,Colorscheme * hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 '''
 
 # statusline custom
