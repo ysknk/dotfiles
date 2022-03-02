@@ -656,6 +656,8 @@ hook_add = '''
   \   'vue': ['eslint'],
   \   'jsx': ['eslint']
   \ }
+  let g:ale_echo_msg_format = '[%linter%] %s'
+
   nmap <silent> <C-w>j <Plug>(ale_next_wrap)
   nmap <silent> <C-w>k <Plug>(ale_previous_wrap)
 '''
