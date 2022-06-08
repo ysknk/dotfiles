@@ -635,7 +635,7 @@ hook_add = '''
   \     'right': [['lineinfo'], ['percent']]
   \   },
   \   'component_function': {
-  \     'gitbranch': 'fugitive#head'
+  \     'gitbranch': 'FugitiveHead'
   \   }
   \ }
 '''
