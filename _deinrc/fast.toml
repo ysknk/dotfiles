@@ -117,6 +117,10 @@ repo = 'prabirshrestha/asyncomplete.vim'
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+'''
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 merged = '0'
