@@ -85,6 +85,7 @@ else
 	-@brew install fzf
 	-@brew install ripgrep
 	-@brew install tree
+	-@brew install deno
 
 	-@brew install tnftp
 	-@brew install mysql
