@@ -133,6 +133,9 @@ let g:lsp_settings_filetype_javascriptreact = ['eslint-language-server']
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
+  " disabled
+  let g:polyglot_disabled = ['svelte']
+
   " vue
   let g:vue_disable_pre_processors=1
   let g:vue_pre_processors='detect_on_enter'
@@ -179,9 +182,6 @@ hook_add = '''
   let php_folding=1
   " カッコが閉じていない場合にハイライト
   let php_parent_error_close=1
-
-  " disabled
-  let g:polyglot_disabled = []
 '''
 
 [[plugins]]
