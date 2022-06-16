@@ -110,6 +110,19 @@ hook_add = '''
   \ }
 '''
 
+# svelte
+[[plugins]]
+repo = 'evanleck/vim-svelte'
+on_ft = ['svelte']
+hook_add = '''
+let g:svelte_preprocessor_tags = [
+  \ { 'name': 'pug', 'tag': 'template', 'as': 'pug' },
+  \ { 'name': 'stylus', 'tag': 'style', 'as': 'stylus' }
+  \ ]
+" You still need to enable these preprocessors as well.
+let g:svelte_preprocessors = ['pug', 'stylus']
+'''
+
 # pug complete
 [[plugins]]
 repo = 'dNitro/vim-pug-complete'
