@@ -44,17 +44,13 @@ else
 	-@anyenv init
 	-@exec $SHELL -l
 	-@anyenv install --init
-	-@anyenv install nodenv
 	-@anyenv install pyenv
 	-@exec $SHELL -l
 
-	-@git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
-	-@git clone https://github.com/nodenv/node-build-update-defs.git "$(nodenv root)"/plugins/node-build-update-defs
-	-@git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/plugins/nodenv-package-rehash
+	-@curl https://get.volta.sh | bash
+	-@exec $SHELL -l
+	-@volta install node
 
-	-@nodenv package-hooks install --all
-	-@nodenv install 16.13.2
-	-@nodenv global 16.13.2
 	-@node -v
 	-@npm i --save -g gulp-cli
 
@@ -77,7 +73,6 @@ else
 	-@python -V
 	-@python2 -V
 	-@python3 -V
-
 
 	# https://github.com/mileszs/ack.vim/issues/156
 	# sudo apt-get install ack
