@@ -150,7 +150,7 @@ set display+=lastline
 " 不要な再描画をしない（関連ファイルから正常に開かないためdisabled）
 " set lazyredraw
 " 正規表現エンジンの切り替え
-set re=1
+set re=2
 " ターミナル接続を高速化
 set ttyfast
 
