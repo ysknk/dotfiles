@@ -449,6 +449,7 @@ hook_post_update = '''
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
+if = '''!has('nvim')'''
 hook_add = '''
   " vimshell setting
   if has('osxdarwin')
