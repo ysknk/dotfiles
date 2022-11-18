@@ -40,7 +40,7 @@ endfunction
 
 let s:editor = 'vim'
 if has('nvim')
-  s:editor = 'nvim'
+  let s:editor = 'nvim'
 endif
 
 let s:tmp_dir = expand('~/.temp/' . s:editor)
