@@ -407,6 +407,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
+if = '''!has('nvim')'''
 hook_add = '''
   " mapping
   nmap n <Plug>(anzu-n-with-echo)
