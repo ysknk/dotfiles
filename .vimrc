@@ -38,9 +38,14 @@ function! s:mkdir(dir)
   endif
 endfunction
 
-let s:tmp_dir = '~/.temp'
+let s:editor = 'vim'
+if has('nvim')
+  s:editor = 'nvim'
+endif
+
+let s:tmp_dir = expand('~/.temp/' . s:editor)
 " call s:mkdir(&s:tmp_dir)
-let s:cache_dir = '~/.cache'
+let s:cache_dir = expand('~/.cache/' . s:editor)
 " call s:mkdir(&s:cache_dir)
 let s:undo_dir = expand(s:cache_dir . '/.undo')
 let s:backup_dir = expand(s:cache_dir . '/.backup')
