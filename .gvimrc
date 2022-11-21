@@ -28,9 +28,12 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
+
 " フォント・透過設定等
+" https://github.com/miiton/Cica/releases
 if has('gui_macvim')
-  set guifont=RictyDiminishedDiscord-Regular:h20
+  " set guifont=RictyDiminishedDiscord-Regular:h20
+  set guifont=Cica:h20
   set transparency=30
   " 自動IME変換をオフに、googleIMEでキー設定を編集 [入力文字なし, Escape, キャンセル後 IME を無効化]
   " https://blog.hotolab.net/entry/vim_ime
@@ -42,6 +45,8 @@ elseif has('win64') || has('win32unix') || has('win32')
   set langmenu=ja_jp.utf-8
   source $VIMRUNTIME/menu.vim
 
-  set guifont=Ricty\ Diminished\ Discord:h15
+  " set guifont=Ricty\ Diminished\ Discord:h15
+  set guifont=Cica:h15
   autocmd GUIEnter * set transparency=200
 endif
+
