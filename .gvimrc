@@ -28,7 +28,6 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
-
 " フォント・透過設定等
 " https://github.com/miiton/Cica/releases
 if has('gui_macvim')
