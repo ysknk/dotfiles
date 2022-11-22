@@ -858,7 +858,7 @@ hook_add = '''
 lua << END
   require('lualine').setup({
     options = {
-      ignore_focus = {"neo-tree"},
+      ignore_focus = {"neo-tree", "nerdtree"},
     }
   })
 END
