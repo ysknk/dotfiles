@@ -26,7 +26,7 @@ Setup for Vim, iTerm(zsh).
 ## Recommended
 
 ### Font
-[RictyDiminishedDiscord](https://github.com/edihbrandon/RictyDiminished)
+[Cica](https://github.com/miiton/Cica)
 
 ## How to Setup
 
