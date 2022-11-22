@@ -10,7 +10,7 @@
   "editor.fontWeight": "normal",
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.fontFamily": "'Ricty Diminished Discord', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Cica, 'Ricty Diminished Discord', Menlo, Monaco, 'Courier New', monospace",
   "editor.renderWhitespace": "all",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -23,7 +23,7 @@
   // terminal
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.rendererType": "dom",
-  "terminal.integrated.fontFamily": "'Ricty Diminished Discord', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "Cica, 'Ricty Diminished Discord', Menlo, Monaco, 'Courier New', monospace",
 
   // files
   "files.exclude": {
