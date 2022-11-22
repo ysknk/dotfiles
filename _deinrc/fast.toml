@@ -5,13 +5,87 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'wsdjeg/dein-ui.vim'
 
+## [[plugins]]
+## repo = 'Shougo/defx.nvim'
+## hook_post_source = '''
+##   autocmd FileType defx call s:defx_my_settings()
+##
+##   function! s:defx_my_settings() abort
+##     nnoremap <silent><buffer><expr> <CR>
+##      \ defx#do_action('drop')
+##     nnoremap <silent><buffer><expr> c
+##     \ defx#do_action('copy')
+##     nnoremap <silent><buffer><expr> m
+##     \ defx#do_action('move')
+##     nnoremap <silent><buffer><expr> p
+##     \ defx#do_action('paste')
+##     nnoremap <silent><buffer><expr> l
+##     \ defx#do_action('drop')
+##     nnoremap <silent><buffer><expr> t
+##     \ defx#do_action('open','tabnew')
+##     nnoremap <silent><buffer><expr> E
+##     \ defx#do_action('drop', 'vsplit')
+##     nnoremap <silent><buffer><expr> P
+##     \ defx#do_action('drop', 'pedit')
+##     nnoremap <silent><buffer><expr> o
+##     \ defx#do_action('open_or_close_tree')
+##     nnoremap <silent><buffer><expr> K
+##     \ defx#do_action('new_directory')
+##     nnoremap <silent><buffer><expr> N
+##     \ defx#do_action('new_file')
+##     nnoremap <silent><buffer><expr> M
+##     \ defx#do_action('new_multiple_files')
+##     nnoremap <silent><buffer><expr> C
+##     \ defx#do_action('toggle_columns',
+##     \                'mark:indent:icon:filename:type:size:time')
+##     nnoremap <silent><buffer><expr> S
+##     \ defx#do_action('toggle_sort', 'time')
+##     nnoremap <silent><buffer><expr> d
+##     \ defx#do_action('remove')
+##     nnoremap <silent><buffer><expr> r
+##     \ defx#do_action('rename')
+##     nnoremap <silent><buffer><expr> !
+##     \ defx#do_action('execute_command')
+##     nnoremap <silent><buffer><expr> x
+##     \ defx#do_action('execute_system')
+##     nnoremap <silent><buffer><expr> yy
+##     \ defx#do_action('yank_path')
+##     nnoremap <silent><buffer><expr> .
+##     \ defx#do_action('toggle_ignored_files')
+##     nnoremap <silent><buffer><expr> ;
+##     \ defx#do_action('repeat')
+##     nnoremap <silent><buffer><expr> h
+##     \ defx#do_action('cd', ['..'])
+##     nnoremap <silent><buffer><expr> ~
+##     \ defx#do_action('cd')
+##     nnoremap <silent><buffer><expr> q
+##     \ defx#do_action('quit')
+##     nnoremap <silent><buffer><expr> <Space>
+##     \ defx#do_action('toggle_select') . 'j'
+##     nnoremap <silent><buffer><expr> *
+##     \ defx#do_action('toggle_select_all')
+##     nnoremap <silent><buffer><expr> j
+##     \ line('.') == line('$') ? 'gg' : 'j'
+##     nnoremap <silent><buffer><expr> k
+##     \ line('.') == 1 ? 'G' : 'k'
+##     nnoremap <silent><buffer><expr> <C-l>
+##     \ defx#do_action('redraw')
+##     nnoremap <silent><buffer><expr> <C-g>
+##     \ defx#do_action('print')
+##     nnoremap <silent><buffer><expr> cd
+##     \ defx#do_action('change_vim_cwd')
+##   endfunction
+## '''
+
 # deoplete on vim requires plugin 1/2
 [[plugins]]
 repo = 'roxma/nvim-yarp'
+# if = '''has('nvim')'''
 
 # deoplete on vim requires plugin 2/2
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
+# if = '''has('nvim')'''
 
 # Both
 # Goyo 120x30
@@ -34,10 +108,6 @@ build = 'npm install'
 
 [[plugins]]
 repo = 'lambdalisue/vim-pyenv'
-
-# color preview *slow
-# [[plugins]]
-# repo = 'marslo/vim-coloresque'
 
 [[plugins]]
 repo = 'junegunn/rainbow_parentheses.vim'
@@ -121,6 +191,7 @@ hook_add = '''
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 '''
+
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 merged = '0'
@@ -143,11 +214,11 @@ hook_add = '''
   autocmd FileType vue syntax sync fromstart
   autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
 
-  " scss
-  autocmd FileType scss set iskeyword+=-
-
   " pcss
   autocmd BufRead,BufNewFile *.pcss setlocal filetype=scss
+
+  " scss
+  autocmd FileType scss set iskeyword+=-
 
   " glsl
   autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
@@ -179,7 +250,7 @@ hook_add = '''
   " zM: ぜんぶ閉じる
   " zj: 次に移動
   " zk: 前に移動
-  let php_folding=1
+  let php_folding=0
   " カッコが閉じていない場合にハイライト
   let php_parent_error_close=1
 '''
@@ -215,116 +286,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'itchyny/vim-cursorword'
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-  " 隠しファイルをデフォルトで表示させる
-  let g:NERDTreeShowHidden=1
-  " ブックマークや、ヘルプのショートカットをメニューに表示しない
-  let g:NERDTreeMinimalUI=1
-  " treeの見た目
-  " let g:NERDTreeDirArrowExpandable='+'
-  " let g:NERDTreeDirArrowCollapsible='-'
-  " 表示する位置
-  let g:NERDTreeWinPos='left'
-
-  let g:NERDTreeAutoDeleteBuffer=1
-
-  " keymap
-  nnoremap :tree :NERDTreeToggle
-  nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
-  " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる
-  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  " デフォルトでツリーを表示させる
-  " autocmd VimEnter,Colorscheme * NERDTree
-  " ファイル指定があればNERDTreeを開く、指定がない場合は表示させない
-  autocmd VimEnter,Colorscheme * if argc() != 0 | NERDTree | endif
-  " カーソルをメインウインドウに移動
-  autocmd VimEnter,Colorscheme * if argc() != 0 | wincmd p | endif
-'''
-
-[[plugins]]
-repo = 'MarSoft/nerdtree-grep-plugin'
-depends = ['scrooloose/nerdtree']
-
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
-depends = ['scrooloose/nerdtree']
-hook_add = '''
-  let g:NERDTreeGitStatusIndicatorMapCustom={
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "_",
-    \ "Renamed"   : ">",
-    \ "Unmerged"  : "=",
-    \ "Deleted"   : "x",
-    \ "Dirty"     : "X",
-    \ "Clean"     : "-",
-    \ 'Ignored'   : ' ',
-    \ "Unknown"   : "?"
-    \ }
-
-  autocmd VimEnter,Colorscheme * highlight link NERDTreeGitStatusIgnored Comment  "custom color
-'''
-
-# [[plugins]]
-# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-# hook_add = '''
-#   let s:brown="905532"
-#   let s:aqua= "3AFFDB"
-#   let s:blue="689FB6"
-#   let s:darkBlue="44788E"
-#   let s:purple="834F79"
-#   let s:lightPurple="834F79"
-#   let s:red="AE403F"
-#   let s:beige="F5C06F"
-#   let s:yellow="F09F17"
-#   let s:orange="D4843E"
-#   let s:darkOrange="F16529"
-#   let s:pink="CB6F6F"
-#   let s:salmon="EE6E73"
-#   let s:green="8FAA54"
-#   let s:lightGreen="31B53E"
-#   let s:white="FFFFFF"
-#
-#   let g:NERDTreeLimitedSyntax=1
-#
-#   let g:NERDTreeFileExtensionHighlightFullName=1
-#   let g:NERDTreeExactMatchHighlightFullName=1
-#   let g:NERDTreePatternMatchHighlightFullName=1
-#
-#   let g:NERDTreeHighlightCursorline=0
-#
-#   let g:NERDTreeExtensionHighlightColor = {}
-#   let g:NERDTreePatternMatchHighlightColor = {}
-#   let g:NERDTreeExactMatchHighlightColor = {}
-#
-#   let g:NERDTreeExtensionHighlightColor['pug']=s:darkOrange
-#   let g:NERDTreeExtensionHighlightColor['jade']=s:darkOrange
-#
-#   let g:NERDTreeExtensionHighlightColor['vue']=s:beige
-#   let g:NERDTreeExtensionHighlightColor['jsx']=s:beige
-#   let g:NERDTreeExtensionHighlightColor['ts']=s:beige
-#   let g:NERDTreeExtensionHighlightColor['tsx']=s:beige
-#
-#   let g:NERDTreeExtensionHighlightColor['svg']=s:aqua
-#
-#   let g:NERDTreeSyntaxEnabledExtensions=[
-#    \ 'styl',
-#    \ 'yml',
-#    \ 'gif',
-#    \ 'psd', 'psb', 'ai'
-#  \ ]
-# '''
-
-# [[plugins]]
-# repo = 'ryanoasis/vim-devicons'
-# hook_add = '''
-#   set encoding=UTF-8
-#   let g:WebDevIconsUnicodeDecorateFolderNodes=1
-# '''
 
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
@@ -406,21 +367,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'osyo-manga/vim-anzu'
-if = '''!has('nvim')'''
-hook_add = '''
-  " mapping
-  nmap n <Plug>(anzu-n-with-echo)
-  nmap N <Plug>(anzu-N-with-echo)
-  nmap * <Plug>(anzu-star-with-echo)
-  nmap # <Plug>(anzu-sharp-with-echo)
-  " clear status
-  nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
-  " statusline
-  set statusline=%{anzu#search_status()}
-'''
-
-[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
@@ -445,6 +391,185 @@ hook_post_update = '''
     let cmd = 'make'
   endif
   let g:dein#plugin.build = cmd
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# カーソル移動
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
+hook_add = '''
+  " デフォルトのキーマッピングを無効に
+  let g:EasyMotion_do_mapping=0
+  " f + 2文字 で画面全体を検索してジャンプ
+  nmap f <plug>(easymotion-overwin-f2)
+  " 検索時、大文字小文字を区別しない
+  let g:EasyMotion_smartcase=1
+'''
+
+# カーソル位置のコンテキストに合わせてftを切り替える
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+# カーソル位置のコンテキストのftを判定するライブラリ
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
+  let g:indent_guides_enable_on_vim_startup=1
+  " ガイドをスタートするインデントの量
+  let g:indent_guides_start_level=2
+  " 自動カラーを無効にする
+  let g:indent_guides_auto_colors=0
+  " ハイライト色の変化の幅
+  let g:indent_guides_color_change_percent=30
+  " ガイドの幅
+  let g:indent_guides_guide_size=1
+  " 例外ファイルタイプ
+  let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite', 'startify', 'neo-tree']
+  " 奇数インデントのカラー
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg='#555544' ctermbg=153
+  " 偶数インデントのカラー
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#445555' ctermbg=221
+'''
+
+[[plugins]]
+repo = 'ervandew/supertab'
+hook_add = '''
+  let g:SuperTabDefaultCompletionType="<c-n>"
+'''
+
+# comment out/in
+[[plugins]]
+repo = 'tyru/caw.vim'
+hook_add = '''
+  vmap gcc <Plug>(caw:zeropos:toggle)
+'''
+
+# ,で区切ったあとに:MakeTable!
+[[plugins]]
+repo = 'mattn/vim-maketable'
+
+# help日本語化
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+  set helplang=ja
+'''
+
+# 置換可視化
+[[plugins]]
+repo = 'markonm/traces.vim'
+
+# 文字選択後:Translate
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
+#---------
+# @vim !has('nvim')
+#---
+[[plugins]]
+repo = 'preservim/nerdtree'
+# if = '''!has('nvim')'''
+# depends = ['vim-devicons', 'nerdtree-git-plugin']
+hook_add = '''
+  " 隠しファイルをデフォルトで表示させる
+  let g:NERDTreeShowHidden=1
+  " ブックマークや、ヘルプのショートカットをメニューに表示しない
+  let g:NERDTreeMinimalUI=1
+  " treeの見た目
+  " let g:NERDTreeDirArrowExpandable='+'
+  " let g:NERDTreeDirArrowCollapsible='-'
+  " 表示する位置
+  let g:NERDTreeWinPos='left'
+
+  let g:NERDTreeAutoDeleteBuffer=1
+
+  " https://github.com/preservim/nerdtree/issues/1321
+  let g:NERDTreeMinimalMenu=1
+
+  " keymap
+  nnoremap :tree :NERDTreeToggle
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+  " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる
+  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  " デフォルトでツリーを表示させる
+  " autocmd VimEnter,Colorscheme * NERDTree
+  " ファイル指定があればNERDTreeを開く、指定がない場合は表示させない
+  autocmd VimEnter,Colorscheme * if argc() != 0 | exe 'NERDTree' | endif
+  " カーソルをメインウインドウに移動
+  autocmd VimEnter,Colorscheme * if argc() != 0 | wincmd p | endif
+'''
+
+[[plugins]]
+repo = 'MarSoft/nerdtree-grep-plugin'
+# if = '''!has('nvim')'''
+depends = ['preservim/nerdtree']
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+# if = '''!has('nvim')'''
+hook_add = '''
+  " let g:NERDTreeGitStatusIndicatorMapCustom={
+  "   \ "Modified"  : "*",
+  "   \ "Staged"    : "+",
+  "   \ "Untracked" : "_",
+  "   \ "Renamed"   : ">",
+  "   \ "Unmerged"  : "=",
+  "   \ "Deleted"   : "x",
+  "   \ "Dirty"     : "X",
+  "   \ "Clean"     : "-",
+  "   \ 'Ignored'   : ' ',
+  "   \ "Unknown"   : "?"
+  "   \ }
+  let g:NERDTreeGitStatusIndicatorMapCustom={
+    \ 'Modified'  :'✹',
+    \ 'Staged'    :'✚',
+    \ 'Untracked' :'✭',
+    \ 'Renamed'   :'➜',
+    \ 'Unmerged'  :'═',
+    \ 'Deleted'   :'✖',
+    \ 'Dirty'     :'✗',
+    \ 'Ignored'   :'☒',
+    \ 'Clean'     :'✔︎',
+    \ 'Unknown'   :'?',
+    \ }
+  let g:NERDTreeGitStatusUseNerdFonts = 1
+  " autocmd VimEnter,Colorscheme * highlight link NERDTreeGitStatusIgnored Comment  "custom color
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+# if = '''!has('nvim')'''
+hook_add = '''
+  " set encoding=UTF-8
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
+  let g:NERDTreeExtensionHighlightColor = {}
+  let g:NERDTreeExtensionHighlightColor['vue'] = '42B983'
+
+  let g:WebDevIconsUnicodeDecorateFolderNodes=1
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+if = '''!has('nvim')'''
+hook_add = '''
+  " mapping
+  nmap n <Plug>(anzu-n-with-echo)
+  nmap N <Plug>(anzu-N-with-echo)
+  nmap * <Plug>(anzu-star-with-echo)
+  nmap # <Plug>(anzu-sharp-with-echo)
+  " clear status
+  nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+  " statusline
+  set statusline=%{anzu#search_status()}
 '''
 
 [[plugins]]
@@ -520,94 +645,17 @@ hook_add = '''
   nnoremap <silent> vsp :VimShellPop %:p:h<CR>
   nnoremap <silent> vsi :VimShellInteractive<CR>
 '''
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-# カーソル移動
-[[plugins]]
-repo = 'Lokaltog/vim-easymotion'
-hook_add = '''
-  " デフォルトのキーマッピングを無効に
-  let g:EasyMotion_do_mapping=0
-  " f + 2文字 で画面全体を検索してジャンプ
-  nmap f <plug>(easymotion-overwin-f2)
-  " 検索時、大文字小文字を区別しない
-  let g:EasyMotion_smartcase=1
-'''
-
-# カーソル位置のコンテキストに合わせてftを切り替える
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
-
-# カーソル位置のコンテキストのftを判定するライブラリ
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-hook_add = '''
-  " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
-  let g:indent_guides_enable_on_vim_startup=1
-  " ガイドをスタートするインデントの量
-  let g:indent_guides_start_level=2
-  " 自動カラーを無効にする
-  let g:indent_guides_auto_colors=0
-  " ハイライト色の変化の幅
-  let g:indent_guides_color_change_percent=30
-  " ガイドの幅
-  let g:indent_guides_guide_size=1
-  " 例外ファイルタイプ
-  let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite', 'startify']
-  " 奇数インデントのカラー
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg='#555544' ctermbg=153
-  " 偶数インデントのカラー
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#445555' ctermbg=221
-'''
-
-[[plugins]]
-repo = 'ervandew/supertab'
-hook_add = '''
-  let g:SuperTabDefaultCompletionType="<c-n>"
-'''
-
-# comment out/in
-[[plugins]]
-repo = 'tyru/caw.vim'
-hook_add = '''
-  vmap gcc <Plug>(caw:zeropos:toggle)
-'''
-
-# ,で区切ったあとに:MakeTable!
-[[plugins]]
-repo = 'mattn/vim-maketable'
-
-# help日本語化
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-hook_add = '''
-  set helplang=ja
-'''
-
-# 置換可視化
-[[plugins]]
-repo = 'markonm/traces.vim'
-
-# 文字選択後:Translate
-[[plugins]]
-repo = 'skanehira/translate.vim'
-
 # colorscheme
 [[plugins]]
 # repo = 'Pychimp/vim-luna'
 # repo = 'sainnhe/edge'
 # repo = 'jonathanfilip/vim-lucius'
-# repo = 'dracula/vim'
 # repo = 'zeis/vim-kolor'
 # repo = 'KeitaNakamura/neodark.vim'
 # repo = 'arcticicestudio/nord-vim'
+# repo = 'dracula/vim'
 repo = 'cocopon/iceberg.vim'
+if = '''!has('nvim')'''
 hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
@@ -619,6 +667,7 @@ hook_add = '''
   " autocmd MyAutoCmd VimEnter * nested colorscheme kolor
   " autocmd MyAutoCmd VimEnter * nested colorscheme neodark
   " autocmd MyAutoCmd VimEnter * nested colorscheme nord
+  " autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
   autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
 
   " highlight 初期化
@@ -630,6 +679,7 @@ hook_add = '''
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+if = '''!has('nvim')'''
 hook_add = '''
   let g:lightline={
   \   'colorscheme': 'iceberg',
@@ -650,6 +700,7 @@ hook_add = '''
 # linter, hint
 [[plugins]]
 repo = 'w0rp/ale'
+if = '''!has('nvim')'''
 depends = ['lightline.vim']
 #  \   'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
 #  \   'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
@@ -665,7 +716,12 @@ hook_add = '''
   \   'stylus': ['stylelint'],
   \   'javascript': ['eslint'],
   \   'vue': ['eslint'],
-  \   'jsx': ['eslint']
+  \   'jsx': ['eslint'],
+  \   'tsx': ['eslint'],
+  \   'ts': ['eslint'],
+  \   'typescript': ['eslint'],
+  \   'typescriptreact': ['eslint'],
+  \   'svelte': ['eslint']
   \ }
   let g:ale_echo_msg_format = '[%linter%] %s'
 
@@ -676,14 +732,17 @@ hook_add = '''
 # lightline ale
 [[plugins]]
 repo = 'maximbaz/lightline-ale'
+if = '''!has('nvim')'''
 depends = ['lightline.vim']
 hook_add = '''
   let g:lightline.component_expand={
+  \   'linter_checking': 'lightline#ale#checking',
   \   'linter_warnings': 'lightline#ale#warnings',
   \   'linter_errors': 'lightline#ale#errors',
   \   'linter_ok': 'lightline#ale#ok'
   \ }
   let g:lightline.component_type={
+  \   'linter_checking': 'left',
   \   'linter_warnings': 'warning',
   \   'linter_errors': 'error',
   \   'linter_ok': 'left'
@@ -691,3 +750,133 @@ hook_add = '''
   " let g:lightline.active.right=[['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'], ['linter_errors', 'linter_warnings', 'linter_ok']]
 '''
 
+#---------
+# @nvim has('nvim')
+#---
+# colorscheme
+[[plugins]]
+repo = 'EdenEast/nightfox.nvim'
+if = '''has('nvim')'''
+hook_add = '''
+lua << EOF
+  require("nightfox").setup()
+  vim.cmd("autocmd MyAutoCmd VimEnter * nested colorscheme nightfox")
+EOF
+'''
+
+# [[plugins]]
+# repo = 'nvim-neo-tree/neo-tree.nvim'
+# if = '''has('nvim')'''
+# depends = ['nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons', 'MunifTanjim/nui.nvim']
+# rev  = 'v2.x'
+# hook_add = '''
+# lua << EOF
+#   vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+#
+#   vim.fn.sign_define("DiagnosticSignError",
+#     {text = " ", texthl = "DiagnosticSignError"})
+#   vim.fn.sign_define("DiagnosticSignWarn",
+#     {text = " ", texthl = "DiagnosticSignWarn"})
+#   vim.fn.sign_define("DiagnosticSignInfo",
+#     {text = " ", texthl = "DiagnosticSignInfo"})
+#   vim.fn.sign_define("DiagnosticSignHint",
+#     {text = " ", texthl = "DiagnosticSignHint"})
+#
+#   require("neo-tree").setup({
+#     close_if_last_window = true,
+#     enable_git_status = true,
+#     enable_diagnostics = true,
+#     popup_border_style = "rounded",
+#     sort_case_insensitive = false,
+#
+#     actions = {
+#       open_file = {
+#         resize_window = true
+#       }
+#     },
+#     source_selector = {
+#       winbar = false,
+#       statusline = false
+#     },
+#     window = {
+#       position = "left",
+#       width = 30,
+#     },
+#     filesystem = {
+#       filtered_items = {
+#         visible = false, -- when true, they will just be displayed differently than normal items
+#         hide_dotfiles = false,
+#         hide_gitignored = false,
+#         hide_hidden = false, -- only works on Windows for hidden files/directories
+#       }
+#     },
+#     default_component_configs = {
+#       git_status = {
+#         symbols = {
+#           -- Change type
+#           added     = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
+#           modified  = "✹", -- or "", but this is redundant info if you use git_status_colors on the name
+#           deleted   = "✖",-- this can only be used in the git_status source
+#           renamed   = "➜",-- this can only be used in the git_status source
+#           -- Status type
+#           untracked = "✭",
+#           ignored   = "☒",
+#           unstaged  = "?",
+#           staged    = "",
+#           conflict  = "",
+#         },
+#         align = "right",
+#       },
+#     },
+#   })
+#   -- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+#   vim.cmd([[
+#     nnoremap <silent><C-e> :Neotree toggle left<CR>
+#     autocmd VimEnter * if argc() != 0 | exe 'Neotree' | endif
+#     autocmd VimEnter * if argc() != 0 | wincmd p | endif
+#   ]])
+# EOF
+# '''
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+if = '''has('nvim')'''
+
+# [[plugins]]
+# repo = 'nvim-tree/nvim-web-devicons'
+# if = '''has('nvim')'''
+
+[[plugins]]
+repo = 'MunifTanjim/nui.nvim'
+if = '''has('nvim')'''
+
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+# depends = ['kyazdani42/nvim-web-devicons']
+if = '''has('nvim')'''
+hook_add = '''
+lua << END
+  require('lualine').setup({
+    options = {
+      ignore_focus = {"neo-tree"},
+    }
+  })
+END
+'''
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+if = '''has('nvim')'''
+hook_add = '''
+lua << END
+  require('nvim-web-devicons').setup()
+  vim.cmd([[
+    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
+    let g:NERDTreeExtensionHighlightColor = {}
+    let g:NERDTreeExtensionHighlightColor['vue'] = '42B983'
+
+    let g:WebDevIconsUnicodeDecorateFolderNodes=1"
+  ]])
+END
+'''
