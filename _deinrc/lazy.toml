@@ -131,9 +131,9 @@ on_ft = ['pug', 'jade']
 # html tag close
 [[plugins]]
 repo = 'alvan/vim-closetag'
-on_ft = ['html', 'htm', 'xhtml', 'phtml', 'erb', 'php', 'vue', 'jsx', 'tsx']
+on_ft = ['html', 'htm', 'xhtml', 'phtml', 'erb', 'php', 'vue', 'jsx', 'tsx', 'svelte']
 hook_add = '''
-  let g:closetag_filenames = '*.html,*.htm,*.xhtml,*.phtml,*.erb,*.php,*.vue,*.jsx,*.tsx'
+  let g:closetag_filenames = '*.html,*.htm,*.xhtml,*.phtml,*.erb,*.php,*.vue,*.jsx,*.tsx,*.svelte'
 '''
 
 # markdown preview PreVimOpen
@@ -148,3 +148,21 @@ hook_add = '''
 [[plugins]]
 repo = 'Quramy/tsuquyomi'
 on_ft = ['ts', 'tsx', 'typescript', 'typescriptreact']
+
+# color preview *slow
+# [[plugins]]
+# repo = 'marslo/vim-coloresque'
+
+#---------
+# @nvim has('nvim')
+#---
+# preview source color
+[[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
+if = '''has('nvim')'''
+on_event = 'BufEnter'
+hook_source = '''
+lua << EOF
+  require('colorizer').setup()
+EOF
+'''
