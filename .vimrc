@@ -11,7 +11,7 @@ filetype off
 filetype plugin indent off
 
 let mapleader = '\<Space>'
-set rtp+=/usr/local/opt/fzf
+set rtp += /usr/local/opt/fzf
 
 if has('python3')
 endif
