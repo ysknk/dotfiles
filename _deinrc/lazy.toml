@@ -156,13 +156,3 @@ on_ft = ['ts', 'tsx', 'typescript', 'typescriptreact']
 #---------
 # @nvim has('nvim')
 #---
-# preview source color
-[[plugins]]
-repo = 'norcalli/nvim-colorizer.lua'
-if = '''has('nvim')'''
-on_event = 'BufEnter'
-hook_source = '''
-lua << EOF
-  require('colorizer').setup()
-EOF
-'''
