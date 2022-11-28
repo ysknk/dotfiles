@@ -16,6 +16,7 @@ ifeq ($(OS),Windows_NT)
 	-@cinst cmder nodist git winscp putty vagrant virtualbox docker docker-compose docker-machine
 	-@cinst ack
 	-@cinst ripgrep
+	-@cinst fd
 	-@cinst deno
 	-@cinst googlechrome firefox
 	-@cinst tortoisesvn git-fork
@@ -82,6 +83,7 @@ else
 	-@brew install the_silver_searcher
 	-@brew install fzf
 	-@brew install ripgrep
+	-@brew install fd
 	-@brew install tree
 	-@brew install deno
 
