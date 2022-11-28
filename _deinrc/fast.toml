@@ -59,7 +59,8 @@ hook_add = '''
 
 [[plugins]]
 repo = 'junegunn/fzf'
-build = './install --all'
+build = './install'
+rtp = ''
 merged = '0'
 
 # Files, History, GFiles, Colors
@@ -67,6 +68,8 @@ merged = '0'
 repo = 'junegunn/fzf.vim'
 depends = ['fzf']
 hook_add = '''
+  " let g:fzf_command_prefix = 'Fzf'
+
   fun! FzfOmniFiles()
     let is_git = system('git status')
     if v:shell_error
@@ -80,11 +83,11 @@ hook_add = '''
   " <C-g>で文字列検索を開く
   " <S-?>でプレビューを表示/非表示する
   command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
-  \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 3..'}, 'up:60%')
-  \ : fzf#vim#with_preview({'options': '--exact --delimiter : --nth 3..'}, 'right:50%:hidden', '?'),
-  \ <bang>0)
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+    \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 3..'}, 'up:60%')
+    \   : fzf#vim#with_preview({'options': '--exact --delimiter : --nth 3..'}, 'right:50%:hidden', '?'),
+    \   <bang>0)
   nnoremap <C-g> :Rg<CR>
 
   " frでカーソル位置の単語をファイル検索する
@@ -437,7 +440,20 @@ depends = ['preservim/nerdtree']
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['preservim/nerdtree']
 hook_add = '''
+  " let g:NERDTreeGitStatusIndicatorMapCustom={
+  "   \ "Modified"  : "*",
+  "   \ "Staged"    : "+",
+  "   \ "Untracked" : "_",
+  "   \ "Renamed"   : ">",
+  "   \ "Unmerged"  : "=",
+  "   \ "Deleted"   : "x",
+  "   \ "Dirty"     : "X",
+  "   \ "Clean"     : "-",
+  "   \ 'Ignored'   : ' ',
+  "   \ "Unknown"   : "?"
+  "   \ }
   let g:NERDTreeGitStatusIndicatorMapCustom={
     \ 'Modified'  :'✹',
     \ 'Staged'    :'✚',
@@ -456,6 +472,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+# if = '''!has('nvim')'''
 hook_add = '''
   " set encoding=UTF-8
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
@@ -559,27 +576,12 @@ hook_add = '''
 '''
 # colorscheme
 [[plugins]]
-# repo = 'Pychimp/vim-luna'
-# repo = 'sainnhe/edge'
-# repo = 'jonathanfilip/vim-lucius'
-# repo = 'zeis/vim-kolor'
-# repo = 'KeitaNakamura/neodark.vim'
-# repo = 'arcticicestudio/nord-vim'
-# repo = 'dracula/vim'
 repo = 'cocopon/iceberg.vim'
 if = '''!has('nvim')'''
 hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-  " autocmd MyAutoCmd VimEnter * nested colorscheme luna
-  " autocmd MyAutoCmd VimEnter * nested colorscheme edge
-  " autocmd MyAutoCmd VimEnter * nested colorscheme lucius
-  " autocmd MyAutoCmd VimEnter * nested colorscheme dracula
-  " autocmd MyAutoCmd VimEnter * nested colorscheme kolor
-  " autocmd MyAutoCmd VimEnter * nested colorscheme neodark
-  " autocmd MyAutoCmd VimEnter * nested colorscheme nord
-  " autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
   autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
 
   " highlight 初期化
@@ -614,8 +616,6 @@ hook_add = '''
 repo = 'w0rp/ale'
 if = '''!has('nvim')'''
 depends = ['lightline.vim']
-#  \   'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-#  \   'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
 hook_add = '''
   let g:ale_statusline_format=['E%d', 'W%d', '']
   let g:ale_linter_aliases = {
@@ -755,8 +755,8 @@ repo = 'nvim-lua/plenary.nvim'
 if = '''has('nvim')'''
 
 # [[plugins]]
-# repo = 'nvim-tree/nvim-web-devicons'
-# if = '''has('nvim')'''
+repo = 'nvim-tree/nvim-web-devicons'
+if = '''has('nvim')'''
 
 [[plugins]]
 repo = 'MunifTanjim/nui.nvim'
@@ -776,19 +776,46 @@ lua << END
 END
 '''
 
+# preview source color
 [[plugins]]
-repo = 'kyazdani42/nvim-web-devicons'
+repo = 'brenoprata10/nvim-highlight-colors'
 if = '''has('nvim')'''
 hook_add = '''
-lua << END
-  require('nvim-web-devicons').setup()
-  vim.cmd([[
-    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
-    let g:NERDTreeExtensionHighlightColor = {}
-    let g:NERDTreeExtensionHighlightColor['vue'] = '42B983'
-
-    let g:WebDevIconsUnicodeDecorateFolderNodes=1"
-  ]])
-END
+lua << EOF
+  require('nvim-highlight-colors').setup()
+EOF
 '''
+
+# [[plugins]]
+# repo = 'kyazdani42/nvim-web-devicons'
+# if = '''has('nvim')'''
+# hook_add = '''
+# lua << END
+#   require('nvim-web-devicons').setup()
+#   vim.cmd([[
+#     let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+#     let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
+#     let g:NERDTreeExtensionHighlightColor = {}
+#     let g:NERDTreeExtensionHighlightColor['vue'] = '42B983'
+#
+#     let g:WebDevIconsUnicodeDecorateFolderNodes=1"
+#   ]])
+# END
+# '''
+#
+# [[plugins]]
+# repo = 'nvim-telescope/telescope.nvim'
+# if = '''has('nvim')'''
+# depends = ['plenary.nvim']
+# rev = '0.1.0'
+# hook_add = '''
+# lua << EOF
+#   require('telescope').setup()
+#   vim.cmd([[
+#     nnoremap <leader>ff <cmd>Telescope find_files<cr>
+#     nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+#     nnoremap <leader>fb <cmd>Telescope buffers<cr>
+#     nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+#   ]])
+# EOF
+# '''
