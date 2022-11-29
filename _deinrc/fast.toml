@@ -659,7 +659,10 @@ if = '''has('nvim')'''
 hook_add = '''
 lua << EOF
   require("nightfox").setup()
-  vim.cmd("autocmd MyAutoCmd VimEnter * nested colorscheme nightfox")
+  vim.cmd([[
+    set background=dark
+    autocmd MyAutoCmd VimEnter * nested colorscheme nightfox
+  ]])
 EOF
 '''
 
@@ -699,36 +702,3 @@ lua << EOF
 EOF
 '''
 
-# [[plugins]]
-# repo = 'kyazdani42/nvim-web-devicons'
-# if = '''has('nvim')'''
-# hook_add = '''
-# lua << END
-#   require('nvim-web-devicons').setup()
-#   vim.cmd([[
-#     let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-#     let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
-#     let g:NERDTreeExtensionHighlightColor = {}
-#     let g:NERDTreeExtensionHighlightColor['vue'] = '42B983'
-#
-#     let g:WebDevIconsUnicodeDecorateFolderNodes=1"
-#   ]])
-# END
-# '''
-#
-# [[plugins]]
-# repo = 'nvim-telescope/telescope.nvim'
-# if = '''has('nvim')'''
-# depends = ['plenary.nvim']
-# rev = '0.1.0'
-# hook_add = '''
-# lua << EOF
-#   require('telescope').setup()
-#   vim.cmd([[
-#     nnoremap <leader>ff <cmd>Telescope find_files<cr>
-#     nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-#     nnoremap <leader>fb <cmd>Telescope buffers<cr>
-#     nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-#   ]])
-# EOF
-# '''
