@@ -660,14 +660,10 @@ hook_add = '''
 [[plugins]]
 repo = 'EdenEast/nightfox.nvim'
 if = '''has('nvim')'''
+on_lua = 'nightfox'
 hook_add = '''
-lua << EOF
-  require("nightfox").setup()
-  vim.cmd([[
-    set background=dark
-    autocmd MyAutoCmd VimEnter * nested colorscheme nightfox
-  ]])
-EOF
+  set background=dark
+  autocmd MyAutoCmd VimEnter * nested colorscheme nightfox
 '''
 
 [[plugins]]
@@ -699,9 +695,5 @@ END
 [[plugins]]
 repo = 'brenoprata10/nvim-highlight-colors'
 if = '''has('nvim')'''
-hook_add = '''
-lua << EOF
-  require('nvim-highlight-colors').setup()
-EOF
-'''
+on_lua = 'nvim-highlight-colors'
 
