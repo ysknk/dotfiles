@@ -681,7 +681,7 @@ if = '''has('nvim')'''
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 if = '''has('nvim')'''
-hook_add = '''
+hook_source = '''
 lua << END
   require('lualine').setup({
     options = {
