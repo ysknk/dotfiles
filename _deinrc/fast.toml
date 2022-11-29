@@ -479,7 +479,7 @@ hook_add = '''
 #---
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
-on_if = '''!has('nvim')'''
+if = '''!has('nvim')'''
 hook_add = '''
   " mapping
   nmap n <Plug>(anzu-n-with-echo)
@@ -494,7 +494,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
-on_if = '''!has('nvim')'''
+if = '''!has('nvim')'''
 hook_add = '''
   " vimshell setting
   if has('osxdarwin')
@@ -568,7 +568,7 @@ hook_add = '''
 # colorscheme
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
-on_if = '''!has('nvim')'''
+if = '''!has('nvim')'''
 hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
@@ -584,7 +584,7 @@ hook_add = '''
 # statusline custom
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-on_if = '''!has('nvim')'''
+if = '''!has('nvim')'''
 hook_add = '''
   let g:lightline={
   \   'colorscheme': 'iceberg',
@@ -605,7 +605,7 @@ hook_add = '''
 # linter, hint
 [[plugins]]
 repo = 'w0rp/ale'
-on_if = '''!has('nvim')'''
+if = '''!has('nvim')'''
 depends = ['lightline.vim']
 hook_add = '''
   let g:ale_statusline_format=['E%d', 'W%d', '']
@@ -635,7 +635,7 @@ hook_add = '''
 # lightline ale
 [[plugins]]
 repo = 'maximbaz/lightline-ale'
-on_if = '''!has('nvim')'''
+if = '''!has('nvim')'''
 depends = ['lightline.vim']
 hook_add = '''
   let g:lightline.component_expand={
@@ -659,7 +659,7 @@ hook_add = '''
 # colorscheme
 [[plugins]]
 repo = 'EdenEast/nightfox.nvim'
-on_if = '''has('nvim')'''
+if = '''has('nvim')'''
 hook_add = '''
 lua << EOF
   require("nightfox").setup()
@@ -672,15 +672,15 @@ EOF
 
 [[plugins]]
 repo = 'nvim-lua/plenary.nvim'
-on_if = '''has('nvim')'''
+if = '''has('nvim')'''
 
 # [[plugins]]
 repo = 'nvim-tree/nvim-web-devicons'
-on_if = '''has('nvim')'''
+if = '''has('nvim')'''
 
 [[plugins]]
 repo = 'MunifTanjim/nui.nvim'
-on_if = '''has('nvim')'''
+if = '''has('nvim')'''
 
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
