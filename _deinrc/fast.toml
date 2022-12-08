@@ -695,5 +695,9 @@ END
 [[plugins]]
 repo = 'brenoprata10/nvim-highlight-colors'
 if = '''has('nvim')'''
-on_lua = 'nvim-highlight-colors'
+hook_add = '''
+lua << END
+  require('nvim-highlight-colors').setup()
+END
+'''
 
