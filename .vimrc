@@ -198,7 +198,7 @@ set wildmenu
 " コマンドラインの補完
 set wildmode=longest:full,full
 " vim script内の再帰処理回数
-set maxfuncdepth=200
+set maxfuncdepth=1000
 " 文字検索時カウント表示
 set shortmess-=S
 
