@@ -238,7 +238,7 @@ set whichwrap=b,s,h,l,<,>,[,],~
 " バックスペースキーの有効化
 set backspace=indent,eol,start
 " 保存するコマンド履歴の数
-set history=2048
+set history=10000
 " 新しいウィンドウを下に開く
 set splitbelow
 " 新しいウィンドウを右に開く
