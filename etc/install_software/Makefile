@@ -13,7 +13,12 @@ install: ## Software Install. Windows: Chocolatey, Other(Mac): Homebrew.
 	@echo [33mInstall start. [0m;
 ifeq ($(OS),Windows_NT)
 	-@cinst chocolateygui
-	-@cinst cmder nodist git winscp putty vagrant virtualbox docker docker-compose docker-machine
+	-@cinst cmder git winscp putty vagrant virtualbox docker docker-compose docker-machine
+
+	# refs: https://zenn.dev/longbridge/articles/30c70144c97d32
+	-@cinst volta
+	-@volta install node
+
 	-@cinst ack
 	-@cinst ripgrep
 	-@cinst fd
