@@ -565,6 +565,7 @@ hook_add = '''
   nnoremap <silent> vsp :VimShellPop %:p:h<CR>
   nnoremap <silent> vsi :VimShellInteractive<CR>
 '''
+
 # colorscheme
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
@@ -663,7 +664,17 @@ if = '''has('nvim')'''
 on_lua = 'nightfox'
 hook_add = '''
   set background=dark
-  autocmd MyAutoCmd VimEnter * nested colorscheme nightfox
+  autocmd MyAutoCmd VimEnter * nested call SetHightlightOptions()
+
+  " highlight 初期化 背景色を設定なしに
+  function SetHightlightOptions()
+    colorscheme nightfox
+    highlight Normal ctermbg=NONE guibg=NONE
+    highlight NonText ctermbg=NONE guibg=NONE
+    highlight LineNr ctermbg=NONE guibg=NONE
+    highlight Folded ctermbg=NONE guibg=NONE
+    highlight EndOfBuffer ctermbg=NONE guibg=NONE
+  endfunction
 '''
 
 [[plugins]]
