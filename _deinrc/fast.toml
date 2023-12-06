@@ -669,11 +669,11 @@ hook_add = '''
   " highlight 初期化 背景色を設定なしに
   function SetHightlightOptions()
     colorscheme nightfox
-    highlight Normal ctermbg=NONE guibg=NONE
-    highlight NonText ctermbg=NONE guibg=NONE
-    highlight LineNr ctermbg=NONE guibg=NONE
-    highlight Folded ctermbg=NONE guibg=NONE
-    highlight EndOfBuffer ctermbg=NONE guibg=NONE
+    " highlight Normal ctermbg=NONE guibg=NONE
+    " highlight NonText ctermbg=NONE guibg=NONE
+    " highlight LineNr ctermbg=NONE guibg=NONE
+    " highlight Folded ctermbg=NONE guibg=NONE
+    " highlight EndOfBuffer ctermbg=NONE guibg=NONE
   endfunction
 '''
 
