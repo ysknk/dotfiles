@@ -59,3 +59,4 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
     - mouse sense
     - touch screen
     - sound off
+    - spotlight off & alfred config
