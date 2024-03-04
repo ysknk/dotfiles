@@ -8,7 +8,9 @@ Setup for Vim, iTerm(zsh).
 
 ### For All
 
-1. Git
+- check command
+    - `git -v`
+    - `make -v`
 
 ### For Windows
 
@@ -18,7 +20,6 @@ Setup for Vim, iTerm(zsh).
 1. [gnuwin32](http://gnuwin32.sourceforge.net/packages/make.htm)
 
 - check command
-    - `make -v`
     - `sed --version`
     - `cygpath --version`
     - `echo %HOME%` -> Environment variables must be set(ex: C:\Users\ysknk)
