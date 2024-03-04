@@ -119,6 +119,7 @@ else
 	-@brew install --cask versions
 	-@brew install --cask adobe-creative-cloud
 	-@brew install --cask deepl
+	-@brew install --cask sketch
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 	-@chsh -s '/usr/local/bin/zsh'
