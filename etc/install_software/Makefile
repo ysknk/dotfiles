@@ -127,7 +127,7 @@ else
 
 	-@brew doctor
 	-@brew list
-	-@echo "install etc: subsetfont, woffconv, winarchiver-lite"	
+	-@echo "install etc: subsetfont, woffconv, winarchiver-lite, filezilla"	
 endif
 	@echo [32mInstall complete!. ✔︎[0m;
 
