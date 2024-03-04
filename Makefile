@@ -49,6 +49,7 @@ else
 	-@$(foreach f, $(DOT_FILES), $(ML_FILE_CMD) $(DOT_PATH)$(f) $(HOME_DIR)$(f);)
 	-@defaults write com.apple.finder AppleShowAllFiles TRUE
 	-@defaults write com.apple.desktopservices DSDontWriteNetworkStores TRUE
+	-@defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 	-@killall Finder
 endif
 	@make _message_end TASK_NAME:="Deploy"
