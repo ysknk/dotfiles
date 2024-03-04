@@ -27,12 +27,12 @@ Setup for Vim, iTerm(zsh).
 ### For Mac
 
 1. XCode
-```
+```sh
 xcode-select --install
 sudo xcode-select --switch /Library/Developer/CommandLineTools
 ```
 2. [Homebrew](https://brew.sh/)
-```
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Homebrew to your PATH
 ```
