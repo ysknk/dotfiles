@@ -103,6 +103,7 @@ else
 	-@brew install --cask google-chrome
 	-@brew install --cask cyberduck
 	# https://filezilla-project.org/
+	# https://filezilla-project.org/download.php?platform=macos-arm64
 	-@brew install --cask firefox
 	-@brew install --cask fork
 	-@brew install --cask alfred
