@@ -127,11 +127,7 @@ else
 	-@brew doctor
 	-@brew list
 	-@brew cask list
-	-@echo "install etc: subsetfont, woffconv"
-	
-	-@defaults write com.apple.finder AppleShowAllFiles TRUE
-	-@defaults write com.apple.desktopservices DSDontWriteNetworkStores TRUE
-	-@killall Finder
+	-@echo "install etc: subsetfont, woffconv"	
 endif
 	@echo [32mInstall complete!. ✔︎[0m;
 
