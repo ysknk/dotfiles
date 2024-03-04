@@ -101,6 +101,8 @@ else
 	-@brew install docker-compose
 	-@brew install docker-machine-nfs
 	-@brew install --cask google-chrome
+	-@brew install --cask cyberduck
+	# https://filezilla-project.org/
 	-@brew install --cask firefox
 	-@brew install --cask fork
 	-@brew install --cask alfred
