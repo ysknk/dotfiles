@@ -38,7 +38,7 @@ else
 	-@xcode-select --install
 	-@sudo xcode-select --switch /Library/Developer/CommandLineTools
 	-@exec $SHELL -l
-	-@ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	-@/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	-@exec $SHELL -l
 
 	-@brew doctor
