@@ -29,7 +29,7 @@ ifeq ($(OS),Windows_NT)
 	-@cinst winrar lhaplus
 	-@cinst python2 python3 ruby
 	-@cinst keypirinha googlejapaneseinput
-	-@cinst vim hidemaru-editor
+	-@cinst vim hidemaru-editor vscode
 	-@cinst winmerge
 
 	-@choco list -localonly
