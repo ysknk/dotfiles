@@ -94,6 +94,7 @@ else
 	-@brew install macvim
 	# https://atom.io/packages/veda/
 	-@brew install --cask atom
+	-@brew install --cask visual-studio-code
 	-@brew install --cask iterm2
 	-@brew install --cask vagrant
 	-@brew install --cask virtualbox
