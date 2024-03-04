@@ -127,7 +127,6 @@ else
 
 	-@brew doctor
 	-@brew list
-	-@brew cask list
 	-@echo "install etc: subsetfont, woffconv"	
 endif
 	@echo [32mInstall complete!. ✔︎[0m;
