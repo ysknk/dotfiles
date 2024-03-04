@@ -68,13 +68,11 @@ else
 	-@pyenv install 2.7.18
 	-@pyenv virtualenv 2.7.18 neovim2
 	-@pyenv activate neovim2
-	# -@pip install neovim
 	-@pip2 install pynvim
 
 	-@pyenv install 3.9.1
 	-@pyenv virtualenv 3.9.1 neovim3
 	-@pyenv activate neovim3
-	# -@pip3 install neovim
 	-@pip3 install pynvim
 
 	-@pyenv global 3.9.1 2.7.18
@@ -83,7 +81,6 @@ else
 	-@python3 -V
 
 	# https://github.com/mileszs/ack.vim/issues/156
-	# sudo apt-get install ack
 	-@brew install ack
 	-@brew install the_silver_searcher
 	-@brew install fzf
@@ -117,7 +114,7 @@ else
 	-@brew install --cask android-studio
 	-@brew install --cask versions
 	-@brew install --cask adobe-creative-cloud
-
+	-@brew install --cask deepl
 	-@brew install zsh
 	-@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 	-@chsh -s '/usr/local/bin/zsh'
