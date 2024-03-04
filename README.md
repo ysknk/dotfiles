@@ -24,6 +24,20 @@ Setup for Vim, iTerm(zsh).
     - `cygpath --version`
     - `echo %HOME%` -> Environment variables must be set(ex: C:\Users\ysknk)
 
+### For Mac
+
+1. XCode
+```
+xcode-select --install
+sudo xcode-select --switch /Library/Developer/CommandLineTools
+```
+2. [Homebrew](https://brew.sh/)
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Homebrew to your PATH
+```
+
+
 ## Recommended
 
 ### Font
