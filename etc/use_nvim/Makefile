@@ -51,7 +51,7 @@ init: clean deploy ## clean to deploy.
 
 deploy: ## Deploy nvim files.
 	@echo [33mDeploy nvim dotfiles start. [0m;
-	-@mkdir "$(NVIM_DIR)"
+	-@mkdir -p "$(NVIM_DIR)"
 ifeq ($(OS),Windows_NT)
 	-@$(ML_FILE_CMD) $(INITVIM) $(VIMRC)
 	-@$(ML_FILE_CMD) $(GINITVIM) $(GVIMRC)
