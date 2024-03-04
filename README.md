@@ -42,4 +42,7 @@ Setup for Vim, iTerm(zsh).
     cd ~/dotfiles
     make deploy
     ```
-
+1. OS unique settings *optional　& manual
+    - mouse sense
+    - touch screen
+    - sound off
