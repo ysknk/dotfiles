@@ -110,7 +110,8 @@ else
 	# http://atarimae.hatenablog.com/entry/2014/05/21/173856
 	-@brew install --cask google-japanese-ime
 	-@brew install --cask clipy
-	-@brew install --cask comparemerge
+	# -@brew install --cask comparemerge
+	-@brew install --cask p4v
 	-@brew install --cask slack
 	-@brew install --cask appcleaner
 	-@brew install --cask blender
