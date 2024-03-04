@@ -39,7 +39,7 @@ Setup for Vim, iTerm(zsh).
     ```
 1. **You can easily install it using *Makefile***
     ```
-    cd ~/dotfiles　&& make deploy
+    cd ~/dotfiles && make deploy
     ```
 1. OS unique settings *optional　& manual
     - mouse sense
