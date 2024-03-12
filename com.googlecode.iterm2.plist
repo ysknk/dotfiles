@@ -686,7 +686,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Advanced</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1086,7 +1086,7 @@
 			<key>Title Components</key>
 			<integer>512</integer>
 			<key>Transparency</key>
-			<real>0.30286970903837651</real>
+			<real>0.11462365164974618</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
