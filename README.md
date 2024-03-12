@@ -60,3 +60,4 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
     - touch screen
     - sound off
     - spotlight off & alfred config
+    - for apple silicon mac `chsh -s /bin/zsh`
