@@ -36,7 +36,10 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Homebrew to your PATH
 ```
-
+3. [oh-my-zsh](https://ohmyz.sh/)
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 ## Recommended
 
