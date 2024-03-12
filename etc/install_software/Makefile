@@ -120,12 +120,12 @@ else
 	-@brew install --cask adobe-creative-cloud
 	-@brew install --cask deepl
 	-@brew install --cask sketch
-	-@brew install zsh
+	# -@brew install zsh
 	# -@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
-	-@sudo sh -c "echo '/opt/homebrew/bin/zsh' >> /etc/shells"
+	# -@sudo sh -c "echo '/bin/zsh' >> /etc/shells"
 
 	# -@chsh -s '/usr/local/bin/zsh'
-	-@chsh -s '/opt/homebrew/bin/zsh'
+	-@chsh -s '/bin/zsh'
 	# -@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	-@compaudit | xargs chmod g-w,o-w
 
