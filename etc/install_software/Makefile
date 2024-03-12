@@ -88,7 +88,7 @@ else
 	-@brew install fd
 	-@brew install tree
 	-@brew install deno
-
+	-@brew install pnpm
 	-@brew install tnftp
 	-@brew install mysql
 	-@brew install macvim
