@@ -40,7 +40,7 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-4. For M1 Mac use Rosetta
+4. For Apple Silicon Mac use Rosetta
 
 ## Recommended
 
