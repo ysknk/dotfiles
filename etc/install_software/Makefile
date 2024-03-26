@@ -120,6 +120,7 @@ else
 	-@brew install --cask adobe-creative-cloud
 	-@brew install --cask deepl
 	-@brew install --cask sketch
+	-@brew install --cask keka
 	# -@brew install zsh
 	# -@sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 	# -@sudo sh -c "echo '/bin/zsh' >> /etc/shells"
@@ -131,7 +132,7 @@ else
 
 	-@brew doctor
 	-@brew list
-	-@echo "install etc: subsetfont, woffconv, winarchiver-lite, filezilla"	
+	-@echo "install etc: subsetfont, woffconv, filezilla"	
 endif
 	@echo [32mInstall complete!. ✔︎[0m;
 
