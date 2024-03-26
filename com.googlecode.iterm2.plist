@@ -354,6 +354,10 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>NeverWarnAboutShortLivedSessions_D6D153C2-3EF2-41B6-A939-CA982AFAA394</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_D6D153C2-3EF2-41B6-A939-CA982AFAA394_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1028,7 +1032,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Cica 20</string>
+			<string>Cica-Regular 20</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1086,7 +1090,7 @@
 			<key>Title Components</key>
 			<integer>512</integer>
 			<key>Transparency</key>
-			<real>0.11462365164974618</real>
+			<real>0.49792456276178082</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
