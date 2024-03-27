@@ -50,6 +50,7 @@ else
 	-@defaults write com.apple.finder AppleShowAllFiles TRUE
 	-@defaults write com.apple.desktopservices DSDontWriteNetworkStores TRUE
 	-@defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+	-@defaults write com.apple.PowerChime ChimeOnAllHardware -bool false; killall PowerChime
 	-@killall Finder
 endif
 	@make _message_end TASK_NAME:="Deploy"
