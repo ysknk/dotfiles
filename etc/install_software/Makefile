@@ -91,6 +91,7 @@ else
 	-@brew install pnpm
 	-@brew install tnftp
 	-@brew install mysql
+	-@brew install subversion
 	-@brew install --cask macvim
 	# https://atom.io/packages/veda/
 	-@brew install --cask atom
