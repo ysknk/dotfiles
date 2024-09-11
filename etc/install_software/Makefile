@@ -91,6 +91,7 @@ else
 	-@brew install pnpm
 	-@brew install tnftp
 	-@brew install mysql
+	-@brew install libpng
 	# intel mac -> brew install subversion
 	-@arch -arm64 brew install subversion
 	-@brew install --cask macvim
