@@ -181,7 +181,7 @@ repo = 'hrsh7th/vim-vsnip-integ'
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
   " disabled
-  let g:polyglot_disabled = ['svelte']
+  let g:polyglot_disabled = ['svelte', 'vue']
 
   " vue
   let g:vue_disable_pre_processors=1
