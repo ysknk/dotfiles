@@ -138,8 +138,10 @@ if executable("deno")
 endif
 
 if executable("typescript-language-server")
+  " グローバルインストールされたnpmモジュールの保存場所
   let s:npm_root = trim(system("npm root -g"))
 
+  " vim-lspのinitialization_optionsを使用して、typescript-deno-pluginのインストール場所をtypescript-language-serverへ伝えます
   let s:has_typescript_deno_plugin = isdirectory(s:npm_root . "/typescript-deno-plugin")
   let s:plugins = s:has_typescript_deno_plugin
     \ ? [{ "name": "typescript-deno-plugin", "location": s:npm_root }]
@@ -165,6 +167,15 @@ hook_add = '''
 let g:lsp_settings_filetype_javascript = ['eslint-language-server']
 let g:lsp_settings_filetype_javascriptreact = ['eslint-language-server']
 '''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-icons'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
