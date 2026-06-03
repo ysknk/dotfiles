@@ -117,10 +117,10 @@ endif
 " =======================
 " init set
 " =======================
-let $PATH = '~/.pyenv/shims:'.$PATH
+let $PATH = '~/.local/share/mise/shims:'.$PATH
 if has('nvim')
-  let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/neovim2/bin/python") || echo -n $(which python2)')
-  let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/neovim3/bin/python") || echo -n $(which python3)')
+  let g:python3_host_prog = expand('~/.local/share/mise/shims/python3')
+  let g:python_host_prog = expand('~/.local/share/mise/shims/python2')
 endif
 
 " TMPファイル
