@@ -57,6 +57,7 @@ else
 	# -@exec $SHELL -l
 	# -@volta install node
 	-@https://mise.run | sh
+	-@exec $SHELL -l
 	-@mise use --global node@26
 
 	-@node -v
