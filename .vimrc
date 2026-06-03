@@ -118,9 +118,24 @@ endif
 " init set
 " =======================
 let $PATH = '~/.local/share/mise/shims:'.$PATH
+
 if has('nvim')
-  let g:python3_host_prog = expand('~/.local/share/mise/shims/python3')
-  let g:python_host_prog = expand('~/.local/share/mise/shims/python2')
+  let s:mise_nvim2 = expand('~/.vim-python2/bin/python')
+  if filereadable(s:mise_nvim2)
+    let g:python_host_prog = s:mise_nvim2
+  else
+    let g:python_host_prog = system('which python2 2>/dev/null || which python 2>/dev/null')
+  endif
+
+  let s:mise_nvim3 = expand('~/.vim-python3/bin/python')
+  if filereadable(s:mise_nvim3)
+    let g:python_host_prog = s:mise_nvim3
+  else
+    let g:python_host_prog = system('which python3 2>/dev/null')
+  endif
+  
+  let g:python_host_prog = substitute(g:python_host_prog, '\n$', '', '')
+  let g:python3_host_prog = substitute(g:python3_host_prog, '\n$', '', '')
 endif
 
 " TMPファイル
