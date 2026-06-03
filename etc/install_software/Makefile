@@ -59,6 +59,7 @@ else
 	-@https://mise.run | sh
 	-@exec $SHELL -l
 	-@mise use --global node@26
+	-@echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
 
 	-@node -v
 	-@npm i --save -g gulp-cli
