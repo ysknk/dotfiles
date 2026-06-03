@@ -80,7 +80,12 @@ else
 	# -@pyenv virtualenv 3.9.1 neovim3
 	# -@pyenv activate neovim3
 	# -@pip3 install pynvim
-	
+	-@python3 -m venv ~/.vim-python3
+	-@~/.vim-python3/bin/pip install pynvim
+	-@python2 -m pip install virtualenv
+	-@python2 -m virtualenv ~/.vim-python2
+	-@~/.vim-python2/bin/pip install pynvim
+
 	-@python3 -m pip install pynvim
 	-@python2 -m pip install pynvim
 
