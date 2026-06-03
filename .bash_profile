@@ -43,8 +43,8 @@ fi
 # fi
 
 # volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Path java
 # export JAVA_HOME=$(/usr/libexec/java_home)
