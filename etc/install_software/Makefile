@@ -59,6 +59,7 @@ else
 	-@https://mise.run | sh
 	-@exec $SHELL -l
 	-@mise use --global node@26
+	-@mise use --global python@2.7.18
 	-@mise use --global python@3.14
 	-@echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
 
@@ -79,11 +80,15 @@ else
 	# -@pyenv virtualenv 3.9.1 neovim3
 	# -@pyenv activate neovim3
 	# -@pip3 install pynvim
+	
+	-@python3 -m pip install pynvim
+	-@python2 -m pip install pynvim
 
 	# -@pyenv global 3.9.1 2.7.18
+	-@mise global python@3.14 python@2.7.18
 	-@python -V
-	# -@python2 -V
-	# -@python3 -V
+	-@python2 -V
+	-@python3 -V
 
 	# https://github.com/mileszs/ack.vim/issues/156
 	-@brew install ack
