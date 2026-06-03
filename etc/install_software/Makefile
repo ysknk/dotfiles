@@ -53,9 +53,11 @@ else
 	-@anyenv install pyenv
 	-@exec $SHELL -l
 
-	-@curl https://get.volta.sh | bash
-	-@exec $SHELL -l
-	-@volta install node
+	# -@curl https://get.volta.sh | bash
+	# -@exec $SHELL -l
+	# -@volta install node
+	-@https://mise.run | sh
+	-@mise use --global node@26
 
 	-@node -v
 	-@npm i --save -g gulp-cli
@@ -103,7 +105,8 @@ else
 	-@brew install --cask virtualbox
 	-@brew install --cask docker
 	-@brew install docker-compose
-	-@brew install docker-machine-nfs
+	-@brew install docker-buildx
+	# -@brew install docker-machine-nfs
 	-@brew install --cask google-chrome
 	-@brew install --cask cyberduck
 	# https://filezilla-project.org/
